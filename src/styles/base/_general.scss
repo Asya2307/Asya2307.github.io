@@ -1,0 +1,29 @@
+html {
+  font-size: 16px;
+  -ms-overflow-style: scrollbar;
+  overflow-x: hidden;
+}
+
+.body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  min-width: 320px;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  outline-color: transparent;
+}
+
+a,
+button {
+  display: block;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1780px;
+  margin-left: auto;
+  margin-right: auto;
+}
