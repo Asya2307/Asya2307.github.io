@@ -1,0 +1,21 @@
+.btn {
+    border-radius: 26px;
+    border: none;
+    width: 50%;
+    font-size: 18px;
+    padding: 17px 80px;
+    transition: background-color $transition;
+    &--prm {
+        color: #ffffff;
+        background-color: rgba($color: $prmColor, $alpha: 1.0);
+
+        &:hover {
+            background-color: rgba($color: $prmColor, $alpha: 0.8);
+        }
+    }
+
+    &--submit {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,21 @@
+<section class="modal__wrap">
+    <div class="modal">
+        <form clas="form" action="POST">
+            <span class="form__title">Заполните форму обязательной связи</span>
+            <div class="form__inner">
+                <div class="form__group">
+                    <label for="name" class="form__label form__label--req">Укажите свое имя</label>
+                    <input type="text" id="name" class="form__input" required>
+                </div>
+                <div class="form__group">
+                    <label for="phone" class="form__label form__label--req">Укажите свой телефон</label>
+                    <input type="text" id="phone" class="form__input js-input-tel" required>
+                </div>
+            </div>
+            <button class="btn btn--prm btn--submit" type="submit">Отправить</button>
+        </form>
+        <button class="modal__close js-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413.348 413.348"><path d="M413.348 24.354L388.994 0l-182.32 182.32L24.354 0 0 24.354l182.32 182.32L0 388.994l24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"/></svg>
+        </button>
+    </div>
+</section>

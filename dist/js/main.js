@@ -86,18 +86,83 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/blocks/modules/modal/modal.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/modules/modal/modal.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+$(window).on('load', function () {
+  var telMask = $('.js-input-tel');
+
+  if (telMask) {
+    $('.js-input-tel').mask('+7 (000) 000-0000');
+  }
+
+  var modalClose = $('.js-modal-close');
+
+  if (modalClose) {
+    modalClose.on('click', function () {
+      $(this).closest('.modal__wrap').removeClass('active');
+    });
+  }
+
+  var modalOpen = $('.js-modal-open');
+  console.log(_typeof(modalOpen));
+
+  if (modalOpen) {
+    console.log(1);
+    modalOpen.on('click', function () {
+      $('.modal__wrap').addClass('active');
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./src/blocks/modules/product/slider.js":
+/*!**********************************************!*\
+  !*** ./src/blocks/modules/product/slider.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(window).on('load', function () {
+  var slider = $('.slider');
+
+  if (slider.length) {
+    slider.slick({
+      arrows: false
+    });
+    $('.slider__arrow-item--next').on('click', function () {
+      $(this).closest('.slider__wrap').find('.slider').slick('slickNext');
+    });
+    $('.slider__arrow-item--prev').on('click', function () {
+      $(this).closest('.slider__wrap').find('.slider').slick('slickPrev');
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/import/modules.js":
 /*!**********************************!*\
   !*** ./src/js/import/modules.js ***!
   \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// import "%modules%/header/header";
-// import "%modules%/footer/footer";
-// import "%modules%/location/location";
-// import "%modules%/features/features";
-// import "%modules%/news/news";
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_product_slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! %modules%/product/slider.js */ "./src/blocks/modules/product/slider.js");
+/* harmony import */ var _modules_product_slider_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_modules_product_slider_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_modal_modal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! %modules%/modal/modal.js */ "./src/blocks/modules/modal/modal.js");
+/* harmony import */ var _modules_modal_modal_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_modal_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
 
 /***/ }),
 
@@ -111,10 +176,7 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _import_modules_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./import/modules.js */ "./src/js/import/modules.js");
-/* harmony import */ var _import_modules_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_import_modules_js__WEBPACK_IMPORTED_MODULE_0__);
- // import './import/rellax.js';
-// import './import/waypoints.js';
-// import './import/_animate-css.js';
+
 
 /***/ })
 
