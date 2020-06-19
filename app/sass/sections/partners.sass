@@ -1,0 +1,79 @@
+.partners
+    &__wrap
+        padding-bottom: 60px
+    
+    &__item
+        margin-bottom: 20px
+        width: 100%
+        max-width: calc(100%/6 - 44px)
+        margin: 10px 22px
+        &-link 
+            color: #000000
+            text-decoration: none
+    &__box
+        display: flex
+        flex-wrap: wrap
+        margin-left: -22px
+        margin-right: -22px
+    
+    @media screen and (max-width: 1280px)
+        &__item
+            max-width: calc(100%/4 - 44px)
+
+            &:nth-child(6n)
+                margin-right: 22px
+            &:nth-child(4n)
+                margin-right: 0px
+    @media screen and (max-width: 768px)
+        &__item
+            max-width: calc(100%/2 - 44px)
+
+            &:nth-child(2n)
+                margin-right: 0px
+    @media screen and (max-width: 550px)
+        &__item
+            max-width: calc(100%)
+            margin: 0
+
+            &:nth-child(2n)
+                margin-right: 0px
+           
+    &__title
+        max-width: 950px
+        margin: 80px auto 60px auto
+
+    @media screen and (max-width: 550px)
+        &__title
+            margin: 40px 0
+
+    &__img
+        
+        &-wrap
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 100%
+            height: 230px
+            background-color: #f6f6f6
+        @media screen and (max-width: 1600px)
+            &-wrap
+                height: 160px
+        
+    &__link
+        text-decoration: none
+        font-size: 16px
+        font-weight: 300
+        color: #000000
+        transition: .7s
+        &-wrap
+            width: 100%
+            display: flex
+            justify-content: center
+            margin-top: 20px
+        &:hover
+            background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0))
+
+@media screen and (max-width: 550px)
+    .partners
+        margin: 0
+    

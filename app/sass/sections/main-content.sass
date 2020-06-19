@@ -1,0 +1,110 @@
+.main__content
+    max-width: 950px
+    margin: 0 auto
+    padding-bottom: 75px
+
+    &-inner
+        padding-top: 40px
+    @media screen and (max-width: 475px) 
+         &-inner
+            padding-top: 30px
+    
+    p 
+        line-height: 29px
+    
+    a 
+        color: $blue
+        text-decoration: none
+        border-bottom: 1px solid rgba(0, 79, 186, 0.2)
+        transition: border-color .3s
+
+        &:hover
+            border-bottom-color: transparent
+    img
+        margin-top: 40px
+        max-width: 80%
+        width: 100%
+        display: block
+
+    @media screen and (max-width: 767px)
+        img 
+            max-width: 100%
+    
+    h3 
+        margin-top: 43px
+        margin-bottom: 30px
+        font-size: 36px
+        line-height: 40px
+        font-weight: 400
+
+    @media screen and (max-width: 768px)
+        h3
+            font-size: 26px
+            line-height: 33px
+    span 
+        font-size: 16px
+        font-weight: 600
+    ul 
+        list-style-type: none
+        padding: 0
+        margin: 20px 0 0 0
+        li 
+            display: flex
+            align-items: flex-start 
+            
+            &:before
+                content: ''
+                display: block
+                min-width: 15px
+                height: 1px
+                background-color: $blue
+                margin-right: 11px
+                position: relative
+                top: 12px
+    ol 
+        list-style-type: none
+        counter-reset: item
+        padding-left: 0
+        li
+            display: flex;
+            &:before 
+                content: counter(item) '. '
+                counter-increment: item
+                font-size: 14px
+                font-weight: 600
+                color: $blue
+                margin-right: 9px
+                position: relative
+                top: 2px
+    h4 
+        font-size: 24px
+        line-height: 28px
+        font-weight: 400
+    figcaption
+        margin-bottom: 40px
+        font-weight: 300
+        font-size: 14px
+        padding-top: 14px
+    
+    table
+        margin-top: 30px
+        border-collapse: collapse
+        margin-bottom: 20px
+        th
+            color: $light-text
+            font-size: 15px;
+            font-weight: 400
+            text-align: left
+            background-color: $blue
+            padding: 14px 20px
+            border: none 
+        td
+            border: 1px solid rgba(0, 79, 186, 0.2)
+            padding: 14px 20px
+            font-size: 16px
+            font-weight: 400
+
+
+
+        
+    

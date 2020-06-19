@@ -1,0 +1,438 @@
+.header
+	width: 100%
+	position: relative
+	z-index: 3
+	&-fixed
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 5
+		background-color: #fff
+		height: 80px
+		display: flex
+		align-items: center
+		transform: translateY(-100%)
+		transition-duration: .3s
+		&_visible
+			transform: none
+			box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.25)
+		.header
+			&__form
+				margin-left: 0
+				margin-right: 30px
+			&-contacts
+				&__phone
+					margin-right: 30px
+			&-menu
+				&__sublist
+					bottom: -27px
+	&__container
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 68px
+		position: relative
+	&__bottom
+		display: flex
+		align-items: center
+	&-categories
+		&__list
+			padding: 0
+			margin: 0
+			list-style-type: none
+			display: flex
+		&__item
+			margin-right: 25px
+			&:last-child
+				margin-right: 0
+		&__link
+			color: $text
+			text-transform: uppercase
+			text-decoration: none
+			font-size: 13px
+			transition-duration: .3s
+			&:hover
+				color: $blue-light
+	&-contacts
+		display: flex
+		align-items: center
+		position: relative
+		&__email
+			font-size: 14px
+			font-weight: 300
+			color: $text
+			margin-right: 40px
+			transition-duration: .3s
+			&:hover
+				color: $blue-light
+		&__phone
+			margin-right: 40px
+			color: $text
+			font-size: 19px
+			text-decoration: none
+			transition-duration: .3s
+			&:hover
+				color: $blue-light
+		&__profile
+			text-decoration: none
+			margin-right: 25px
+			&:hover
+				path
+					stroke: $blue-light
+			svg
+				width: 20px
+				display: block
+			path
+				transition-duration: .3s
+			.st0
+				fill: none
+				stroke: #081728
+				stroke-width: 2
+			.st1
+				fill-rule: evenodd
+				clip-rule: evenodd
+				fill: #FFFFFF
+				fill-opacity: 0
+				stroke: #081728
+				stroke-width: 2
+		&__search
+			display: flex
+			align-items: center
+			margin-right: 25px
+			&-button, &-submit
+				padding: 0
+				border: none
+				background: none
+				outline: none
+				text-decoration: none
+				cursor: pointer
+				&:hover, &:focus
+					.st0
+						fill: $blue-light
+					.st1
+						stroke: $blue-light
+				svg
+					width: 18px
+					display: block
+				path
+					transition-duration: .3s
+				.st0
+					fill-rule: evenodd
+					clip-rule: evenodd
+				.st1
+					fill: none
+					stroke: #000000
+					stroke-width: 2
+			&-form
+				position: absolute
+				left: 0
+				top: 50%
+				height: 40px
+				width: calc(100% - 40px)
+				transform: translate(30px, -50%)
+				z-index: 10
+				opacity: 0
+				pointer-events: none
+				transition-duration: .3s
+				background-color: #fff
+				&_open
+					opacity: 1
+					pointer-events: auto
+					transform: translate(0, -50%)
+			&-input
+				border: none
+				height: 40px
+				width: 100%
+				background-color: #fff
+				box-shadow: 0px 3px 5.7px 0.3px rgba(0, 0, 0, 0.06)
+				padding-left: 15px
+				font-size: 14px
+				color: $text
+				&::placeholder
+					font-size: 14px
+					color: $text
+					opacity: 0.5
+			&-submit
+				position: absolute
+				right: 14px
+				top: 50%
+				transform: translateY(-50%)
+	&-burger
+		background: none
+		border: none
+		margin: 0
+		padding: 0
+		height: 30px
+		width: 30px
+		position: relative
+		cursor: pointer
+		z-index: 31
+		&::after
+			content: ""
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 100%
+			height: 2px
+			background-color: $text
+			transform: translateY(-4px)
+			transition-duration: .2s
+		&::before
+			content: ""
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			width: 100%
+			height: 2px
+			background-color: $text
+			transform: translateY(4px)
+			transition-duration: .2s
+		&:hover
+			&::after, &::before
+				background-color: $blue-light
+	&-logo
+		display: block
+		width: 244px
+		margin-right: 80px
+		transition-duration: .3s
+		overflow: hidden
+		position: relative
+		&__img
+			width: 100%
+			display: block
+			transition-duration: .3s
+			margin-left: -7%
+	&-menu
+		&__list
+			margin: 0
+			padding: 0
+			list-style-type: none
+			display: flex
+			align-items: center
+		&__item
+			position: relative
+			margin-right: 20px
+			&:last-child
+				margin-right: 0
+			&.open
+				& > .header-menu__sublist
+					opacity: 1
+					transform: translateY(100%)
+					pointer-events: auto
+		&__link
+			font-size: 16px
+			color: $text
+			text-decoration: none
+			transition-duration: .3s
+			&:hover
+				color: $blue-light
+		&__sublist
+			padding: 15px 0
+			margin: 0
+			list-style-type: none
+			position: absolute
+			bottom: -15px
+			left: 0
+			transform: translateY(95%)
+			opacity: 0
+			pointer-events: none
+			background-color: #004fba
+			transition-duration: .3s
+			& + .header-menu__sublink svg
+				display: block
+		&__subitem
+			height: 32px
+			& > .header-menu__sublist
+				bottom: auto
+				right: 0
+				left: auto
+				top: 0
+				transform: translateX(100%)
+				background-color: #0044a0
+			&.open
+				& > .header-menu__sublist
+					opacity: 1
+					transform: translateX(100%)
+					pointer-events: auto
+		&__sublink
+			line-height: 32px
+			padding: 0 40px 0 25px
+			color: $light-text
+			font-size: 16px
+			text-decoration: none
+			display: flex
+			justify-content: space-between
+			align-items: center
+			transition-duration: .3s
+			white-space: nowrap
+			position: relative
+			&:hover
+				background-color: #1368db
+			svg
+				display: none
+				position: absolute
+				right: 25px
+				top: 0
+				bottom: 0
+				margin: auto 0
+	&__form
+		margin-left: auto
+
+@media screen and ( max-width: 1650px )
+	.header
+		&-fixed
+			.header
+				&-logo
+					max-width: 184px
+					margin-right: 0
+				&-categories
+					&__link
+						font-size: 11px
+				&-contacts
+					&__email
+						font-size: 12px
+						margin-right: 30px
+					&__phone
+						font-size: 17px
+						margin-right: 30px
+				&-menu
+					&__link
+						font-size: 14px
+
+@media screen and ( max-width: 1366px )
+	.header
+		&-fixed
+			height: 68px
+			&_visible
+				box-shadow: 0px 3px 25px 0px rgba(0, 0, 0, 0.25)
+			.header-logo
+				margin-right: 0
+			.header-menu
+				&__sublist
+					bottom: -21px
+				&__subitem > .header-menu__sublist
+					bottom: auto
+		&-categories
+			&__link
+				font-size: 11px
+		&-contacts
+			&__email
+				font-size: 12px
+				margin-right: 30px
+			&__phone
+				font-size: 17px
+				margin-right: 30px
+		&-menu
+			&__link
+				font-size: 14px
+			&__sublink
+				font-size: 14px
+
+@media screen and ( max-width: 1280px )
+	.header-fixed
+		.header
+			&-logo
+				max-width: 160px
+			&__form
+				margin-right: 20px
+			&-contacts
+				&__phone, &__profile, &__search
+					margin-right: 20px
+
+@media screen and ( max-width: 1199px )
+	.header
+		&-fixed
+			&_visible
+				box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.2)
+			.header
+				&-menu
+					&__link
+						font-size: 13px
+				&__form
+					display: none
+				&-contacts
+					&__phone
+						font-size: 16px
+		&-logo
+			max-width: 180px
+			margin-right: 40px
+		&-contacts
+			&__phone
+				font-size: 16px
+				margin-right: 20px
+			&__email
+				margin-right: 20px
+			&__profile
+				margin-right: 20px
+			&__search
+				margin-right: 20px
+
+@media screen and ( max-width: 991px )
+	.header
+		&-fixed
+			.header-contacts
+				width: auto
+				&__profile
+					margin-left: 0
+		&-categories
+			display: none
+		&-menu
+			display: none
+		&-contacts
+			width: 100%
+			&__profile
+				margin-left: auto
+
+@media screen and ( max-width: 767px )
+	.header
+		&-fixed
+			height: 60px
+			.header-logo
+				max-width: 160px
+				margin-right: 30px
+		&-contacts
+			&__phone
+				&:nth-child(2)
+					display: none
+			&__email
+				display: none
+			&__search
+				&-form
+					width: calc( 100vw - 70px )
+					left: auto
+					right: 40px
+		&__wrap
+			display: flex
+			flex-direction: row-reverse
+			justify-content: space-between
+		&__form
+			display: none
+
+@media screen and ( max-width: 560px )
+	.header
+		&-logo
+			max-width: 150px
+		&-contacts
+			&__phone
+				font-size: 14px
+
+@media screen and ( max-width: 480px )
+	.header
+		&-contacts
+			&__phone
+				display: none
+
+
+

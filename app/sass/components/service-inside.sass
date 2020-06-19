@@ -1,0 +1,160 @@
+.service
+    &__inside
+        padding: 80px 0 100px 0
+        &-inner 
+    &__content
+        &-item 
+            display: flex
+            align-items: center
+            max-width: 1280px
+            margin-left: auto
+            margin-bottom: 100px
+            &:last-child
+                margin-bottom: 0
+            &--slider 
+                flex-direction: column
+                max-width: 960px
+                margin-left: auto
+                margin-right: auto
+            &--reverse
+                flex-direction: row-reverse
+                margin-left: 0
+                margin-right: auto
+                .service__content-text
+                    padding-right: 0
+                    padding-left: 60px
+            @media screen and ( max-width:  650px)
+                &--reverse
+                    .service__content-text
+                        padding-left: 0
+                        margin-top: 0
+            &--column 
+                flex-direction: column-reverse
+                max-width: 960px
+                margin: auto
+                .service__content-text
+                    padding: 0
+                    margin-top: 40px
+            @media screen and ( max-width:  1280px)
+                &--column
+                    flex-direction: row
+                    .service__content-text
+                        padding-right: 60px
+                        margin-top: 0
+            @media screen and ( max-width:  650px)
+                &--column
+                    .service__content-text
+                        padding-right: 0px
+                        margin-top: 0
+        @media screen and ( max-width:  650px)
+            &-item
+                margin-bottom: 0px
+        &-text
+            font-size: 16px
+            font-weight: 300
+            padding-right: 60px
+            width: 100%
+            b
+                display: block
+                font-weight: 700
+                margin-bottom: 10px
+        @media screen and ( max-width:  650px)
+            &-text 
+                padding-right: 0
+                padding-left: 0
+            
+        &-img
+            max-width: 50%
+            width: 100%;
+            img
+                display: block
+                width: 100%
+        @media screen and ( max-width:  1280px)
+            &-img 
+                min-width: unset 
+                max-width: 50%
+        @media screen and ( max-width:  650px)
+            &-img 
+                display: none
+
+            
+    &__contacts
+        &-title
+            font-size: 36px
+            display: block
+            width: 100%
+            text-align: center
+            margin-bottom: 62px
+        &-inner
+            display: flex
+            align-items: stretchs
+            margin: 0 -20px
+        @media screen and ( max-width:  960px)
+            &-inner 
+                flex-direction: column 
+                margin: 0
+            
+        &-item
+            position: relative 
+            background-color: #f6f6f6
+            padding: 40px 70px 0 70px
+            width: calc(100%/2 - 40px)
+            margin-left: 20px 
+            margin-right: 20px
+        @media screen and ( max-width:  960px)
+            &-item
+                margin-left: 0
+                margin-right: 0
+                margin-bottom: 70px
+                width: 100%
+                &:last-child
+                    margin-bottom: 0
+        @media screen and (max-width: 650px)
+            &-item 
+                padding-bottom: 40px
+        @media screen and (max-width: 475px)
+            &-item
+                padding: 20px
+        &-box
+            display: flex
+            flex-direction: column
+            max-width: 70%
+        @media screen and (max-width: 650px)
+            &-box 
+                max-width: 100% 
+
+        &-part 
+            font-size: 11px
+            font-weight: 500
+            line-height: 30px
+            text-transform: uppercase
+            letter-spacing: 0.88px
+        @media screen and (max-width: 475px)
+            &-part 
+                font-size: 9px
+                line-height: 11px
+        &-name 
+            display: block
+            margin-top: 20px
+            font-size: 24px
+            font-weight: 28px
+        @media screen and (max-width: 475px)
+            &-name
+                font-size: 16px
+                line-height: 24px
+        &-position
+            font-size: 16px
+            font-weight: 300
+        @media screen and (max-width: 475px)
+            &-position
+                font-size: 13px
+                
+        &-img 
+            position: absolute
+            bottom: 0 
+            right: 0
+            img 
+                display: block
+        @media screen and (max-width: 650px)
+            &-img 
+                display: none

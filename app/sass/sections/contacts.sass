@@ -1,0 +1,122 @@
+.contacts
+    &__inner
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 80px 0
+        margin: 0 -15px
+    &__item
+        width: 100%
+        max-width: calc(100%/4 - 30px)
+        margin: 0 15px
+
+    @media screen and (max-width: 1280px)
+        &__item
+            max-width: calc(100%/2 - 30px)
+            margin-bottom: 40px
+
+    @media screen and (max-width: 768px)
+        &__item
+            max-width: 100%
+    &__title
+        font-size: 20px
+        line-height: 27px
+        padding-bottom: 18px
+        display: block
+    @media screen and (max-width: 1650px)
+        &__title
+            height: 72px
+    @media screen and (max-width: 1650px)
+        &__title
+            height: unset
+    @media screen and (max-width: 1650px)
+        &__title
+            height: 72px
+    @media screen and (max-width: 768px)
+        &__title
+            padding-bottom: 10px
+            height: unset
+
+    &__box
+        &-inner
+            display: flex
+            &--service
+                align-items: center
+        &-item
+            display: flex
+            margin-bottom: 15px
+            align-items: center
+
+
+            &:last-child
+                margin-bottom: 0
+
+            &::before
+                content: ''
+                position: relative
+                display: block
+                background-position: center
+                background-size: contain
+                background-repeat: no-repeat
+                margin-right: 12px
+
+            &--tel
+                &::before
+                    width: 19px
+                    height: 19px
+                    background-image: url(../img/tel.png)
+            
+            &--email
+                &::before
+                    width: 21px
+                    height: 15px
+                    background-image: url(../img/email.png)
+                
+            &--service
+                align-items: center
+                margin-top: 20px
+                &::before
+                    width: 21px
+                    height: 15px
+                    background-image: url(../img/email-dark.png)
+                    top: 0
+                .contacts__box-title
+                    line-height: 1
+                    
+        @media screen and (max-width: 768px)
+            &-item
+                margin-bottom: 5px
+        
+        &-title
+            font-size: 13px
+            font-weight: 600
+            letter-spacing: 1.04px
+            line-height: 29px
+            text-transform: uppercase
+            padding-right: 10px
+    &__link
+        display: block
+        font-weight: 300
+        font-size: 16px
+        color: #000000
+        text-decoration: none
+        transition: .3s
+
+        &--email
+            // border-bottom: 1px solid rgba(0, 0, 0,0.7 )
+            position: relative
+            padding-bottom: 1px
+            &:after 
+                content: ''
+                display: block
+                height: 1px
+                position: absolute
+                width: 100%
+                border-bottom: 1px solid rgba(0,0,0,.7)
+                bottom: 7px
+                left: 0
+
+
+            
+    

@@ -1,0 +1,425 @@
+.services
+	height: 100vh
+	max-height: 100vh
+	&-item
+		height: 100vh
+		padding-top: 80px
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+		position: relative
+		&__wrapper
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&__img
+			max-width: 100%
+			&-wrap
+				width: 51%
+				height: calc(100vh - 80px)
+				display: flex
+				align-items: flex-end
+				justify-content: center
+		&__text
+			width: 40%
+		&__category
+			display: flex
+			align-items: center
+			font-size: 13px
+			color: $light-text
+			max-width: 480px
+			margin-bottom: 10px
+			&::before
+				content: ""
+				display: block
+				width: 40px
+				height: 1px
+				background: #fff
+				margin-right: 10px
+		&__title
+			display: inline
+			margin: 0
+			font-size: 62px
+			line-height: 1.1
+			color: $light-text
+			font-weight: 400
+			max-width: 480px
+			cursor: pointer
+			background-position: 0 83%
+			background-size: 100% 0px
+			background-repeat: repeat-x
+			transition: .3s
+			border-bottom: 1px dotted rgba(255, 255, 255, 0.2)
+			&:hover
+				background-position: 0 83%
+				background-size: 100% 1px
+				border-bottom-color: transparent
+		&__desc
+			font-size: 16px
+			font-weight: 300
+			color: $light-text
+			line-height: 1.8
+			max-width: 480px
+			margin-top: 35px
+	&-nav
+		position: absolute
+		z-index: 1
+		left: 0
+		bottom: 70px
+		width: 100%
+		&__container
+			display: flex
+			justify-content: flex-end
+		&__arrow
+			padding: 0
+			margin: 0
+			background: $blue
+			border: none
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 62px
+			height: 62px
+			transition-duration: .3s
+			cursor: pointer
+			svg
+				display: block
+			&:hover
+				background: $blue-light
+			&_disabled
+				cursor: default
+				opacity: .5
+		&__prev
+			margin-right: 10px
+		&__next
+			transform: rotate(180deg)
+	&-popup
+		width: 100%
+		height: calc(100vh - 80px)
+		position: absolute
+		bottom: 0
+		left: 0
+		transition-duration: .3s
+		opacity: 0
+		pointer-events: none
+		z-index: 10
+		background-color: rgba(0, 0, 0, .5)
+		&_open
+			pointer-events: auto
+			opacity: 1
+		&__close
+			border: none
+			padding: 0
+			margin: 0
+			background: none
+			width: 40px
+			height: 40px
+			position: absolute
+			top: 40px
+			left: calc(50vw - 800px)
+			cursor: pointer
+			&::after
+				content: ""
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				margin: auto
+				background-color: #e8e8e9
+				width: 42px
+				height: 2px
+				transform: rotate(45deg)
+				transition-duration: .3s
+			&::before
+				content: ""
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				margin: auto
+				background-color: #e8e8e9
+				width: 42px
+				height: 2px
+				transform: rotate(-45deg)
+				transition-duration: .3s
+			&:hover
+				&:after
+					transform: rotate(135deg)
+				&::before
+					transform: rotate(-135deg)
+		&__content
+			height: calc( 100% - 40px )
+			position: absolute
+			right: 0
+			bottom: 0
+			display: flex
+			width: 70vw
+		&__text
+			width: 33vw
+			max-height: 100%
+			position: relative
+			padding: 60px 50px
+			background: #fff
+
+			&:hover
+				.ps__rail-y
+					opacity: 1
+					.ps__thumb-y
+						opacity: 1
+			.ps__rail-y
+				width: 6px
+				opacity: 1
+				background-color: #e5e5e5
+				&:hover
+					background-color: #e5e5e5
+				.ps__thumb-y
+					width: 6px
+					right: 0
+					border-radius: 0
+					background-color: #004fba
+					opacity: 1
+					cursor: pointer
+			h2
+				font-size: 48px
+				color: $text
+				line-height: 1.15
+				font-weight: 400
+				margin: 20px 0 0
+			p, li
+				font-size: 16px
+				color: $text
+				line-height: 1.8
+				font-weight: 300
+				margin: 20px 0
+			img
+				max-width: 100%
+				display: block
+				margin: 30px 0
+		&__img
+			background-position: center
+			background-size: cover
+			background-repeat: no-repeat
+			width: 0
+			overflow: hidden
+			transition: .5s
+			transition-delay: 0.6s
+			transition-timing-function: ease-in-out
+
+			&.active
+				width: 33vw
+				img
+					width: 33vw
+					height: 100%
+					object-fit: cover
+					display: block
+		&__category
+			display: flex
+			align-items: center
+			font-size: 13px
+			color: $text
+			max-width: 480px
+			&::before
+				content: ""
+				display: block
+				width: 40px
+				height: 1px
+				background: $text
+				margin-right: 10px
+		&__box
+			overflow: hidden
+			transition: .3s
+			height: 100%
+		&__overflow
+			width: 0
+			overflow: hidden
+			transition: .5s
+			height: 100%
+			transition-timing-function: ease-in-out
+
+
+			&.active
+				width: 37vw
+
+
+
+@media screen and ( max-width: 1650px )
+	.services
+		&-popup
+			&__close
+				left: calc(50vw - 633px)
+			&__text
+				width: 37vw
+				padding: 50px 40px
+				h2
+					font-size: 36px
+					margin: 10px 0 0
+				p, li
+					font-size: 14px
+					margin: 20px 0
+				img
+					margin: 25px 0
+			// &__img
+			// 	width: 33vw
+			&__category
+				font-size: 11px
+
+@media screen and ( max-width: 1366px )
+	.services
+		&-item
+			padding-top: 68px
+			&__title
+				font-size: 48px
+			&__desc
+				font-size: 14px
+			&__category
+				font-size: 11px
+			&__img
+				&-wrap
+					height: calc(100vh - 68px)
+		&-popup
+			height: calc(100vh - 68px)
+			&__close
+				left: 20px
+				&::after, &::before
+					width: 26px
+			&__content
+				height: calc(100% - 30px)
+		&-nav
+			bottom: 50px
+			&__arrow
+				width: 50px
+				height: 50px
+				svg
+					transform: scale(0.67)
+
+@media screen and ( max-width: 1199px )
+	.services
+		&-popup
+			&__content
+				height: 100%
+				width: 100%
+			&__close
+				left: auto
+				right: 20px
+				z-index: 10
+				&::after, &::before
+					background-color: $text
+			&__text
+				width: 60vw
+				h2
+					font-size: 32px
+			&__category
+				&::before
+					width: 30px
+					transition-duration: .3s
+			&__img
+				width: 40vw
+			&__overflow, &__overflow.active
+				width: 100%
+
+
+@media screen and ( max-width: 991px )
+	.services
+		height: auto
+		max-height: none
+		&-item
+			padding-top: 60px
+			height: auto
+			max-height: none
+			&__title
+				font-size: 36px
+			&__desc
+				font-size: 13px
+				margin: 20px 0
+			&__img-wrap
+				height: auto
+		&-popup
+			position: fixed
+			top: 0
+			left: 0
+			bottom: auto
+			height: 100vh
+			&__text
+				h2
+					font-size: 28px
+				p, li
+					font-size: 13px
+		&-nav
+			bottom: 30px
+			&__arrow
+				height: 40px
+				width: 40px
+@media screen and ( max-width: 768px )
+	.services
+		&-nav
+			bottom: 7px
+
+@media screen and ( max-width: 767px )
+	.services
+		&-item
+			padding-top: 60px
+			&__title
+				font-size: 32px
+			&__img
+				&-wrap
+					height: calc(100vh - 60px)
+		&-popup
+			&__text
+				padding: 40px 30px
+				h2
+					font-size: 24px
+
+@media screen and ( max-width: 640px )
+	.services
+		&-item
+			&__title
+				font-size: 28px
+			&__desc
+				margin: 15px 0
+
+@media screen and ( max-width: 560px )
+	.services
+		&-item
+			&__title
+				font-size: 24px
+			&__desc
+				font-size: 12px
+			&__category
+				&::before
+					width: 30px
+		&-popup
+			&__close
+				top: 15px
+			&__text
+				width: 100vw
+				padding: 30px 15px
+				h2
+					font-size: 20px
+				p, li
+					font-size: 12px
+					margin: 15px 0
+				img
+					margin: 20px 0
+				.mobile-margin
+					height: 60px
+			&__img
+				display: none
+		&-item
+			padding-top: 20px
+			&__wrapper
+				padding-bottom: 0
+				padding-top: 30px
+				flex-direction: column-reverse
+				justify-content: space-between
+				align-items: flex-start
+			&__text
+				width: 100%
+			&__img
+				&-wrap
+					height: auto
+					max-width: 100%
+					width: calc(100vw - 130px)
+		&-nav
+			bottom: 20px

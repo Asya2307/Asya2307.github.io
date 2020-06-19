@@ -1,0 +1,198 @@
+.footer
+	padding: 50px
+	background-color: #003194
+	height: auto
+	color: $light-text
+	position: relative
+	max-height: 100vh
+	overflow: auto
+	&__wrapper
+		display: flex
+		align-items: stretch
+		justify-content: space-between
+	&__logo
+		margin-top: auto
+		&-img
+			max-width: 160px
+			width: 100%
+		&-rect
+			transition-duration: .3s
+		&:hover
+			.footer__logo-rect
+				fill: #1368db
+	&__col
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		&:nth-child(1), &:nth-child(2)
+			width: 23%
+		&:nth-child(2), 
+			padding-top: 14px
+		@media screen and (max-width: 768px)
+			&:nth-child(2), 
+				padding-top: 0px
+		&:nth-child(3), &:nth-child(4), &:nth-child(5)
+			width: 14%
+	&__copyright
+		font-size: 16px
+		font-weight: 300
+		line-height: 1
+		margin-top: 10px
+	&-socials
+		padding: 0
+		margin: 30px 0
+		list-style-type: none
+		display: flex
+		align-items: center
+		&__item
+			margin-right: 34px
+			transition-duration: .3s
+			&:hover
+				opacity: 0.5
+			&:last-child
+				margin-right: 0
+			svg
+				display: block
+		&__link
+			text-decoration: none
+	&__phone
+		color: $light-text
+		font-size: 19px
+		text-decoration: none
+		line-height: 1
+		margin-bottom: 10px
+		transition-duration: .3s
+		border-bottom: 1px solid transparent
+		&:hover
+			border-color: #4065af
+		&:first-child
+			margin-top: 11px
+	&__form
+		margin-top: 10px
+	&__email
+		color: $light-text
+		font-size: 14px
+		font-weight: 300
+		text-decoration: none
+		border-bottom: 1px solid #4065af
+		line-height: 1
+		margin-top: 35px
+		transition-duration: .2s
+		&:hover
+			border-color: transparent
+	&-menu
+		padding: 0
+		margin: 0
+		list-style-type: none
+		display: flex
+		flex-direction: column
+		&__item
+			line-height: 2.5
+		&__link
+			text-decoration: none
+			color: $light-text
+			font-size: 16px
+			font-weight: 600
+			transition-duration: .3s
+			line-height: 1
+			border-bottom: 1px solid transparent
+			&:hover
+				border-color: #4065af
+		&__sublist
+			padding: 0
+			margin: 0
+			list-style-type: none
+			display: flex
+			flex-direction: column
+		&__subitem
+			line-height: 2.5
+		&__sublink
+			text-decoration: none
+			color: $light-text
+			opacity: 0.5
+			font-size: 16px
+			font-weight: 300
+			line-height: 1
+			transition-duration: .3s
+			&:hover
+				opacity: 1
+
+@media screen and ( max-width: 1650px )
+	.footer
+		&__copyright
+			font-size: 14px
+		&__phone
+			font-size: 17px
+		&__email
+			font-size: 14px
+		&-menu
+			&__link, &__sublink
+				font-size: 14px
+
+@media screen and ( max-width: 1199px )
+	.footer
+		&__copyright
+			font-size: 13px
+		&__phone
+			font-size: 16px
+		&__email
+			font-size: 13px
+		&-menu
+			&__link, &__sublink
+				font-size: 13px
+
+@media screen and ( max-width: 991px )
+	.footer
+		padding: 40px 10px
+		&__wrapper
+			flex-wrap: wrap
+		&__col
+			&:nth-child(1), &:nth-child(2)
+				width: 50%
+				align-items: flex-start
+				margin-bottom: 45px
+			&:nth-child(3), &:nth-child(4), &:nth-child(5)
+				width: 50%
+				align-items: flex-start
+		&-menu
+			&__item, &__subitem
+				line-height: 32px
+
+@media screen and ( max-width: 560px )
+	.footer
+		padding: 30px 10px
+		&-menu
+			&__link, &__sublink
+				font-size: 12px
+		&__phone
+			font-size: 14px
+		&__copyright
+			font-size: 12px
+		&__email
+			font-size: 12px
+		&__col
+			&:nth-child(1), &:nth-child(2)
+				align-items: flex-start
+			&:nth-child(3), &:nth-child(4), &:nth-child(5)
+				align-items: flex-start
+
+@media screen and ( max-width: 480px )
+	.footer
+		padding-top: 45px
+		&__wrapper
+			justify-content: center
+		&__col
+			&:nth-child(1), &:nth-child(2)
+				width: 100%
+				align-items: center
+			&:nth-child(3), &:nth-child(4), &:nth-child(5)
+				width: 50%
+				text-align: center
+				align-items: center
+				display: none
+			&:nth-child(1)
+				order: 5
+			&:nth-child(2), &:nth-child(5)
+				margin-bottom: 20px
+		&__email
+			margin-top: 15px

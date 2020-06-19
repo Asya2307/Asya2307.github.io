@@ -1,0 +1,75 @@
+.main-banner
+	height: 100vh
+	max-height: 100vh
+	background-position: center top
+	background-repeat: no-repeat
+	background-size: 100%
+	background-image: url(../img/main/Bg.jpg)
+	display: flex
+	flex-direction: column
+	transition: 20s
+	
+	&__container.container
+		padding-left: 60px
+		position: relative
+		z-index: 2
+	h1
+		display: block
+		font-size: 64px
+		font-weight: 700
+		line-height: 1.05
+		text-transform: uppercase
+		margin: 60px 0 0
+		span
+			display: block
+			font-weight: 400
+			margin-left: 180px
+	&:after 
+		content: ''
+		display: block
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0 
+		background-image: linear-gradient(to bottom, #f3f3f3, transparent)
+		height: 570px
+		z-index: 1
+@media screen and ( max-width: 1366px )
+	.main-banner
+		h1
+			font-size: 50px
+
+@media screen and ( min-width: 1366px )
+	.main-banner
+		background-size: cover
+		&.loaded
+			background-size: 105%
+
+@media screen and ( max-width: 991px )
+	.main-banner
+		height: unset
+		padding-bottom: 40px
+		background-size: cover
+
+		h1
+			font-size: 42px
+			span
+				margin-left: 140px
+
+@media screen and ( max-width: 767px )
+	.main-banner
+		h1
+			margin: 45px 0 0
+			font-size: 34px
+			span
+				margin-left: 120px
+
+@media screen and ( max-width: 560px )
+	.main-banner
+		&__container.container
+			padding-left: 15px
+		h1
+			margin: 30px 0 0
+			font-size: 28px
+			span
+				margin-left: 80px

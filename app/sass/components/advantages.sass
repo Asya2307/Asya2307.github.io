@@ -1,0 +1,161 @@
+.advantages
+    display: flex
+    align-items: center
+    padding: 50px 0
+    &__wrap
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        margin-top: 66px
+        margin-bottom: -47px
+    @media screen and (max-width: 475px)
+        &__wrap
+            margin-top: 25px
+            margin-bottom: 0
+    &__info
+        width: 100%
+        padding-right: 150px
+    @media screen and (max-width: 1024px)
+        &__info
+            padding-right: 0
+    &__title
+        font-size: 36px
+        line-height: 40px
+    @media screen and (max-width: 475px)
+        &__title
+            font-size: 24px
+    &__item
+        width: 39%
+        margin-bottom: 47px     
+    @media screen and (max-width: 768px)
+        &__item
+            width: 100%
+    &__icon
+        margin-bottom: 20px
+        img 
+    &__text 
+    &__video
+        max-width: 600px
+        position: relative
+        background-image: url(../img/video-service.jpg)
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+        width: 100%
+        &::after
+            content: ''
+            padding-top: 100%
+            float: left
+        &-inner
+            position: absolute
+            left: 0
+            bottom: 0
+            max-width: 457px  
+            width: 100%  
+            &:hover
+                #a1 
+                    fill: #ffffff
+                #a2 
+                    fill: $blue
+        &-button
+            display: block
+            text-decoration: none
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: flex-start
+            border: none
+            background-color: $blue
+            padding: 22px 40px 22px 40px
+            cursor: pointer
+            text-decoration: none
+            span
+                color: #ffffff
+                text-align: left
+                line-height: 26px
+        @media screen and (max-width: 768px)
+            &-button
+                padding: 10px
+        &-icon
+            position: relative
+            max-width: 54px
+            width: 100%
+            height: 54px
+            margin-right: 16px
+
+            &:before 
+                content: ''
+                display: block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                background-image: url(../img/video__arrow.png)
+                background-position: center
+                background-size: contain
+                background-repeat: no-repeat
+            &:after 
+                content: ''
+                display: block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                background-image: url(../img/video__arrow-hover.png)
+                background-position: center
+                background-size: contain
+                background-repeat: no-repeat
+                opacity: 0
+                transition: .3s
+                z-index: 1
+            &:hover:after
+                opacity: 1
+
+
+    @media screen and (max-width: 1366px)
+        &__video
+            margin-top: 30px
+    &--inside
+        .advantages__item
+            width: 45% 
+    &__small
+        max-width: 730px
+        margin-left: auto
+        margin-right: auto 
+        margin-top: 50px
+        margin-bottom: 50px
+        &-title
+            display: block
+            width: 100%
+            text-align: center 
+            font-size: 36px
+        .advantages__item
+            width: 28%
+    @media screen and (max-width: 1220px)
+        &__small
+            max-width: 100%
+    @media screen and (max-width: 1220px)
+        &__small
+            .advantages__item
+                width: 100%
+    @media screen and (max-width: 475px)
+        &__small
+            margin-bottom: 0px
+            margin-top: 40px
+            &-title
+                font-size: 24px
+        
+
+@media screen and (max-width: 1366px)
+    .advantages
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+@media screen and (max-width: 1024px)
+    .advantages
+        padding-bottom: 0
+@media screen and (max-width: 768px)
+    .advantages
+        padding: 40px 0

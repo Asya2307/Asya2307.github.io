@@ -1,0 +1,68 @@
+.social 
+    display: flex
+    list-style-type: none
+    padding: 0
+    margin: 0
+    &__inner
+        display: flex
+        align-items: center
+    @media screen and (max-width: 650px)
+        &__inner
+            margin-bottom: 15px
+            flex-direction: column
+            align-items: flex-start
+
+    &__title 
+        font-size: 16px
+        font-weight: 300
+        padding-right: 20px
+    &__box
+    &__item
+        margin-right: 10px
+
+        &:last-child
+            margin-right: 0
+    &__link
+        display: flex 
+        align-items: center
+        justify-content: center
+        width: 50px
+        height: 50px
+        border: 1px solid #000000
+        border-radius: 50%
+        transition: .3s
+
+        svg
+            path
+                fill: #000000
+                transition: .3s 
+        
+        &--twitter
+            svg
+                width: 14px
+                height: 11px
+        &--vk
+            svg
+                width: 16px
+                height: 9px
+        &--fb
+            svg
+                width: 6px
+                height: 15px
+        &--mail 
+            svg
+                width: 14px
+                height: 14px
+
+        &:hover
+            border-color: $blue
+            background-color: $blue
+
+            svg
+                path
+                    fill: #ffffff
+    @media screen and (max-width: 650px)
+        &__link
+            width: 35px
+            height: 35px
+

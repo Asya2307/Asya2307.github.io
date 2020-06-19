@@ -1,0 +1,23 @@
+.button
+	background: $blue
+	border: none
+	padding: 0 20px
+	height: 40px
+	cursor: pointer
+	color: $light-text
+	font-size: 16px
+	outline: none
+	transition-duration: .3s
+	display: flex
+	align-items: center
+	justify-content: center
+	text-decoration: none
+	&:hover, &:focus
+		background: $blue-light
+	&_transparent
+		background-color: transparent
+		border: 1px solid #1a469f
+
+@media screen and ( max-width: 1366px )
+	.button
+		font-size: 14px

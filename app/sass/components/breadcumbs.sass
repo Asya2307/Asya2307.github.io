@@ -1,0 +1,43 @@
+.breadcumbs
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    list-style-type: none
+    justify-content: center
+    margin-top: 0
+    margin-bottom: 0
+    padding: 0
+    &__item
+        display: flex
+        align-items: center
+        text-transform: uppercase
+        margin-left: 10px
+        margin-bottom: 4px
+
+        &:last-child 
+            margin-left: 0
+        &:after 
+            content: '';
+            display: block
+            background-color: $light-text
+            width: 2px
+            height: 2px
+            border-radius: 50%
+            margin-left: 10px
+    &__link
+        color: $light-text
+        font-size: 9px
+        font-weight: 600
+        text-decoration: none
+        border-bottom: 1px solid $light-text
+        transition: border-color .3s
+        &:hover 
+            border-bottom-color: transparent
+
+
+
+        
+
+            
+
+    
