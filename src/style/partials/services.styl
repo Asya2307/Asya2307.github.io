@@ -1,0 +1,215 @@
+.services
+    position relative
+    box-sizing border-box
+    width 1248px
+    margin 0 auto
+    @media laptop
+        width 1002px
+    @media tablet-landscape-medium
+        width calc(100% - 80px)
+        max-width 1002px
+    @media tablet-portrait
+        width calc(100% - 60px)
+    @media phone
+        width calc(100% - 40px)
+
+    &--index
+        padding-top 180px
+        margin-bottom 197px
+        @media laptop
+            padding-top 100px
+            margin-bottom 156px
+        @media phone
+            padding-top 80px
+
+    &__decoration
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        @media tablet-portrait
+            display none
+
+        & svg
+            fill light-gray
+
+    &__list
+        position relative
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        padding 0
+        margin 0
+        list-style none
+        @media phone
+            flex-direction column
+
+    &__item:not(:nth-last-child(-n+2))
+        margin-bottom 123px
+        @media laptop
+            margin-bottom 114px
+        @media tablet-landscape-small
+            margin-bottom 80px
+        @media phone
+            margin-bottom 0
+
+    &__item:not(:nth-last-child(1))
+        @media phone
+            margin-bottom 60px
+
+    &__buttons
+        display flex
+        justify-content center
+        align-items flex-start
+        width 100%
+        margin-top 83px
+        @media laptop
+            margin-top 64px
+        @media tablet-portrait
+            flex-direction column
+            align-items center
+        @media phone
+            align-items stretch
+
+    &__link
+        margin-right 20px
+        @media tablet-portrait
+            margin-right 0
+            margin-bottom 20px
+
+.services--index
+    & .services__item
+        &:nth-child(2)
+            margin-top 266px
+            @media laptop
+                margin-top 220px
+            @media tablet-landscape-small
+                margin-top 0
+
+        &:nth-child(3)
+            margin-top -102px
+            @media tablet-landscape-small
+                margin-top 0
+
+.service-preview
+    width 600px
+    text-align center
+    @media laptop
+        width 480px
+    @media tablet-landscape-small
+        width calc(50% - 21px)
+    @media tablet-portrait
+        width calc(50% - 15px)
+    @media phone
+        width 100%
+
+    &--small
+        width 436px
+        @media laptop
+            width 362px
+        @media tablet-landscape-small
+            width calc(50% - 21px)
+        @media tablet-portrait
+            width calc(50% - 15px)
+        @media phone
+            width 100%
+
+    &__link
+        position relative
+        color inherit
+        text-decoration none
+
+    &__image-container
+        position relative
+        width 100%
+        padding-top 100%
+
+    &__decoration
+        position absolute
+        background-size 100%
+        background-repeat no-repeat
+        opacity 0
+        transition opacity .5s 0s ease
+        animation employers-decoration-rotation
+        animation-iteration-count infinite
+        animation-timing-function linear
+        animation-play-state paused
+        animation-duration 23s
+        @media tablet-landscape-large
+            display none
+
+        &--01
+            top -5%
+            left 70%
+            width 178px
+            height 178px
+            background-image url(../images/icons/decor-01.svg)
+            animation-duration 30s
+
+        &--02
+            top 62%
+            left -6%
+            width 100px
+            height 100px
+            background-image url(../images/icons/decor-01.svg)
+            animation-duration 25s
+
+        &--03
+            top 74%
+            left 93%
+            width 68px
+            height 68px
+            background-image url(../images/icons/decor-02.svg)
+            animation-duration 35s
+            animation-direction reverse
+
+    &__image-wrapper
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background-color black
+        overflow hidden
+        transition border-radius .3s 0s ease
+
+    &__image
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        max-width 100%
+        min-width 100%
+        display block
+        opacity .85
+
+    &__title
+        display block
+        max-width 300px
+        margin 35px auto 0 auto
+        font-family "Helvetica-Neue"
+        font-size 13px
+        line-height 22px
+        font-weight 300
+        color black
+        text-align center
+        text-transform uppercase
+        letter-spacing 4px
+        @media laptop
+            font-size 12px
+            line-height 21px
+
+.service-preview__image-container:hover
+    & .service-preview__image-wrapper
+        border-radius 50%
+
+    & .service-preview__decoration
+        opacity 1
+        animation-play-state running
+
+.service-preview--small
+    & .service-preview__decoration--01
+        top -15%
+        left -10%
+
+

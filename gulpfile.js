@@ -1,140 +1,79 @@
-var gulp         = require('gulp'),
-		sass         = require('gulp-sass'),
-		browserSync  = require('browser-sync').create(),
-		concat       = require('gulp-concat'),
-		uglify       = require('gulp-uglify-es').default,
-		cleancss     = require('gulp-clean-css'),
-		autoprefixer = require('gulp-autoprefixer'),
-		rsync        = require('gulp-rsync'),
-		ftp          = require('vinyl-ftp'),
-		gutil        = require('gulp-util' ),
-		babel 			 = require('rollup-plugin-babel'),
-		del          = require('del'),
-		rollup       = require('gulp-rollup');
+"use strict";
+let gulp = require("gulp"),
+    prefixer = require("gulp-autoprefixer"),
+    cssmin = require("gulp-csso"),
+    svgstore = require("gulp-svgstore"),
+    rename = require("gulp-rename"),
+    watch = require("gulp-watch"),
+    stylus = require("gulp-stylus"),
+    rigger = require("gulp-rigger"),
+    pug = require("gulp-pug"), 
+    server = require("browser-sync").create(),
+    reload = server.reload;
 
-// Local Server
-gulp.task('browser-sync', function() {
-	browserSync.init({
-		server: {
-			baseDir: 'app'
-		},
-		notify: false,
-		// online: false, // Work offline without internet connection
-		// tunnel: true, tunnel: 'projectname', // Demonstration page: http://projectname.localtunnel.me
-	})
-});
-function bsReload(done) { browserSync.reload(); done(); };
-
-// Custom Styles
-gulp.task('styles', function() {
-	return gulp.src('app/sass/main.sass')
-	.pipe(sass({
-		outputStyle: 'expanded',
-		includePaths: [__dirname + '/node_modules']
-	}))
-	.pipe(concat('styles.min.css'))
-	.pipe(autoprefixer({
-		grid: true,
-		overrideBrowserslist: ['last 10 versions']
-	}))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Optional. Comment out when debugging
-	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.stream())
+gulp.task("webserver", function(){
+    server.init({
+        server: "build/",
+        index: "tree.html"
+    });
+    gulp.watch("src/style/**/*.{styl,css}", gulp.series("style:build"));
+    gulp.watch("src/**/*.pug", gulp.series("html:build"));
+    gulp.watch("src/js/**/*.js", gulp.series("js:build"));
 });
 
-// JS Libraries
-gulp.task('scripts', function() {
-	return gulp.src([
-		'app/js/src/_libs.js', // JS libraries (all in one)
-		'app/libs/perfect-scrollbar/perfect-scrollbar.min.js',
-		'app/libs/swiper/swiper.min.js',
-		'app/js/_custom.js',
-		])
-	.pipe(concat('scripts.min.js'))	
-	//.pipe(uglify()) // Minify js (opt.)
-	.pipe(gulp.dest('app/js'))
-	.pipe(browserSync.reload({ stream: true }))
+gulp.task("html:build", function(){
+    return gulp.src("src/pug/*.pug")
+        .pipe(rigger())
+        .pipe(pug())
+        /*.pipe(posthtml([
+            include()
+          ]))*/
+        .pipe(gulp.dest("build"))
+        .pipe(server.stream());
 });
 
-// Scripts & babel
-gulp.task('babel', function() {
-	return gulp.src([
-		'app/js/src/_custom.js'
-	])
-	.pipe(rollup({
-		allowRealFiles: true,
-		input: './app/js/src/_custom.js',
-		format: 'umd',
-		plugins: [
-			babel({
-				presets: [['@babel/env', { modules: false }]],
-			})
-		]
-	}))
-	.pipe(gulp.dest('app/js/'))
+gulp.task("js:build", function(){
+    return gulp.src("src/js/*.js")
+        .pipe(rigger())
+        .pipe(gulp.dest("build/script"))
+        .pipe(server.stream());
 });
 
-// Code & Reload
-gulp.task('code', function() {
-	return gulp.src('app/**/*.html')
-	.pipe(browserSync.reload({ stream: true }))
+gulp.task("style:build", function(){
+    return gulp.src("src/style/*.{styl,css}")
+        .pipe(stylus())
+        .pipe(prefixer({
+            overrideBrowserslist: ["last 2 versions"],
+            cascade: false
+        }))
+        .pipe(gulp.dest("build/style"))
+        .pipe(server.stream());
 });
 
-// Deploy
-gulp.task('rsync', function() {
-	return gulp.src('app/')
-	.pipe(rsync({
-		root: 'app/',
-		hostname: 'username@yousite.com',
-		destination: 'yousite/public_html/',
-		// include: ['*.htaccess'], // Included files
-		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excluded files
-		recursive: true,
-		archive: true,
-		silent: false,
-		compress: true
-	}))
+gulp.task("fonts:build", function(){
+    return gulp.src("src/fonts/*.woff2")
+        .pipe(gulp.dest("build/fonts"));
 });
 
-gulp.task('deploy', function() {
-
-	gulp.parallel('dist');
-
-	var domen = 'test.amado.company';
-
-	var conn = ftp.create({
-		host:      'amado.su',
-		user:      'proger',
-		password:  '9P9c7V2n',
-		parallel:  	10,
-		log: 				gutil.log
-	});
-
-	var globs = [
-	'dist/**',
-	];
-	return gulp.src(globs, {buffer: false})
-	.pipe(conn.dest('/www/' + domen + '/privetDima'));
-
+gulp.task("image:build", function(){
+    return gulp.src("src/images/**/*.{jpeg,jpg,png,svg,gif}")
+        .pipe(gulp.dest("build/images"));
 });
 
-gulp.task('dist', function() {
-
-	return gulp.src([
-		'app/*.html',
-		'app/img',	
-		'app/fonts',	
-		'app/js',		
-	])
-	.pipe(gulp.dest('dist'))
+gulp.task("svg:build", function(){
+    return gulp.src("src/svg/*.svg")
+        .pipe(svgstore({
+            inlineSvg: true
+        }))
+        .pipe(rename("sprite.svg"))
+        .pipe(gulp.dest("build/images"));
 });
 
-gulp.task('push', gulp.series('dist', 'deploy'));
-
-gulp.task('watch', function() {
-	gulp.watch('app/sass/**/*.sass', gulp.parallel('styles'));
-	gulp.watch(['app/js/src/**/*.js'], gulp.series('babel', 'scripts'));
-	gulp.watch('app/*.html', gulp.parallel('code'));
+gulp.task("video:build", function(){
+    return gulp.src("src/video/*.mp4")
+        .pipe(gulp.dest("build/video"));
 });
 
-gulp.task('default', gulp.parallel('styles', 'babel', 'scripts', 'browser-sync', 'watch'));
+let build = gulp.series("fonts:build", "image:build", "svg:build", "video:build", "html:build", "style:build", "js:build", "webserver");
+
+gulp.task("build", build);

@@ -1,0 +1,17 @@
+section.form__wrap
+    form.form(action="").js-form
+        .form__inner
+            span.form__title Записаться на прием
+            .form__box
+                .form__group
+                    .form__item 
+                        input(type="text" placeholder="Имя").form__input
+                    .form__item
+                        input(type="text" placeholder="Телефон*").form__input.js-input-phone.js-phone-mask
+                .form__checkbox
+                    .custom__checkbox-wrap
+                        input(type="checkbox").custom__checkbox
+                        label.custom__checkbox-label Согласен на обработку персональных данных
+                button.common__button.common__button--gray-cherry Записаться
+
+                 

@@ -1,0 +1,131 @@
+.location
+    display flex
+    flex-wrap nowrap
+    justify-content space-between
+    box-sizing border-box
+    width 100%
+    padding 0 64px
+    @media tablet-landscape-large
+        padding 0 40px
+    @media tablet-landscape-small
+        flex-direction column
+        justify-content flex-start
+        align-items center
+    @media tablet-portrait
+        padding 0 30px
+    @media phone
+        padding 0 20px
+
+    &__map
+        width 50%
+        height 800px
+        background-color black
+        overflow hidden
+        &--full 
+            width 100%
+            height 560px
+        &--low
+            height 300px
+            margin-bottom 67px
+        @media tablet-landscape-small
+            width 100%
+            height 300px
+
+    &__aside
+        display flex
+        flex-direction column
+        align-items center
+        justify-content center
+        box-sizing border-box
+        width 50%
+        padding 0 50px 0 50px
+        @media tablet-landscape-small
+            width 100%
+            padding 0
+        @media phone
+            align-items stretch
+
+    &__appeal
+        text-align center
+
+    &__appeal:nth-child(1)
+        @media tablet-landscape-small
+            display none
+
+    &__appeal + &__appeal
+        margin 30px 0 42px 0
+        @media laptop
+            margin 24px 0 33px 0
+
+    &__select-wrapper
+        width 398px
+        @media phone
+            width 100%
+            
+    &__contacts
+        width 100%
+        margin-top 34px
+        text-align center
+
+    &__contacts-list
+        padding 0
+        margin 0
+        list-style none
+
+    &__contacts-item
+        display flex
+        justify-content center
+        flex-wrap nowrap
+        @media tablet-landscape-medium
+            flex-direction column
+            align-items center
+        @media tablet-landscape-small
+            flex-direction row
+        @media phone
+            flex-direction column
+
+    &__phone
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 25px
+        font-weight 300
+        color black
+        text-decoration none
+
+    &__work-time
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 25px
+        font-weight 300
+        color black
+        text-decoration none
+        
+    &__phone + &__work-time
+        margin-left 30px
+        @media tablet-landscape-medium
+            margin-left 0
+            margin-top 10px
+        @media tablet-landscape-small
+            margin-left 30px
+            margin-top 0
+        @media phone
+            margin-left 0
+            margin-top 10px
+
+    &__phone + &__phone
+        margin-left 30px
+        @media tablet-landscape-medium
+            margin-left 0
+            margin-top 10px
+        @media tablet-landscape-small
+            margin-left 30px
+            margin-top 0
+        @media phone
+            margin-left 0
+            margin-top 10px
+
+    &__button
+        margin-top 62px
+
+.location__contacts-item.js-content-is-hidden
+    display none

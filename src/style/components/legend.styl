@@ -1,0 +1,57 @@
+.legend
+    &__item 
+        padding: 250px 0
+        max-width: 1240px
+        margin-left auto 
+        margin-right auto
+    @media screen and (max-width: 1280px)
+        &__item
+            padding 70px 0 0 0
+    @media tablet-portrait
+        &__item
+            &:last-child
+                padding 0
+    &__inner 
+        display flex
+        flex-direction column
+        text-align center
+        color black
+        max-width: 50%
+        margin-left auto
+        &--reverse 
+            margin-right auto
+            margin-left 0
+    @media screen and (max-width: 1440px)
+        &__inner
+            margin auto
+    @media tablet-hor
+        &__inner
+            max-width 100%
+    &__title 
+        font-size 50px
+        line-height 54px
+        display block
+        padding-bottom 20px
+    &__text 
+        font-size 26px
+        line-height 34px
+    &__wrap 
+        position relative
+        overflow hidden
+        &:after
+            content: ''
+            display block
+            width 1560px
+            height 450px
+            background-image: url(../images/about/jeternel.png)
+            position absolute
+            bottom 12%
+            right 0
+            transform: translateX(52%)
+            background-position center
+            background-size cover
+            background-repeat no-repeat
+    @media screen and (max-width: 1440px)
+        &__wrap
+            &:after
+                content: none

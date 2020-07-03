@@ -1,0 +1,48 @@
+.gallery
+    &__inner
+        display flex
+        flex-wrap wrap
+        margin: 0 -12px
+    &__item
+        width calc(100%/5 - 24px)
+        margin 11px
+        height 164px
+        background-position center
+        background-size cover
+        background-repeat no-repeat
+        border 1px solid #e7e7e7
+        &--ser
+            background-size: contain
+            height unset
+            display flex
+            align-items center
+            justify-content center
+            &:after
+                content ''
+                float left 
+                padding-bottom 100%
+            img 
+                margin-left auto
+                margin-right auto
+        &--popup 
+            height unset
+            img 
+                display block
+                margin auto 
+                padding 11px
+    @media tablet-hor
+        &__item
+            width calc(100%/2 - 24px)
+    @media phone
+        &__item
+            width 100%
+            margin 12px 0
+            height 300px
+
+@media tablet-landscape-large
+    .gallery
+        padding-left 20px
+        padding-right 20px
+
+
+        

@@ -1,0 +1,559 @@
+.head
+    position absolute
+    top 0
+    left 0
+    z-index 2
+    box-sizing border-box
+    display flex
+    flex-wrap nowrap
+    align-items center
+    width 100%
+    padding 30px 64px 33px 64px
+    color black
+    transition opacity 2s 1s ease
+    @media desktop-medium
+        padding 25px 64px 28px 64px
+    @media laptop
+        padding 20px 64px 23px 64px
+    @media tablet-landscape-large
+        padding 20px 40px 23px 40px
+    @media tablet-portrait
+        padding 20px 30px 23px 30px
+    @media phone
+        flex-direction row-reverse
+        justify-content space-between
+        padding 20px 20px 23px 20px
+
+    &--white
+        color white
+
+    &--sticky
+        position fixed
+        background-color white
+        color black
+        animation sticky-header
+        animation-duration .5s
+        animation-fill-mode forwards
+    
+    &--inside
+        position relative
+
+    &__burger
+        margin-right 40px
+        @media tablet-portrait
+            margin-right 30px
+        @media phone
+            margin-right 0
+
+    &__navigation
+        position absolute
+        left 50%
+        transform translateX(-50%)
+        @media desktop-medium
+            position static
+            transform none
+            margin-left auto
+            margin-right 40px
+        @media tablet-landscape-large
+            display none
+
+    &__navigation-list
+        display flex
+        flex-wrap nowrap
+        margin 0
+        padding 0
+        list-style none
+
+    &__navigation-item
+        position relative
+
+        &::after
+            content ""
+            position absolute
+            top 19px
+            left 0
+            display block
+            width 0
+            height 1px
+            background-color black
+            opacity .25
+            transition width .5s 0s ease
+
+        &:hover::after
+            width 100%
+
+    &__navigation-item:not(:nth-last-child(1))
+        margin-right 30px
+
+    &__navigation-link
+        font-family "Helvetica-Neue"
+        font-size 16px
+        line-height 21px
+        font-weight 300
+        color inherit
+        text-decoration none
+        @media laptop
+            font-size 14px
+            line-height 19px
+
+    &__aside
+        display flex
+        flex-wrap nowrap
+        align-items center
+        margin-left auto
+        @media desktop-medium
+            margin-left 0
+        @media tablet-landscape-large
+            margin-left auto
+        @media phone
+            display none
+
+    &__phone
+        margin-right 30px
+        font-family "Helvetica-Neue"
+        font-size 16px
+        line-height 21px
+        font-weight 300
+        color inherit
+        text-decoration none
+        @media laptop
+            font-size 15px
+            line-height 19px
+
+.head--white:not(.head--sticky)
+    & .head__navigation-item::after
+        background-color white
+
+.logo
+    position relative
+    display flex
+    align-items center
+    
+    & svg
+        fill bright-cherry
+
+    &__description
+        margin-left 35px
+        font-family "Helvetica-Neue"
+        font-size 16px
+        line-height 21px
+        font-weight 300
+        color inherit
+        @media laptop
+            font-size 14px
+            line-height 19px
+        @media tablet-portrait
+            display none
+
+.head--white
+    & .logo svg
+        fill white
+
+.head--sticky
+    & .logo svg
+        fill bright-cherry
+
+.burger-menu
+    & .logo svg
+        fill white
+
+    & .logo__description
+        color white
+
+.helpers
+    &__button
+        padding 0
+        margin 0
+        border none 
+        outline none
+        background none
+        cursor pointer
+
+        &--special
+            @media tablet-landscape-large
+                display none
+
+    &__button + &__button
+        margin-left 30px
+
+    & svg
+        fill none
+        stroke black
+        stroke-width 1.2px
+
+.head--white
+    & .helpers svg
+        stroke white
+
+.head--sticky
+    & .helpers svg
+        stroke black
+
+.burger-menu
+    & .helpers svg
+        stroke white
+
+.burger
+    position relative
+    z-index 2
+    width 34px
+    height 34px
+    outline none
+    overflow hidden
+    cursor pointer
+
+    &__default
+        &::before
+            content ""
+            position absolute
+            top 12px
+            left 0
+            display block
+            width 34px
+            height 1px
+            background-color black
+            transition left .5s .6s ease
+
+        &::after
+            content ""
+            position absolute
+            top 22px
+            left 0
+            display block
+            width 70%
+            height 1px
+            background-color black
+            transition width .5s 0s ease, left .5s .7s ease
+
+    &__crossed
+        transform rotate(0deg)
+        width 100%
+        height 100%
+        transition transform .5s 0s ease
+
+        &::before
+            content ""
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%) rotate(-45deg)
+            display block
+            width 0
+            height 1px
+            background-color white
+            transition width .5s 0s ease
+
+        &::after
+            content ""
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%) rotate(45deg)
+            display block
+            width 0
+            height 1px
+            background-color white
+            transition width .5s .1s ease
+
+.burger:hover
+    .burger__default::after
+        width 100%
+
+.head--white:not(.head--sticky)
+    & .burger__default::before
+        background-color white
+
+    & .burger__default::after
+        background-color white
+
+.head--sticky
+    & .burger__default::before
+        background-color black
+
+    & .burger__default::after
+        background-color black
+
+.burger-menu
+    position fixed
+    top 0
+    left 0
+    z-index 1
+    width 0
+    height 100vh
+    overflow hidden
+    transition width 0s 2s ease
+
+    &::before
+        content ""
+        position absolute
+        top 0
+        left -100%
+        transform translateX(-50%) skew(-22deg)
+        width 150%
+        height 100%
+        background-color default-cherry
+        transition left 1.5s .5s ease
+        @media tablet-landscape-small
+            left -200%
+            width 250%
+        @media phone
+            left -150%
+            width 200%
+
+    &__decoration
+        position absolute
+        right -29px
+        bottom -93px
+        opacity 0
+        visibility hidden
+        transition opacity .5s 0s ease, visibility 0s .5s ease
+
+        & svg
+            fill dark-cherry
+
+    &__container
+        position relative
+        width calc(100% + 17px)
+        height 100%
+        overflow-y scroll
+        opacity 0
+        visibility hidden
+        transition opacity .5s 0s ease, visibility 0s .5s ease
+
+    &__top
+        display flex
+        flex-wrap nowrap
+        align-items center
+        box-sizing border-box
+        width 100%
+        padding 30px 64px 33px 64px
+        @media desktop-medium
+            padding 25px 64px 28px 64px
+        @media laptop
+            padding 20px 64px 23px 64px
+        @media tablet-landscape-large
+            padding 20px 40px 23px 40px
+        @media tablet-portrait
+            padding 20px 30px 23px 30px
+        @media phone
+            padding 35px 100px 23px 20px
+
+    &__logo
+        margin-left 74px
+        @media phone
+            display none
+
+    &__aside
+        display flex
+        flex-wrap nowrap
+        align-items center
+        margin-left auto
+        @media phone
+            flex-direction column-reverse
+            align-items flex-start
+            margin-left 0
+
+    &__bottom
+        display flex
+        flex-wrap nowrap
+        box-sizing border-box
+        width 100%
+        padding 120px 186px 180px 186px
+        text-align center
+        @media tablet-portrait
+            flex-direction column-reverse
+            padding 120px 80px 120px 80px
+        @media phone
+            padding 80px 100px 80px 20px
+            text-align left
+
+    &__sitemap
+        margin-right 48px
+        @media laptop
+            margin-right 42px
+        @media tablet-portrait
+            margin-right 0
+            margin-top 60px
+
+    &__contacts
+        position relative
+        width calc(100% / 3 - 48px)
+        @media laptop
+            width calc(100% / 3 - 42px)
+        @media tablet-landscape-large
+            width calc(50% - 21px)
+        @media tablet-portrait
+            width 100%
+
+    &__contacts-list
+        margin 0
+        padding 0
+        list-style none
+
+    &__contacts-item
+        margin-bottom 30px
+
+    &__address
+        display block
+        margin-bottom 4px
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 21px
+        font-weight 300
+        color milk-cherry
+        @media laptop
+            font-size 14px
+            line-height 20px
+
+    &__phone
+        font-family "Helvetica-Neue"
+        font-size 18px
+        line-height 23px
+        font-weight 300
+        color white   
+        text-decoration none
+        @media laptop
+            font-size 16px
+            line-height 21px
+
+body.js-burger-menu-is-open
+    width calc(100% - 17px)
+    overflow-y hidden
+    @media tablet-landscape-large
+        width 100%
+    
+    & .head
+        width calc(100% - 17px)
+        @media tablet-landscape-large
+            width 100%
+
+        &--sticky
+            width 100%
+            padding 30px 81px 33px 64px
+            @media desktop-medium
+                padding 25px 81px 28px 64px
+            @media laptop
+                padding 20px 81px 23px 64px
+            @media tablet-landscape-large
+                padding 20px 40px 23px 40px
+            @media tablet-portrait
+                padding 20px 30px 23px 30px
+            @media phone
+                padding 20px 20px 23px 20px
+
+    & .burger-menu
+        width 100%
+        transition width 0s 0s ease
+
+    & .burger-menu::before
+        left 50%
+        transition left 1.5s 0s ease
+
+    & .burger-menu__decoration
+        opacity 1
+        visibility visible
+        transition opacity .5s 1.5s ease, visibility 0s 1.5s ease
+
+    & .burger-menu__container
+        opacity 1
+        visibility visible
+        transition opacity .5s 1s ease, visibility 0s 1s ease
+
+    & .burger__default::before
+        left 100%
+        transition left .5s 0s ease
+
+    & .burger__default::after
+        left 100%
+        width 100%
+        transition left .5s .1s ease
+
+    & .burger__crossed::before
+        width 100%
+        transition width .5s .6s ease
+
+    & .burger__crossed::after
+        width 100%
+        transition width .5s .7s ease
+
+    & .burger__crossed:hover
+        transform rotate(90deg)
+        transition transform .5s 0s ease
+
+.sitemap
+    position relative
+    width calc((100% / 3 * 2) - 48px)
+    column-count 2
+    column-gap 48px
+    @media laptop
+        width calc((100% / 3 * 2) - 42px)
+        column-gap 42px
+    @media tablet-landscape-large
+        column-count 1
+        width calc(50% - 21px)
+    @media tablet-portrait
+        width 100%
+
+    &__section-list
+        margin 0
+        padding 0
+        list-style none
+
+    &__section-item
+        margin-bottom 26px
+        font-family "Helvetica-Neue"
+        font-size 18px
+        line-height 26px
+        font-weight 300
+        color white
+        @media laptop
+            font-size 16px
+            line-height 24px
+
+    &__section-link
+        color inherit
+        text-decoration none
+        border-bottom 1px solid rgba(255 255 255 0)
+        transition border-bottom .5s 0s ease
+
+        &:hover
+            border-bottom 1px solid rgba(255 255 255 .25)
+
+    &__section-link + &__subsection
+        margin-top 22px
+
+    &__subsection + &__section-item
+        margin-top 45px
+
+    &__subsection-list
+        margin 0
+        padding 0
+        list-style none
+
+    &__subsection-item
+        margin 0
+        padding 0
+        list-style none
+        font-family "Helvetica-Neue"
+        font-size 16px
+        line-height 20px
+        font-weight 300
+        color milk-cherry
+        @media laptop
+            font-size 14px
+            line-height 18px
+
+    &__subsection-item + &__subsection-item
+        margin-top 18px
+
+    &__subsection-link
+        text-decoration none
+        color inherit
+        border-bottom 1px solid rgba(195 157 161 0)
+        transition border-bottom .5s 0s ease
+
+        &:hover
+            border-bottom 1px solid rgba(195 157 161 .25)
+
+
+

@@ -1,0 +1,249 @@
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+        link(rel="stylesheet" href="style/normalize.css" type="text/css")
+        link(rel="stylesheet" href="style/swiper.css" type="text/css")
+        link(rel="stylesheet" href="style/choices.css" type="text/css")
+        link(rel="stylesheet" href="style/main.css" type="text/css")
+        title Центр косметологии Jeternel
+    body.content.js-intro-is-shown
+        div(style="display: none")
+            include ../../build/images/sprite.svg
+        header.head.head--inside
+            div.burger-menu
+                div.burger-menu__decoration
+                    svg(width="562" height="552")
+                        use(xlink:href="#logo-sign")
+                div.burger-menu__container
+                    div.burger-menu__top
+                        div.logo.burger-menu__logo
+                            svg(width="51" height="50")
+                                use(xlink:href="#logo-sign")
+                            span.logo__description
+                                |Cеть медицинских центров косметологии Jeternel
+                        aside.burger-menu__aside
+                            div.helpers
+                                button.helpers__button
+                                    svg(width="23" height="23")
+                                        use(xlink:href="#pen-icon")
+                                button.helpers__button
+                                    svg(width="22" height="22")
+                                        use(xlink:href="#search-icon")
+                                button.helpers__button.helpers__button--special
+                                    svg(width="26" height="22")
+                                        use(xlink:href="#glass-icon")
+                    div.burger-menu__bottom
+                        nav.sitemap.burger-menu__sitemap
+                            ul.sitemap__section-list
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Услуги
+                                    div.sitemap__subsection
+                                        ul.sitemap__subsection-list
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Диагностика
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Косметология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Дерматология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Управление возрастом и здоровье
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Эндокринология и диетология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Трихология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Терапия
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Beauty акцент
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Косметология для мужчин
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Проблемы
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |До и после
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Акции
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |О компании
+                                    div.sitemap__subsection
+                                        ul.sitemap__subsection-list
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Сотрудники
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |О лаборатории
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Лицензии и достижения
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Отзывы
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Наша атмосфера
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Вакансии
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Новости
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Аппараты
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Вопросы и ответы
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Блог
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Контактная информация
+                        div.burger-menu__contacts
+                            ul.burger-menu__contacts-list
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Единый номер
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-55-55
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Братьев Кашириных, 131б
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-50
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Воровского, 13
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-10
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Комсомольский проспект, 48
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-50
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |проспект Ленина, 66
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-20
+            div.burger.head__burger
+                div.burger__default
+                div.burger__crossed
+            div.logo
+                svg(width="51" height="50")
+                    use(xlink:href="#logo-sign")
+                span.logo__description
+                    |Cеть медицинских центров косметологии Jeternel
+            nav.head__navigation
+                ul.head__navigation-list
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Услуги
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Акции
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Проблемы
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Прайс
+            aside.head__aside
+                a.head__phone(href="tel:")
+                    |+7 351 225-55-55
+                div.helpers
+                    button.helpers__button
+                        svg(width="23" height="23")
+                            use(xlink:href="#pen-icon")
+                    button.helpers__button
+                        svg(width="22" height="22")
+                            use(xlink:href="#search-icon")
+                    button.helpers__button.helpers__button--special
+                        svg(width="26" height="22")
+                            use(xlink:href="#glass-icon")
+        main.main
+            .container
+                .main__wrap--biggest
+                    include components/breadcumbs.pug
+                    h1.main__title Блог
+                        .publication__container.publication__container--article
+                            .blog__categories-item
+                                .blog__categories-link
+                                    a(href="#").blog__categories-heading 
+                                        span Все публикации
+                                    span.blog__categories-count 317
+                                .blog__categories-box
+                                    span.blog__categories-title Безупречность во всем
+                                    span.blog__categories-subtitle   Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний, комплексный сервис: от базового ухода до революционных косметологических новаций.                               
+                                    .blog__profile.blog__profile-categories
+                                        button.blog__profile-auth(style="background-image: url(images/faq.png)")
+                                        span.blog__profile-name Константинопольская Ольга
+                            .blog__categories-item
+                                .blog__categories-link
+                                    a(href="#").blog__categories-heading 
+                                        span Наши специалисты
+                                    span.blog__categories-count 67
+                                .blog__categories-box
+                                    span.blog__categories-title Елизарова Ольга – главный врач, и широкой души человек
+                                    span.blog__categories-subtitle Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний, комплексный сервис: от базового ухода до революционных косметологических новаций.                               
+                                    .blog__profile.blog__profile-categories
+                                        button.blog__profile-auth(style="background-image: url(images/faq2.png)")
+                                        span.blog__profile-name Константинопольская Ольга
+                            .blog__categories-item
+                                .blog__categories-link
+                                    a(href="#").blog__categories-heading Наша атмосфера
+                                    span.blog__categories-count 5
+                                .blog__categories-box
+                                    span.blog__categories-title Jeternel на Воровского, 13
+                                    span.blog__categories-subtitle Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                            .blog__categories-item
+                                .blog__categories-link
+                                    a(href="#").blog__categories-heading 
+                                        span Процедуры
+                                    span.blog__categories-count 19
+                                .blog__categories-box
+                                    span.blog__categories-title Вакуумно-ролилковый массаж
+                                    span.blog__categories-subtitle Процедуру на аппарате вакуумно-роликового массажа в Центрах косметологии Jeternel проводят специалисты с многолетним опытом. Мы позаботимся о вас и вашей красоте!                               
+                                    .blog__profile.blog__profile-categories
+                                        button.blog__profile-auth(style="background-image: url(images/faq.png)")
+                                        span.blog__profile-name Константинопольская Ольга
+                            .blog__categories-item
+                                .blog__categories-link
+                                    a(href="#").blog__categories-heading 
+                                        span Косметология
+                                    span.blog__categories-count 258
+                                .blog__categories-box
+                                    span.blog__categories-title Компания Jetrnel приняла участие в торжественной встрече, приуроченной к профессиональному празднику «День работника бытового обслуживания населения»
+                                    span.blog__categories-subtitle 20 марта в Челябинске состоялась торжественная встреча, приуроченная к профессиональному празднику.
+                                    .blog__profile.blog__profile-categories
+                                        button.blog__profile-auth(style="background-image: url(images/faq.png)")
+                                        span.blog__profile-name Константинопольская Ольга
+                            .blog__categories-item.blog__categories-item--resourses
+                                .blog__categories-box.blog__categories-box--resourses
+                                    a(href="#").blog__categories-title.blog__categories-title--prm 
+                                        span Рекомендуемые ресурсы
+                                    span.blog__categories-subtitle.blog__categories-subtitle--prm Подборка сторонних ресурсов по теме.
+
+        //= partials/footer.pug
+        div.intro-curtain
+        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        script(src="script/vendor.js" type="text/javascript")
+        script(src="script/script.js" type="text/javascript")

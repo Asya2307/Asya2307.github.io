@@ -1,0 +1,192 @@
+svg path,
+svg line,
+svg rect,
+svg polygon,
+svg circle
+    fill inherit
+    stroke inherit 
+    stroke-width inherit
+
+.common
+    &__hidden-heading
+        display none
+
+    // Типовой контент
+    &__wysiwyg
+        & h4:not([class])
+            margin 0 0 35px 0
+            font-family "Cormorant"
+            font-size 36px
+            line-height 40px
+            font-weight 300
+            color black
+            @media laptop
+                font-size 32px
+                line-height 36px
+
+        & p:not([class])
+            margin 0
+
+    &__wysiwyg--small
+        & p:not([class])
+            margin 0
+            font-family "Helvetica-Neue"
+            font-size 15px
+            line-height 25px
+            font-weight 300
+            @media laptop
+                font-size 14px
+                line-height 24px
+
+        & p:not([class]) + p:not([class])
+            margin-top 18px
+
+    &__wysiwyg--white
+        & h4:not([class])
+            color white
+
+        & p:not([class])
+            color white
+
+    // Нетиповой контент
+    &__description-small
+        margin 0
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 25px
+        font-weight 300
+        color black
+        @media laptop
+            font-size 14px
+            line-height 24px
+
+        &--white
+            color white
+
+    &__description-large
+        margin 0
+        font-family "Cormorant"
+        font-size 36px
+        line-height 40px
+        font-weight 300
+        color black
+        @media laptop
+            font-size 32px
+            line-height 36px
+        @media phone
+            font-size 24px
+            line-break 28px
+
+    &__h4-heading
+        margin 0
+        font-family "Cormorant"
+        font-size 42px
+        line-height 46px
+        font-weight 300
+        color black
+        @media laptop
+            font-size 32px
+            line-height 36px
+
+        &--white
+            color white
+
+    // Ссылки
+    &__link-small
+        border-bottom 1px solid rgba(56 47 45 .25)
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 25px
+        font-weight 300
+        color inherit
+        text-decoration none
+        transition border .5s 0s ease
+        @media laptop
+            font-size 14px
+            line-height 24px
+
+        &:hover
+            border-bottom 1px solid transparent
+
+    // Кнопки
+    &__button-link
+        display inline-block
+        padding 35px 70px 33px 70px
+        font-family "Helvetica-Neue"
+        font-size 13px
+        line-height 22px
+        font-weight 300
+        color black
+        text-transform uppercase
+        letter-spacing 4px
+        text-decoration none
+        background-color white
+        transition border-radius .3s 0s ease
+        outline none
+        @media laptop
+            font-size 12px
+            line-height 21px
+        @media phone
+            text-align center
+
+        &:hover
+            border-radius 45px
+
+        &--gray-cherry
+            background-color gray-cherry
+            color white
+
+    &__button
+        position relative
+        z-index 1
+        display inline-block
+        padding 35px 70px 33px 70px
+        font-family "Helvetica-Neue"
+        font-size 13px
+        line-height 22px
+        font-weight 300
+        color black
+        text-transform uppercase
+        letter-spacing 4px
+        background-color white
+        transition border-radius .3s 0s ease
+        overflow hidden
+        border none
+        outline none
+        cursor pointer
+        @media laptop
+            font-size 12px
+            line-height 21px
+        @media phone
+            text-align center
+
+        &:hover
+            border-radius 45px
+
+        &--with-icon
+            padding 35px 70px 33px 110px
+            @media desktop-medium
+                padding 35px 70px 33px 70px
+
+            & svg
+                position absolute
+                left 70px
+                top 50%
+                transform translateY(-50%)
+                fill none
+                stroke black
+                stroke-width 1.2px
+                @media desktop-medium
+                    display none
+
+        &--gray-cherry
+            background-color gray-cherry
+            color white
+
+            & svg
+                stroke white
+        &--half 
+            max-width 327px
+            margin-left auto
+            margin-right auto
+        

@@ -1,0 +1,127 @@
+.main
+    &__wrap
+        max-width: 992px
+        margin-left auto
+        margin-right auto
+        padding-top 90px
+        &--big 
+            max-width 1270px
+            margin-left auto
+            margin-right auto
+        &--biggest
+            max-width 1332px
+            margin-left auto
+            margin-right auto
+    &__content
+        font-family serif
+        color black
+        p
+            font-size 24px
+            line-height 32px
+        h2
+            font-size 60px
+            font-weight 400
+            margin-top 83px
+        @media phone-portrait
+            h2
+                font-size 45px
+                margin-top 49px
+        @media phone-portrait
+            h2
+                font-size 32px
+        h3
+            font-size 42px
+            line-height 46px
+            font-weight 400
+            margin-top 90px
+        @media phone-portrait
+            h3
+                font-size 36px
+                margin-top 49px
+        @media phone
+            h3
+                font-size 30px
+        ul
+            list-style-type none
+            padding 0
+            li
+                display flex
+                align-items flex-start
+                font-size 24px
+                margin-bottom 17px
+                &:last-child
+                    margin-bottom 0
+                &:before
+                    content: ''
+                    display block
+                    width 100%
+                    max-width: 25px
+                    height 1px
+                    background-color bright-cherry
+                    margin-right 10px
+                    position relative
+                    top 13px
+        table
+            border 1px solid #e7e7e7
+            background-color default-gray
+            font-size 20px
+            font-weight 400
+            border-collapse: collapse
+            text-align: left 
+            margin-top 9px
+            margin-bottom 4px
+
+            td, th 
+                border-bottom 1px solid #e7e7e7
+                border-left 1px solid #e7e7e7
+                padding 23px
+                font-weight 400
+            th
+                white-space nowrap
+        img 
+            margin-top 7px
+        @media phone
+            img 
+                width 100%
+                display block
+    &__title
+        font-size 90px
+        font-weight 400
+        line-height 94px
+        margin-top 30px
+        margin-bottom 50px
+        &--inside
+            font-size 90px
+    @media tablet-hor
+        &__title
+            font-size 70px
+            line-height 1.1
+    @media phone-portrait
+        &__title
+            font-size 56px
+            line-height 1.1
+    @media phone
+        &__title
+            font-size 42px
+            line-height 1.1  
+    &__box
+        position relative
+    &--prm
+        background-color default-cherry
+@media laptop
+    .main 
+        padding-left 20px
+        padding-right 20px
+.show__more
+    display flex
+    align-items center
+    justify-content center
+
+
+
+
+
+
+
+
+

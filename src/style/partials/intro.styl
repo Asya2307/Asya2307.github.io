@@ -1,0 +1,42 @@
+.intro-curtain
+    &::before
+        content ""
+        position fixed
+        top 0
+        left 200%
+        transform translateX(-50%) skew(-22deg)
+        z-index 3
+        display block
+        width 150%
+        height 100%
+        background-color #fafafa
+        transition left 2s 0s ease
+        @media tablet-landscape-small
+            left 350%
+            width 250%
+        @media phone
+            left 300%
+            width 200%
+
+body.js-intro-is-shown
+    overflow-y hidden
+
+    & .intro-curtain::before
+        left 50%
+
+    & .head
+        opacity 0
+
+    & .main-slider__title
+        top 20px
+        opacity 0
+
+    & .main-slider__description
+        top 20px
+        opacity 0
+
+    & .main-slider__arrow
+        opacity 0
+
+    & .main-slider__image
+        transform translate(-50%, -50%) scale(1.05)

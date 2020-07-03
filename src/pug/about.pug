@@ -1,0 +1,292 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+        link(rel="stylesheet" href="style/normalize.css" type="text/css")
+        link(rel="stylesheet" href="style/swiper.css" type="text/css")
+        link(rel="stylesheet" href="style/choices.css" type="text/css")
+        link(rel="stylesheet" href="style/main.css" type="text/css")
+        title Центр косметологии Jeternel
+    body.content.js-intro-is-shown
+        div(style="display: none")
+            include ../../build/images/sprite.svg
+        header.head.head--white
+            div.burger-menu
+                div.burger-menu__decoration
+                    svg(width="562" height="552")
+                        use(xlink:href="#logo-sign")
+                div.burger-menu__container
+                    div.burger-menu__top
+                        div.logo.burger-menu__logo
+                            svg(width="51" height="50")
+                                use(xlink:href="#logo-sign")
+                            span.logo__description
+                                |Cеть медицинских центров косметологии Jeternel
+                        aside.burger-menu__aside
+                            div.helpers
+                                button.helpers__button
+                                    svg(width="23" height="23")
+                                        use(xlink:href="#pen-icon")
+                                button.helpers__button
+                                    svg(width="22" height="22")
+                                        use(xlink:href="#search-icon")
+                                button.helpers__button.helpers__button--special
+                                    svg(width="26" height="22")
+                                        use(xlink:href="#glass-icon")
+                    div.burger-menu__bottom
+                        nav.sitemap.burger-menu__sitemap
+                            ul.sitemap__section-list
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Услуги
+                                    div.sitemap__subsection
+                                        ul.sitemap__subsection-list
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Диагностика
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Косметология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Дерматология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Управление возрастом и здоровье
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Эндокринология и диетология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Трихология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Терапия
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Beauty акцент
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Косметология для мужчин
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Проблемы
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |До и после
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Акции
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |О компании
+                                    div.sitemap__subsection
+                                        ul.sitemap__subsection-list
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Сотрудники
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |О лаборатории
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Лицензии и достижения
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Отзывы
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Наша атмосфера
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Вакансии
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Новости
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Аппараты
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Вопросы и ответы
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Блог
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Контактная информация
+                        div.burger-menu__contacts
+                            ul.burger-menu__contacts-list
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Единый номер
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-55-55
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Братьев Кашириных, 131б
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-50
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Воровского, 13
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-10
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Комсомольский проспект, 48
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-50
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |проспект Ленина, 66
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-20
+            div.burger.head__burger
+                div.burger__default
+                div.burger__crossed
+            div.logo
+                svg(width="51" height="50")
+                    use(xlink:href="#logo-sign")
+                span.logo__description
+                    |Cеть медицинских центров косметологии Jeternel
+            nav.head__navigation
+                ul.head__navigation-list
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Услуги
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Акции
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Проблемы
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Прайс
+            aside.head__aside
+                a.head__phone(href="tel:")
+                    |+7 351 225-55-55
+                div.helpers
+                    button.helpers__button
+                        svg(width="23" height="23")
+                            use(xlink:href="#pen-icon")
+                    button.helpers__button
+                        svg(width="22" height="22")
+                            use(xlink:href="#search-icon")
+                    button.helpers__button.helpers__button--special
+                        svg(width="26" height="22")
+                            use(xlink:href="#glass-icon")
+        section.main-slider.swiper-container.js-main-slider
+                h4.common__hidden-heading
+                    |Центр косметологии Jeternel
+                ul.main-slider__list.swiper-wrapper
+                    li.main-slider__item.swiper-slide
+                        img.main-slider__image(src="images/main-slider/main-slider-01.jpg", alt="")
+                        div.main-slider__text
+                            span.main-slider__title
+                                a.main-slider__link(href="") О компании
+                            p.main-slider__description.main-slider__description--about.common__description-small.common__description-small--white Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года.
+                            p.main-slider__description.main-slider__description--about.common__description-small.common__description-small--white 
+                                |В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                    li.main-slider__item.swiper-slide
+                        img.main-slider__image(src="images/main-slider/main-slider-01.jpg", alt="")
+                        div.main-slider__text
+                            span.main-slider__title
+                                a.main-slider__link(href="") О компании
+                            p.main-slider__description.main-slider__description--about.common__description-small.common__description-small--white Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года.
+                            p.main-slider__description.main-slider__description--about.common__description-small.common__description-small--white 
+                                |В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                div.main-slider__arrows
+                    div.main-slider__arrow.main-slider__arrow--up
+                        svg(width="35" height="18")
+                            use(xlink:href="#arrow-up")
+                    div.main-slider__arrow.main-slider__arrow--down
+                        svg(width="35" height="18")
+                            use(xlink:href="#arrow-down")
+        main.main
+            .main__box
+                .section__bird 
+                    .section__bird-item.section__bird-item--first
+                        <svg xmlns="http://www.w3.org/2000/svg" width="73" height="60"><path d="M72.996 1.07s-9.558 21.215-25.169 38.147C29.08 59.55 18.377 60.158 12.241 59.99 4.616 59.782.015 55.44.015 55.44s13.45 3.3 23.016-15.837c9.567-19.134 12.394-23.019 19.413-29.935 3.187-3.141 9.839-7.182 16.052-8.657 9.491-2.254 14.5.06 14.5.06z"/></svg>
+                    .section__bird-item.section__bird-item--second
+                        <svg xmlns="http://www.w3.org/2000/svg" width="171" height="68"><path d="M170.992 14.506s-35.007 27.517-76.323 42.52c-49.62 18.019-68.102 9.716-78.238 4.084C3.839 54.112.01 42.766.01 42.766s19.594 17.298 52.753-6.7C85.924 12.07 94.137 7.974 112.09 2.404c8.154-2.53 22.92-3.561 34.653-.638 17.923 4.464 24.25 12.741 24.25 12.741z"/></svg>
+                    .section__bird-item.section__bird-item--thirth
+                        <svg xmlns="http://www.w3.org/2000/svg" width="168" height="140"><path d="M167.985 2.464s-21.948 49.546-57.857 89.053c-43.126 47.452-67.783 48.836-81.926 48.42-17.57-.512-28.188-10.671-28.188-10.671s31.006 7.753 52.98-36.932c21.971-44.687 28.473-53.744 44.62-69.886C104.948 15.12 120.26 5.7 134.572 2.273c21.862-5.233 33.413.191 33.413.191z"/></svg>
+                    .section__bird-item.section__bird-item--fouth
+                        <svg xmlns="http://www.w3.org/2000/svg" width="120" height="67"><path d="M119.99 5.414S99.02 31.48 71.378 49.353c-33.2 21.464-48.051 18.383-56.377 15.896C4.658 62.16-.012 54.42-.012 54.42s17.154 9.536 37.357-13.63C57.55 17.622 62.861 13.248 75.03 6.182c5.527-3.207 16.123-6.4 25.165-6.176 13.81.343 19.795 5.408 19.795 5.408z"/></svg>
+                    .section__bird-item.section__bird-item--fifth
+                        <svg xmlns="http://www.w3.org/2000/svg" width="212" height="59"><path d="M212.007 36.257S160.601 56.055 106.361 58.61C41.22 61.675 22.48 44.94 12.6 34.472.328 21.47-.013 6.538-.013 6.538S16.727 34.4 64.66 18.112C112.59 1.821 123.782-.014 147.005.008c10.543.009 28.335 4.254 41.094 12.085 19.494 11.963 23.908 24.164 23.908 24.164z"/></svg>
+                section.legend__wrap 
+                        .legend__item
+                            .legend__inner
+                                span.legend__title Легенда Jeternel
+                                p.legend__text  На свете существует много легенд, преданий и сказок о различных волшебных птицах. Мы обратили внимание именно на образ русской Жар-птицы — птица-краса, молодильными яблоками кормящаяся, живущая вечно, старости избегая. Её образ было решено использовать
+                        .legend__item
+                            .legend__inner.legend__inner--reverse
+                                p.legend__text
+                                        |Название стало идеологическим продолжением символа: от русской вечно-молодой Жар-птицы была взята первая буква Ж (J), которая соединилась с французским словом eternel (вечность).
+                                p.legend__text
+                                        |Cказку о Жар-птице и молодильных яблоках мы превратили в современную историю Jeternel. Мы помогаем нашим клиентам вернуть вечное сияние молодости и красоты!  
+                    
+            .main__wrap.main__wrap--big
+                section.gallery
+                        .gallery__content.main__content
+                            h2.gallery__title Jeternel сегодня 
+                            ul.gallery__list
+                                li 
+                                    |Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний;
+                                li
+                                    |Комплексный сервис: от базового ухода до революционных косметологических новаций;
+                                li 
+                                    |Самое большое количество оригинального оборудования для эстетической медицины в Челябинске;
+                                li 
+                                    |Самый широкий выбор косметологических препаратов последнего поколения;
+                                li 
+                                    |Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира;
+                                li
+                                    |Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            p Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                            p Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Комплексный сервис: от базового ухода до революционных косметологических новаций. Самое большое количество оригинального оборудования для эстетической медицины в Челябинске. Самый широкий выбор косметологических препаратов последнего поколения. Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            p Все аппараты и косметические средства имеют необходимые лицензии, сертификаты качества и регистрационные удостоверения.
+                        .gallery__inner
+                            .gallery__item(style="background-image: url(images/today/today1.png)")
+                            .gallery__item(style="background-image: url(images/today/today2.png)")
+                            .gallery__item(style="background-image: url(images/today/today3.png)")
+                            .gallery__item(style="background-image: url(images/today/today5.png)")
+                            .gallery__item(style="background-image: url(images/today/today6.png)")
+                            .gallery__item(style="background-image: url(images/today/today7.png)")
+                            .gallery__item(style="background-image: url(images/today/today4.png)")
+                include components/special.pug
+                section.gallery
+                        .gallery__content.main__content
+                            h2.gallery__title Лицензии
+                            p Лаборатория красоты Jeternel — лицензированное учреждение. Мы имеем право и все необходимые разрешения для проведения сложных косметологических процедур. Будьте уверены в результате — все процедуры пройдут по регламентированному порядку с соблюдением всех норм безопасности! Мы работает только с лицензированными препаратами и лучшими европейскими технологиями с мировыми стандартами качества.
+                        .gallery__inner
+                            .gallery__item.gallery__item--popup
+                                img(src="images/liense/liense1.png", alt="", srcset="")
+                            .gallery__item.gallery__item--popup
+                                img(src="images/liense/liense2.png", alt="", srcset="")
+                            .gallery__item.gallery__item--popup
+                                img(src="images/liense/liense3.png", alt="", srcset="")
+                section.gallery
+                        .gallery__content.main__content
+                            h2.gallery__title Достижения
+                            p Группа компания Jeternel за активную жизненную позицию — мы участвуем и проводим различные профессиональные конкурсы, семинары-практикумы, мастер-классы для профессионалов индустрии красоты. Достижения наших специалистов неоднократно были отмечены Дипломами, Сертификатами и Свидетельствами профессионального мастерства.
+                        .gallery__inner
+                            .gallery__item.gallery__item--popup
+                                img(src="images/liense/dos1.png", alt="", srcset="")
+                            .gallery__item.gallery__item--popup
+                                img(src="images/liense/dos2.png", alt="", srcset="")
+                            .gallery__item.gallery__item--popup
+                                img(src="images/liense/dos3.png", alt="", srcset="")
+                include components/reviews.pug
+        //= partials/footer.pug
+        div.intro-curtain
+        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        script(src="script/vendor.js" type="text/javascript")
+        script(src="script/script.js" type="text/javascript")
+
+
+

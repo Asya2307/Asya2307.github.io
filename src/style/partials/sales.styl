@@ -1,0 +1,147 @@
+.sales
+    text-align center
+
+    &--index
+        width 100%
+        margin-bottom 192px
+        padding 80px 0 90px 0
+        background-color default-cherry
+        @media laptop
+            margin-bottom 152px
+            padding 63px 0 70px 0
+
+    &__heading
+        margin-bottom 70px
+        @media laptop
+            margin-bottom 62px
+
+    &__list-wrapper
+        width 1332px
+        margin 0 auto
+        @media laptop
+            width 1078px
+        @media tablet-landscape-medium
+            width calc(100% - 80px)
+            max-width 1078px
+        @media tablet-portrait
+            width calc(100% - 60px)
+        @media phone
+            width calc(100% - 40px)
+
+    &__list
+        display flex
+        flex-wrap wrap
+        width calc(100% + 78px)
+        margin 0 0 0 -78px
+        padding 0
+        list-style none
+        @media laptop
+            width calc(100% + 74px)
+            margin 0 0 0 -74px
+        @media tablet-landscape-large
+            justify-content center
+        @media tablet-landscape-small
+            width calc(100% + 42px)
+            margin 0 0 0 -42px
+        @media tablet-portrait
+            justify-content space-between
+            width 100%
+            margin 0
+        @media phone
+            flex-direction column
+            align-items center
+
+    &__item
+        margin-left 78px
+        @media laptop
+            margin-left 74px
+        @media tablet-landscape-small
+            margin-left 42px
+        @media tablet-portrait
+            margin 0
+
+    &__button-wrapper
+        display flex
+        justify-content center
+        width 100%
+        margin-top 82px
+        @media laptop
+            margin-top 63px
+        @media phone
+            flex-direction column
+            align-items stretch
+            width calc(100% - 40px)
+            margin 82px auto 0 auto
+
+.sales--index
+    & .sales__item
+        margin-bottom 0
+        
+        &:not(:nth-last-child(1))
+            @media phone
+                margin-bottom 80px
+    
+        &:nth-last-child(1)
+            @media tablet-landscape-large
+                display none
+            @media phone
+                display block
+
+.sale-preview
+    width 392px
+    @media laptop
+        width 310px
+    @media tablet-landscape-large
+        width calc(50% - 21px)
+        max-width 392px
+    @media tablet-portrait
+        width calc(50% - 15px)
+    @media phone
+        width 100%
+    
+    &__link
+        text-decoration none
+        color inherit
+
+    &__image-wrapper
+        position relative
+        width 100%
+        padding-top 100%
+        overflow hidden
+        background-color black
+
+    &__image
+        position absolute
+        top 50%
+        left 50%
+        min-width 100%
+        max-width 100%
+        transform translate(-50%, -50%)
+        display block
+        opacity .85
+        transition transform .5s 0s ease
+
+        &:hover
+            transform translate(-50%, -50%) scale(1.05)
+
+    &__text
+        width 75%
+        margin 35px auto 0 auto
+        @media laptop
+            width 85%
+        @media phone
+            width 100%
+
+    &__title
+        display inline-block
+        margin-bottom 12px
+        font-family "Helvetica-Neue"
+        font-size 13px
+        line-height 22px
+        font-weight 300
+        color white
+        text-transform uppercase
+        letter-spacing 4px
+        @media laptop
+            font-size 12px
+            line-height 21px

@@ -1,0 +1,46 @@
+.filters
+    margin-top 40px
+    width 100%
+    overflow auto
+    &__list
+        display flex
+        align-items center
+        padding 0
+        list-style-type none
+    &__item
+        margin-right 30px
+        &:last-child
+            margin-right 0
+    &__button
+        display block
+        position relative
+        padding 0
+        background-color transparent
+        font-size 26px
+        font-family serif 
+        border none
+        transition .3s
+        white-space nowrap
+        &:after
+            content: ''
+            display block
+            position absolute
+            width 100%
+            height 1px
+            bottom 4px
+            background-color rgba(56, 47, 45, 0.2)
+            transition: .3s
+        &:hover
+            color dark-cherry
+            &:after
+                background-color transparent
+    &__select 
+        max-width 412px
+        width 100%
+        margin-top 30px
+
+
+        
+        
+
+    

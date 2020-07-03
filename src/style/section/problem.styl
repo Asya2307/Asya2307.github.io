@@ -1,0 +1,61 @@
+.problem
+    &__catalog 
+        margin-top 124px
+        &-list 
+            display flex
+            align-items flex-start
+            flex-wrap: wrap
+            padding 0
+            margin 0
+            list-style-type none
+            margin-right -66px
+            margin-left -66px
+            margin-top -60px
+            margin-bottom -60px 
+        @media tablet-landscape-large
+            &-list
+                margin-left 0px
+                margin-right 0px
+        @media phone-portrait
+            &-list 
+                margin-top 0px
+        &-item 
+            width calc(100%/2 - 132px)
+            margin: 60px 66px  
+        @media tablet-landscape-large
+            &-item 
+                width calc(100%/2 - 60px)
+                margin: 30px
+        @media phone-portrait
+            &-item 
+                width 100%
+                margin: 30px 0
+        &-img 
+            display flex
+            width 100%
+            background-position center
+            background-size: cover
+            background-repeat no-repeat
+            &:before
+                content: ''
+                display block
+                float: left
+                width 100%
+                padding-bottom 100%
+            img 
+                display none
+        &-name 
+            font-family default
+            text-transform uppercase
+            font-size 13px
+            text-align: center
+            display block 
+            color: black
+            margin-top 20px
+        &-link 
+            text-decoration: none
+    @media phone-portrait
+        &__catalog
+            margin-top 40px
+
+            

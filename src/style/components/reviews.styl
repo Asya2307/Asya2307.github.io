@@ -1,0 +1,61 @@
+.reviews
+    margin-top 80px
+    &__inner
+        display flex
+        flex-wrap wrap 
+        flex-direction column
+
+    &__item
+        padding: 50px 59px
+        margin-bottom 12px
+        background-color white
+
+        &:last-child 
+            margin-bottom 0
+    @media phone
+        &__item 
+            padding 30px
+    &__text
+        font-family serif
+        p
+            font-size 24px
+            line-height 32px
+    &__bottom
+        display flex
+        align-items center
+        justify-content space-between
+        margin-top 37px
+    @media tablet-hor
+        &__bottom
+            flex-direction column
+            align-items flex-start
+    &__tags
+        display flex
+        flex-wrap wrap
+        &-item
+            border-radius 17px
+            border 1px solid #e7e7e7
+            margin-right 12px
+            font-size 12px
+            line-height 13px
+            padding 9px 18px
+            text-decoration none
+            color #382f2d
+            font-family default
+            &:last-child
+                margin-right 0
+    @media tablet-hor
+        &__tags
+            flex-direction column
+            align-items flex-start
+            &-item 
+                margin-bottom 20px
+    &__info
+        font-size 13px
+        font-family default
+
+    &--index 
+        margin-bottom 100px
+
+
+    

@@ -1,0 +1,156 @@
+@font-face
+    font-family: "Cormorant"
+    src: url("../fonts/cormorant-bold.woff2") format("woff2")
+    font-weight: 700
+    font-style: normal
+
+@font-face
+    font-family: "Cormorant"
+    src: url("../fonts/cormorant-semibold.woff2") format("woff2")
+    font-weight: 600
+    font-style: normal
+
+@font-face
+    font-family: "Cormorant"
+    src: url("../fonts/cormorant-medium.woff2") format("woff2")
+    font-weight: 500
+    font-style: normal
+
+@font-face
+    font-family: "Cormorant"
+    src: url("../fonts/cormorant-regular.woff2") format("woff2")
+    font-weight: 600
+    font-style: normal
+
+@font-face
+    font-family: "Helvetica-Neue"
+    src: url("../fonts/helveticaneuecyr-bold.woff2") format("woff2")
+    font-weight: 700
+    font-style: normal
+
+@font-face
+    font-family: "Helvetica-Neue"
+    src: url("../fonts/helveticaneuecyr-medium.woff2") format("woff2")
+    font-weight: 500
+    font-style: normal
+
+@font-face
+    font-family: "Helvetica-Neue"
+    src: url("../fonts/helveticaneuecyr-roman.woff2") format("woff2")
+    font-weight: 300
+    font-style: normal
+
+@import "helpers/vars.styl"
+
+*
+    box-sizing border-box
+    outline none
+
+button
+a
+    cursor pointer 
+
+body
+    min-width 320px
+    color black
+       
+.content
+    background-color #fafafa
+    &--prm
+         background-color default-cherry
+
+.main
+    margin-bottom 100px
+    @media laptop
+        margin-bottom 70px
+
+.ps {
+    overflow: hidden!important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+
+.block__title 
+    font-size 50px
+    line-height 54px
+    color black
+    font-family serif
+    font-weight 400
+
+.slider__nav 
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-112px)
+    &-item 
+        background-color transparent 
+        border none
+        padding 0
+        margin-right 60px
+        cursor pointer
+        &:last-child
+            margin-right 0
+    &--before-after
+        transform: translate(0)
+@media phone
+    .slider__nav 
+        position relative
+        transform: translate(0)
+        display flex
+        justify-content center
+        margin-top 30px
+            
+
+.see__more
+    margin-top 20px
+    &--center 
+        display flex
+        justify-content center
+
+@import "partials/common.styl"
+@import "partials/animations.styl"
+@import "partials/intro.styl"
+@import "partials/header.styl"
+@import "partials/main-slider.styl"
+@import "partials/services.styl"
+@import "partials/doctors-wellcome.styl"
+@import "partials/sales.styl"
+@import "partials/problems.styl"
+@import "partials/before-after.styl"
+@import "partials/advantages.styl"
+@import "partials/location.styl"
+@import "partials/footer.styl"
+
+/* Components */
+@import "components/breadcumbs.styl"
+@import "components/bird.styl"
+@import "components/legend.styl"
+@import "components/reviews.styl"
+@import "components/filters.styl"
+@import "components/form.styl"
+@import "components/profile.styl"
+@import "components/info.styl"
+@import "components/faq.styl"
+@import "components/publication.styl"
+@import "components/equipment.styl"
+@import "components/menu-catalog.styl"
+@import "components/action.styl"
+
+
+/* Section */
+@import "section/main-content.styl"
+@import "section/gallery.styl"
+@import "section/special.styl"
+@import "section/employers.styl"
+@import "section/sections.styl"
+@import "section/history.styl"
+@import "section/blog.styl"
+@import "section/error.styl"
+@import "section/branch.styl"
+@import "section/contents.styl"
+@import "section/problem.styl"
+@import "section/expert.styl"
+
+

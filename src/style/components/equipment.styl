@@ -1,0 +1,98 @@
+.equipment 
+    font-family serif
+    &__box 
+        display flex
+        flex-direction column
+    
+    &__title 
+        font-size 50px
+        margin-top -10px
+    @media tablet-hor
+        &__title 
+            font-size 36px
+    &__list 
+        display flex
+        flex-wrap wrap 
+        list-style-type none
+        padding 0
+        margin-left -24px
+        margin-right -24px
+    @media tablet-landscape-large
+        &__list 
+            margin-left 0
+            margin-right 0
+    &__item 
+        position relative
+        width calc(100%/3 - 48px)
+        margin 35px 24px 35px 24px 
+        border-top 1px solid rgba(0,0,0,0.25)
+        &--half 
+            width calc(100%/2 - 48px)
+    @media tablet-landscape-large
+        &__item 
+            width calc(100%/2 - 48px)
+    @media phone-portrait
+        &__item 
+            width 100%
+            margin 0px
+    &__link 
+        display block 
+        color black 
+        text-decoration none
+        padding 40px 100px 30px 48px
+        transition background-color .3s
+        font-size 26px
+        overflow hidden
+        &:hover 
+            overflow visible
+            background-color white
+            .equipment__tooltip-inner
+                opacity 1
+        &--row 
+            padding-right 40px
+            display flex
+            align-items flex-start
+            justify-content space-between
+        @media phone-portrait
+            &--row 
+                flex-direction column 
+                align-items flex-start
+        &-title 
+            max-width 70%
+            width 100%
+        @media phone-portrait
+            &-title 
+                max-width 100%
+                display block
+                margin-bottom 20px
+    @media phone-portrait
+        &__link 
+            padding-left 20px 
+            padding-right 20px
+    &__tooltip
+        &-inner
+            top 0
+            left 0
+            position absolute
+            opacity 0
+    @media phone-portrait
+        &__tooltip 
+            width 100%
+            margin-top 20px
+            &-inner
+                position unset
+                opacity 1
+    &__head
+        display flex
+        justify-content space-between
+        align-items center
+        .equipment__title
+            margin-bottom 0
+    &__wrap 
+        &--inside 
+            margin-top 80px
+
+
+
+
+

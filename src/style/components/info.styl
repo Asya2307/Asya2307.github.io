@@ -1,0 +1,47 @@
+.infobox
+    margin-top 100px
+    &__title
+        font-size 50px
+        line-height 54px
+        font-weight 400
+    &__inner
+        display flex
+        flex-wrap wrap 
+        &--part 
+            margin 0 -24px
+        &--half
+            justify-content space-between
+    @media tablet-hor
+        &__inner 
+            &--part 
+                margin-left 0
+                margin-right 0
+    &__item
+        width 100%
+        padding: 45px 80px 45px 59px
+        font-family serif 
+        font-size 36px
+        line-height 40px
+        border-top: 1px solid #e7e7e7
+        &--part 
+            width calc(100%/3 - 48px)
+            margin: 24px
+            padding 32px 49px 0px 30px
+            font-size 26px
+            line-height 30px
+            margin-bottom 0
+        &--half 
+            display flex
+            align-items center
+            justify-content space-between
+            flex-wrap wrap
+            font-size 26px
+            width calc(100%/2 - 48px)
+    @media tablet-hor
+        &__item 
+            &--part 
+                width 100%
+
+
+            
+

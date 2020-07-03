@@ -1,0 +1,23 @@
+section.form__wrap
+    form.form(action="").js-form
+        .form__inner.form__inner--big
+            span.form__title Оставить отзыв о филиале
+            .form__box
+                .form__container
+                    .form__group.form__group--half
+                        .form__item 
+                            input(type="text" name="name" placeholder="Имя").form__input.form__input--left.required.js-input-name
+                        .form__item
+                            input(type="text" name="phone" placeholder="Телефон*").form__input.form__input--left.js-input-phone.js-phone-mask.required
+                        .form__item
+                            input(type="text" name="email" placeholder="Электронная почта*").form__input.form__input--left.required.js-input-email
+                    .form__group.form__group--half
+                        .form__item.form__item-textarea
+                            textarea(name="textarea", cols="30", rows="10").form__textarea.required.js-input-textarea Текст отзыва *
+                .form__checkbox
+                    .custom__checkbox-wrap
+                        input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                        label.custom__checkbox-label Согласен на обработку персональных данных
+                button.common__button.common__button--half.common__button--gray-cherry Отправить отзыв
+
+                 

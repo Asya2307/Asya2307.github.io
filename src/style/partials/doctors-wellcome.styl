@@ -1,0 +1,154 @@
+.doctors-wellcome
+    position relative
+    width 100%
+    margin-bottom 200px
+    @media laptop
+        margin-bottom 160px
+
+    &__decoration
+        position absolute
+        top 46%
+        left 50%
+        transform translate(-50%, -50%)
+        width 100%
+        height 100vh
+        overflow hidden
+        @media laptop
+            top 43%
+        @media tablet-portrait
+            display none
+
+    &__background
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        height 700px
+        width 100%
+        max-width 1900px
+        background-image url(../images/doctors-wellcome-background-image.jpg)
+        background-size 100%
+        background-position center bottom
+        @media tablet-landscape-large
+            height 500px
+
+    & svg
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        width 100%
+        fill default-gray
+        @media desktop-small
+            width 105%
+
+    &__top
+        position relative
+        display flex
+        flex-wrap nowrap
+        width calc(100% - 128px)
+        max-width 1428px
+        margin 0 auto 575px auto
+        @media laptop
+            max-width 1002px
+            margin 0 auto 508px auto
+        @media tablet-landscape-large
+            width calc(100% - 80px)
+        @media tablet-landscape-medium
+            justify-content space-between
+            margin 0 auto 300px auto
+        @media tablet-portrait
+            flex-direction column-reverse
+            align-items center
+            width calc(100% - 60px)
+            margin 0 auto 150px auto
+            text-align center
+        @media phone
+            width calc(100% - 40px)
+
+    &__bottom
+        position relative
+        display flex
+        flex-direction row-reverse
+        flex-wrap nowrap
+        width calc(100% - 128px)
+        max-width 1428px
+        margin 0 auto
+        @media laptop
+            max-width 1002px
+        @media tablet-landscape-large
+            width calc(100% - 80px)
+        @media tablet-landscape-medium
+            justify-content space-between
+        @media tablet-portrait
+            flex-direction column-reverse
+            align-items center
+            width calc(100% - 60px)
+            text-align center
+        @media phone
+            width calc(100% - 40px)
+
+    &__text
+        width 738px
+        @media laptop
+            width 65%
+        @media tablet-portrait
+            width 100%
+            max-width 600px
+
+    &__name
+        display block
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 20px
+        font-weight 300
+        color black
+        @media laptop
+            font-size 14px
+            line-height 19px
+
+    &__position
+        margin-bottom 26px
+        display block
+        font-family "Helvetica-Neue"
+        font-size 15px
+        line-height 20px
+        font-weight 300
+        color middle-gray
+        @media laptop
+            font-size 14px
+            line-height 19px
+
+    &__photo-wrapper
+        position relative
+        flex-grow 1
+        @media tablet-landscape-medium
+            top -40px
+            flex-grow 0
+            width 280px
+            height 280px
+            border-radius 50%
+            overflow hidden
+
+    &__photo
+        position absolute
+        top -115px
+        left 50%
+        transform translateX(-50%)
+        display block
+        @media tablet-landscape-medium
+            top -50px
+            transform translateX(-50%) scale(.8)   
+
+    &__buttons
+        display flex
+        flex-direction column
+        align-items flex-start
+        margin-top 41px
+        @media tablet-portrait
+            align-items center
+        @media phone
+            align-items stretch
+
+    &__button
+        margin-bottom 20px
