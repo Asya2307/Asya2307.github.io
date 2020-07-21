@@ -1,4 +1,3 @@
-// Свайпер
 (function(){
 
     // Основной слайдер на главной странице
@@ -78,8 +77,6 @@
         };
     });
 })();
-
-// Скрыть/показать мнею в шапке
 (function(){
 
     const burgerButton = document.querySelector(".burger");
@@ -98,8 +95,6 @@
     };
     
 })();
-
-// Прилипающая шапка
 (function(){
 
     const pageHeader = document.querySelector("header");
@@ -154,8 +149,6 @@
 
 
 })();
-
-// Интро для главной страницы
 (function(){
 
     window.addEventListener("load", closeIntro);
@@ -167,8 +160,6 @@
     };
 
 })();
-
-// Кастомные селекты
 (function(){
 
     /*let branches = [
@@ -223,8 +214,6 @@
     });
 
 })();
-
-// Яндекс-карта
 // Инициализация карты Яндекс
 if(document.getElementById("map")){
     ymaps.ready(init);
@@ -294,8 +283,6 @@ if(document.getElementById("map")){
         locationMap.controls.remove("routeButtonControl");
     };    
 };
-
-// До и после
 (function(){
 
     var swiper = new Swiper('.js-before-after-slider', {
@@ -378,9 +365,27 @@ if(document.getElementById("map")){
         neededWidth = Math.round((event.clientX - this.offset) / this.step + this.skewCompensation);
     };
 
-})();
+    const openPopup = document.querySelectorAll('.js-open-popup');
 
-// Фильтры
+    if (openPopup) {
+        openPopup.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                document.querySelector('.before-after__popup').classList.add('active');
+            })
+        });
+    }
+
+    const closePopup = document.querySelectorAll('.js-close-popup');
+
+    if (closePopup) {
+        closePopup.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                e.currentTarget.closest('.before-after__popup').classList.remove('active');
+            })
+        });
+    }
+
+})();
 (function () {
     
     // Конструктор фильтров в виде селекта
@@ -440,8 +445,6 @@ if(document.getElementById("map")){
     };
 
 })();
-
-// Фильтры
 document.addEventListener('DOMContentLoaded', function() {
     function resizeWatcher() {
         var tableSel = document.querySelectorAll('table');
@@ -486,8 +489,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
       }
 });
-
-// Фильтры
 document.addEventListener('DOMContentLoaded', (e) => {
     const specialSlider = document.querySelectorAll('.js-special-slider');
 
@@ -516,15 +517,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
         })
     }
 })
-
-// Faq
 document.querySelectorAll('.js-open-faq').forEach((item) => {
     item.addEventListener('click', (e) => {
         e.currentTarget.classList.toggle('active')
     })
 });
-
-// Validation
 const form = document.querySelectorAll('.js-form');
 
 const cleaveMaskPhone = document.querySelectorAll('.js-phone-mask')
@@ -542,23 +539,179 @@ if (cleaveMaskPhone) {
 };
 
 if (form) {
-    form.forEach((item) => {
-        item.addEventListener('submit', Validation)
-    });
+    
+        const validationCheck = (e) => {
+            e.preventDefault();
+            
+    
+            // Проверка на обязательность заполнения
+            function reqCheck(elem){
+                if(elem.hasAttribute("data-req")){
+                    validErrors.push(elem);
+                };
+            };
+    
+            // Убрать указание об ошибке
+            function noErrors(elem){
+                let elemParent = elem.parentElement;
+                console.log(elemParent)
+                while(!elemParent.classList.contains("form__group")){
+                    elemParent = elemParent.parentElement;
+                };
+                if(elemParent.classList.contains("js-valid-error")){
+                    elemParent.classList.remove("js-valid-error");
+                };
+            };
+    
+            // Проверка прилагаемого файла
+            function fileCheck(elem, file){
+                if(file.size > 5000000){
+                    validErrors.push(elem);
+                }else{
+                    noErrors(elem);
+                };
+            };
+    
+            // Проверка вводимых данных через регулярное выражение
+            function valueCheck(elem, val, patrn){
+                if(!patrn.test(val)){
+                    validErrors.push(elem); 
+                }else{
+                    noErrors(elem);
+                };
+            };
+    
+            // Ищем форму, к которой относится кнопка
+            let formInner = e.currentTarget;
+            
+            while(formInner.tagName != "FORM"){
+                formInner = formInner.parentElement
+            };
+    
+            // Ищем все элементы данной формы
+            let formElems = formInner.querySelectorAll("input, select, textarea");
+            
+            // Создаем массив для полей с ошибками
+            let validErrors = [];
+    
+            // Основной цикл проверки на правильность заполнения формы
+            for(let i = 0; i < formElems.length; i++){
+    
+                let elemType;
+                if(formElems[i].hasAttribute("type")){
+                    elemType = formElems[i].getAttribute("type");
+                }else{
+                    elemType = formElems[i].getAttribute("data-type");
+                }
+    
+                switch(elemType){
+    
+                    // Для инпутов
+                    case "text":
+                        if(formElems[i].value == ""){ 
+                            reqCheck(formElems[i]);
+                        }else{
+                            switch(formElems[i].getAttribute("name")){
+                                case "surname":
+                                case "name":
+                                    let namePattern = new RegExp("^[a-zа-яё -]{1,}$","i");
+                                    valueCheck(formElems[i], formElems[i].value, namePattern);
+                                    break;
+                                case "phone":   
+                                    let phonePattern = new RegExp("^[0-9 ]{7,}$");
+                                    valueCheck(formElems[i], formElems[i].value, phonePattern);
+                                    break;
+                                case "date":   
+                                    let datePattern = new RegExp("^[0-9]{1,4}[.]{1}[0-9]{1,4}[.]{1}[0-9]{1,4}$");
+                                    valueCheck(formElems[i], formElems[i].value, datePattern);
+                                    break;
+                                case "mail":
+                                    let mailPattern = new RegExp("^[a-z0-9_-]{1,}@{1}[a-z]{1,}[.]{1}[a-z]{2}$","i");
+                                    valueCheck(formElems[i], formElems[i].value, mailPattern);
+                                    break;
+                            };
+                        };
+                        break;
+    
+                    // Для текстовых полей
+                    case "textarea":
+                        if(formElems[i].value == ""){ 
+                            reqCheck(formElems[i]);
+                        }else{
+                            noErrors(formElems[i]);
+                        };
+                        break;
+    
+                    // Для селектов
+                    case "select":
+                        if(formElems[i].value == "choice-1"){
+                            reqCheck(formElems[i]);
+                        }else{
+                            noErrors(formElems[i]);
+                        };
+                        break;
+    
+                    // Для чекбоксов
+                    case "checkbox":
+                        if(!formElems[i].checked){
+                            reqCheck(formElems[i]);
+                        }else{
+                            noErrors(formElems[i]);
+                        };
+                        break;
+    
+                    // Для файлов
+                    case "file":
+                        if(!formElems[i].files[0]){
+                            reqCheck(formElems[i]);
+                        }else if(formElems[i].files[0]){
+                            fileCheck(formElems[i], formElems[i].files[0]);
+                        };
+                        break;
+                };
+            };
+    
+            // Проверка, есть ли поля с ошибками заполнения, отмена отправки, и назначение подсказок об ошибках
+            if(validErrors.length){
+                event.preventDefault();                
+                for(let i = 0; i < validErrors.length; i++){
+    
+                    let elemParent = validErrors[i].parentElement;
+                    console.log(elemParent);
 
-    function Validation(e) {
-        e.preventDefault();
-        const nameInput = e.currentTarget.querySelector('.js-input-name');
-        const phoneInput = e.currentTarget.querySelector('.js-input-phone');
-        const emailInput = e.currentTarget.querySelector('.js-input-email')
-        const textareaInput = e.currentTarget.querySelector('.js-input-textarea');
-        const checkboxInput = e.currentTarget.querySelector('.js-input-checkbox');
+                    while(!elemParent.classList.contains("form__item")){
+                        elemParent = elemParent.parentElement;
+                    };
+                    if(!elemParent.classList.contains("js-valid-error")){
+                        elemParent.classList.add("js-valid-error")
+                    };
+                };
+            };
+        };
 
+        form.forEach((item) => {
+            item.addEventListener('submit', validationCheck)
+        });
         
-    }
-}
 
-// Validation
+
+    
+
+
+    const formItem = document.querySelectorAll('.form__input');
+
+    formItem.forEach((item) => {
+        item.addEventListener('focus', (e) => {
+            e.currentTarget.closest('.form__item').classList.add('active');
+        });
+        item.addEventListener('blur', (e) => {
+            console.log(e.currentTarget.value)
+            if (!e.target.value) {
+                e.currentTarget.closest('.form__item').classList.remove('active');
+            }
+        });
+    })
+}
 const equipmentItem = document.querySelectorAll('.js-equipment__link');
 const windowWidth = window.outerWidth
 
@@ -574,10 +727,154 @@ if (windowWidth > 768) {
         });
     }
 }
-
-// Scroll menu
 document.addEventListener('DOMContentLoaded', () => {
-    const menuCatalogScroll = new PerfectScrollbar(".js-menu-catalog", {
+    const openCatalogButton = document.querySelector('.js-open-catalog');
 
-    });
+    if (openCatalogButton) {
+        const openCatalog = (e) => {
+            document.querySelector('.js-menu-catalog').classList.add('active')
+        }
+        openCatalogButton.addEventListener('click', openCatalog);
+
+        document.querySelector('.js-close-catalog').addEventListener('click', (e) => {
+            e.currentTarget.closest('.menu__catalog').classList.remove('active')
+        });
+    }
+
+    const popupScroll = document.querySelectorAll('.js-popup-scroll');
+
+    if (popupScroll) {
+        popupScroll.forEach((item) => {
+            new Swiper(item, {
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                freeMode: true,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+                mousewheel: true,
+            });
+        });
+    };
+
 })
+const tabsButton = document.querySelectorAll('.js-tabs-button');
+
+if (tabsButton) {
+    const tabsSwitch = (e) => {
+        tabsButton.forEach((item) => {
+            item.classList.remove('active');
+        });
+        document.querySelectorAll('.tabs__inner-item').forEach((item) => {
+            item.classList.remove('active');
+        })
+        const dataTab = e.currentTarget.getAttribute('data-tab');
+        document.getElementById(`${dataTab}`).classList.add('active');
+        e.currentTarget.classList.add('active')
+    }
+
+    tabsButton.forEach((item) => {
+        item.addEventListener('click', tabsSwitch)
+    })
+}
+
+const cookiesShow = document.querySelector('.js-shown-cookie');
+
+if (cookiesShow) {
+    setTimeout(() => {
+        cookiesShow.classList.add('active')
+    }, 7000)
+    const cookiesClose = document.querySelector('.js-shown-cookie');
+
+    cookiesClose.addEventListener('click', (e) => {
+        e.target.closest('.cookies').classList.remove('active');
+    })
+}
+
+const quizStep = document.querySelectorAll('.js-step');
+
+if (quizStep.length) {
+    quizStep.forEach((item, index) => {
+        item.setAttribute('data-step', index+1);
+    });
+
+    quizStep[0].classList.add('active');
+    console.log(quizStep.length)
+
+    document.querySelector('.js-quiz-all').innerHTML = quizStep.length
+    
+    const switcherNext = (_this, countTab) => {
+        document.querySelector('.js-quiz-current').innerHTML = countTab + 1;
+        document.querySelector('[data-tab="prev"]').removeAttribute('disabled');
+        document.querySelector(`[data-step='${countTab + 1}']`).classList.add('active');
+    }
+
+    const switcherPrev = (_this, countTab) => {
+        document.querySelector(`[data-step='${countTab - 1}']`).classList.add('active');
+        document.querySelector('.js-quiz-current').innerHTML = countTab - 1;
+        if (countTab - 1  == 1) {
+            _this.setAttribute('disabled', true);
+        }  
+    };
+
+    const stepButton = document.querySelectorAll('.js-btn');
+
+    stepButton.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            const _this = e.currentTarget;
+            const direction = _this.getAttribute('data-tab');
+            const countTab = parseInt(document.querySelector('.js-step.active').getAttribute('data-step'));
+            document.querySelector('.js-step.active').classList.remove('active');
+            direction === 'next' ? switcherNext(_this, countTab) : switcherPrev(_this, countTab);
+        });
+    });
+
+    const resultButton = document.querySelectorAll('.js-slide-button');
+    resultButton.forEach((item, index) => {
+        console.log(item)
+        item.style.zIndex = `${resultButton.length - index}`
+    });
+}
+
+const popup = document.querySelectorAll('[data-open]');
+const popupClose = document.querySelectorAll('.js-popup-close')
+if (popup) {
+
+    const openPopup = (e) => {
+        let dataPopup = e.currentTarget.getAttribute('data-open');
+        document.querySelector(`[data-popup='${dataPopup}']`).classList.add('active');
+    }
+
+    popup.forEach((item) => {
+        item.addEventListener('click', openPopup)
+    });
+
+    popupClose.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.currentTarget.closest('.popup').classList.remove('active');
+        } )
+    })
+}
+
+const sectionBird = document.querySelector('.section__bird');
+
+if (sectionBird) {
+    const pens = sectionBird.querySelectorAll('.section__bird-item');
+    const blockPosition = sectionBird.scrollHeight;
+
+    document.addEventListener('scroll', (e) => {
+        const scroll = window.pageYOffset;
+        console.log((blockPosition - 300), scroll)
+        if (scroll > (blockPosition - 800)) {
+            pens.forEach((item,index) => {
+                item.classList.add(`section__bird-item--${ index + 1 }`)
+            });
+            setTimeout(() => {
+                pens.forEach((item) => {
+                    item.classList.add(`active`)
+                });
+            }, 2000)
+        };
+        
+    })
+}
