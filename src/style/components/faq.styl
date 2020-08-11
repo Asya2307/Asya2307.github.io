@@ -1,6 +1,8 @@
 .faq 
     font-family serif
-    margin-top 100px
+    margin-top 50px
+    &--problem 
+        margin-top 70px
     &__inner
         display flex
         flex-direction column
@@ -9,10 +11,23 @@
         border-bottom 1px solid #e7e7e7
         padding-bottom 12px
         overflow auto
+        &:first-child .faq__box 
+            border-top 1px solid #e7e7e7
+        &:first-child .faq__box.active
+            border-top 1px solid transparent
+        &.active
+            top -2px
+        &:last-child 
+            border-bottom none
+            
     &__box
         padding 50px 60px 35px 60px
+        transition-duration .3s
         &.active
+            border-top 1px solid transparent
             background-color #ffffff
+            position relative
+            top -1px
             & .faq__container
                 opacity 1
                 position relative
@@ -33,26 +48,34 @@
         padding 0
         text-align left
         word-break break-word
+        color black
         span  
-            border-bottom 1px solid rgba(0,0,0,0)
+            border-bottom 1px dashed rgba(0,0,0,0)
             transition-duration .3s
             &:hover 
-                border-bottom 1px solid rgba(0,0,0,0.1)
+                border-bottom 1px dashed rgba(0,0,0,0.1)
         &-inner
             display flex
             justify-content space-between
             align-items center
+            margin-bottom 16px
             .common__button
                 height 90px
-        @media phone 
+        @media tablet-landscape-small
             &-inner 
                 flex-direction column
+                align-items flex-start
+                margin-bottom 40px
                 .common__button
                     height unset
         &--nolink
             span 
                 &:hover 
                     border-bottom 1px solid rgba(0,0,0,0)
+    @media phone-portrait 
+        &__title 
+            font-size 26px
+            line-height 30px 
     &--index 
         margin-top 0
         margin-bottom 100px
@@ -96,7 +119,25 @@
         font-family default
         margin-left auto
     &__button 
-        margin-top 60px
+        margin-top 17px
         &--center 
             display flex
             justify-content center
+    @media tablet-landscape-small
+        &__button 
+            display flex
+            justify-content center
+@media phone-portrait 
+    .faq 
+        &__text
+            font-size 26px
+            line-height 30px
+        &__bottom 
+            flex-direction: column
+            align-items flex-start
+        &__auth
+            margin-top 20px
+            margin-bottom 5px
+        &__date
+            margin-left 0
+

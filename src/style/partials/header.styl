@@ -26,6 +26,8 @@
 
     &--white
         color white
+        .logo__description
+            color: #ffffff
 
     &--sticky
         position fixed
@@ -139,11 +141,18 @@
         line-height 21px
         font-weight 300
         color inherit
+        &--inside 
+            color black
         @media laptop
             font-size 14px
             line-height 19px
         @media tablet-portrait
             display none
+    &--inside
+        color black
+        text-decoration none 
+        
+
 
 .head--white
     & .logo svg

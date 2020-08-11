@@ -7,6 +7,7 @@ html(lang="ru")
         link(rel="stylesheet" href="style/normalize.css" type="text/css")
         link(rel="stylesheet" href="style/swiper.css" type="text/css")
         link(rel="stylesheet" href="style/choices.css" type="text/css")
+        link(rel="stylesheet" href="style/lightbox.css" type="text/css")
         link(rel="stylesheet" href="style/main.css" type="text/css")
         title Центр косметологии Jeternel
     body.content.js-intro-is-shown
@@ -19,20 +20,20 @@ html(lang="ru")
                         use(xlink:href="#logo-sign")
                 div.burger-menu__container
                     div.burger-menu__top
-                        div.logo.burger-menu__logo
+                        a(href="/index.html").logo.logo--inside.burger-menu__logo
                             svg(width="51" height="50")
                                 use(xlink:href="#logo-sign")
                             span.logo__description
                                 |Cеть медицинских центров косметологии Jeternel
                         aside.burger-menu__aside
                             div.helpers
-                                button.helpers__button
+                                button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
                                 button.helpers__button
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
-                                button.helpers__button.helpers__button--special
+                                button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                                     svg(width="26" height="22")
                                         use(xlink:href="#glass-icon")
                     div.burger-menu__bottom
@@ -147,7 +148,7 @@ html(lang="ru")
             div.burger.head__burger
                 div.burger__default
                 div.burger__crossed
-            div.logo
+            a(href="/index.html").logo.logo--inside
                 svg(width="51" height="50")
                     use(xlink:href="#logo-sign")
                 span.logo__description
@@ -170,19 +171,25 @@ html(lang="ru")
                 a.head__phone(href="tel:")
                     |+7 351 225-55-55
                 div.helpers
-                    button.helpers__button
+                    button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
                     button.helpers__button
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
-                    button.helpers__button.helpers__button--special
+                    button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                         svg(width="26" height="22")
                             use(xlink:href="#glass-icon")
         main.main
-            .container
-                .main__wrap--biggest
-                    include components/breadcumbs.pug
+            .main__wrap--biggest
+                .container
+                    section.breadcumbs
+                        ul.breadcumbs__list
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Главная
+                            li.breadcumbs__item
+                                span Контактная информация
                     h1.main__title Контактная информация
                     ul.contacts
                         li.contacts__item
@@ -209,8 +216,9 @@ html(lang="ru")
                                 span Центр косметологии Jeternel на Братьев Кашириных, 131Б
                             .branch__info.branch__info--contacts
                                 span.branch__info-phone +7 351 225-75-50
-                div#map.location__map.location__map--full
-                .main__wrap--biggest
+            div#map.location__map.location__map--full
+            .main__wrap--biggest
+                .container
                     section.requisites
                         h2.requisites__title Реквизиты ООО «Вдохновение»
                         ul.requisites__list 
@@ -229,10 +237,11 @@ html(lang="ru")
                             li.requisites__item
                                 span.requisites__item-title р/с:
                                 span.requisites__item-info 4070 2810 6720 0002 4621 в Челябинске ОСБ №8597, г. Челябинск 
-                include components/form.pug
-                    
+            include components/form.pug
+                
         //= partials/footer.pug
         div.intro-curtain
+        include components/popups.pug
         script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
         script(src="script/vendor.js" type="text/javascript")
         script(src="script/script.js" type="text/javascript")

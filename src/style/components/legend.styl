@@ -4,6 +4,13 @@
         max-width: 1240px
         margin-left auto 
         margin-right auto
+        &:last-child 
+            padding-bottom 150px
+        &:first-child 
+            padding-top 200px
+     @media screen and (max-width: 1367px)
+        &__item:first-child 
+            padding-top 130px
     @media screen and (max-width: 1280px)
         &__item
             padding 70px 0 0 0
@@ -21,17 +28,25 @@
         &--reverse 
             margin-right auto
             margin-left 0
-    @media screen and (max-width: 1440px)
-        &__inner
-            margin auto
+    @media screen and (max-width: 1366px)
+        &__inner 
+            max-width: 45.5%
     @media tablet-hor
         &__inner
+            margin auto
             max-width 100%
     &__title 
         font-size 50px
         line-height 54px
         display block
         padding-bottom 20px
+    @media screen and (max-width: 1366px) 
+        &__title 
+            font-size: 42px
+    @media phone
+        &__title 
+            font-size: 32px
+            line-height 36px
     &__text 
         font-size 26px
         line-height 34px
@@ -48,10 +63,17 @@
             bottom 12%
             right 0
             transform: translateX(52%)
-            background-position center
+            background-position right center
             background-size cover
             background-repeat no-repeat
-    @media screen and (max-width: 1440px)
+    @media screen and (max-width: 1366px)
+        &__wrap
+            &:after
+                width 1280px
+                background-position left center
+                background-size contain
+                transform translateX(55%)
+    @media tablet-landscape-small
         &__wrap
             &:after
                 content: none

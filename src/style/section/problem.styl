@@ -1,6 +1,6 @@
 .problem
     &__catalog 
-        margin-top 124px
+        margin-top 132px
         &-list 
             display flex
             align-items flex-start
@@ -11,9 +11,13 @@
             margin-right -66px
             margin-left -66px
             margin-top -60px
-            margin-bottom -60px 
-        @media tablet-landscape-large
+        @media screen and (max-width: 1366px)
+            &-list 
+                margin-left -30px
+                margin-right -30px
+        @media screen and (max-width: 960px)
             &-list
+                justify-content space-between
                 margin-left 0px
                 margin-right 0px
         @media phone-portrait
@@ -21,11 +25,22 @@
                 margin-top 0px
         &-item 
             width calc(100%/2 - 132px)
-            margin: 60px 66px  
-        @media tablet-landscape-large
-            &-item 
-                width calc(100%/2 - 60px)
-                margin: 30px
+            margin: 0px 66px 
+            &:not(:nth-last-child(-n+2))
+                margin-bottom 110px
+        @media screen and (max-width: 1366px)
+            &-item
+                width calc(100%/3 - 60px)
+                margin-left 30px
+                margin-right 30px
+        @media screen and (max-width: 960px)
+            &-item
+                width: calc(50% - 15px)
+                margin-left 0
+                margin-right 0
+                &:not(:nth-last-child(-n+2))
+                    margin-bottom 60px
+                    margin-top 0
         @media phone-portrait
             &-item 
                 width 100%

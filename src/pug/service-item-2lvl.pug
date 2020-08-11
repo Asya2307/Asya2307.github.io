@@ -1,0 +1,672 @@
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1")
+        link(rel="stylesheet" href="style/normalize.css" type="text/css")
+        link(rel="stylesheet" href="style/swiper.css" type="text/css")
+        link(rel="stylesheet" href="style/choices.css" type="text/css")
+        link(rel="stylesheet" href="style/lightbox.css" type="text/css")
+        link(rel="stylesheet" href="style/main.css" type="text/css")
+        title Центр косметологии Jeternel
+    body.content.js-intro-is-shown
+        div(style="display: none")
+            include ../../build/images/sprite.svg
+        header.head.head--inside
+            div.burger-menu
+                div.burger-menu__decoration
+                    svg(width="562" height="552")
+                        use(xlink:href="#logo-sign")
+                div.burger-menu__container
+                    div.burger-menu__top
+                        a(href="/index.html").logo.logo--inside.burger-menu__logo
+                            svg(width="51" height="50")
+                                use(xlink:href="#logo-sign")
+                            span.logo__description
+                                |Cеть медицинских центров косметологии Jeternel
+                        aside.burger-menu__aside
+                            div.helpers
+                                button.helpers__button(data-open="consult")
+                                    svg(width="23" height="23")
+                                        use(xlink:href="#pen-icon")
+                                button.helpers__button
+                                    svg(width="22" height="22")
+                                        use(xlink:href="#search-icon")
+                                button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
+                                    svg(width="26" height="22")
+                                        use(xlink:href="#glass-icon")
+                    div.burger-menu__bottom
+                        nav.sitemap.burger-menu__sitemap
+                            ul.sitemap__section-list
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Услуги
+                                    div.sitemap__subsection
+                                        ul.sitemap__subsection-list
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Диагностика
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Косметология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Дерматология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Управление возрастом и здоровье
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Эндокринология и диетология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Трихология
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Терапия
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Beauty акцент
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Косметология для мужчин
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Проблемы
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |До и после
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Акции
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |О компании
+                                    div.sitemap__subsection
+                                        ul.sitemap__subsection-list
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Сотрудники
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |О лаборатории
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Лицензии и достижения
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Отзывы
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Наша атмосфера
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Вакансии
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Новости
+                                            li.sitemap__subsection-item
+                                                a.sitemap__subsection-link(href="")
+                                                    |Аппараты
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Вопросы и ответы
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Блог
+                                li.sitemap__section-item
+                                    a.sitemap__section-link(href="")
+                                        |Контактная информация
+                        div.burger-menu__contacts
+                            ul.burger-menu__contacts-list
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Единый номер
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-55-55
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Братьев Кашириных, 131б
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-50
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Воровского, 13
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-10
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |Комсомольский проспект, 48
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-50
+                                li.burger-menu__contacts-item
+                                    span.burger-menu__address
+                                        |проспект Ленина, 66
+                                    a.burger-menu__phone(href="tel:")
+                                        |+7 351 225-75-20
+            div.burger.head__burger
+                div.burger__default
+                div.burger__crossed
+            a(href="/index.html").logo.logo--inside
+                svg(width="51" height="50")
+                    use(xlink:href="#logo-sign")
+                span.logo__description
+                    |Cеть медицинских центров косметологии Jeternel
+            nav.head__navigation
+                ul.head__navigation-list
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Услуги
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Акции
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Проблемы
+                    li.head__navigation-item
+                        a.head__navigation-link(href="")
+                            |Прайс
+            aside.head__aside
+                a.head__phone(href="tel:")
+                    |+7 351 225-55-55
+                div.helpers
+                    button.helpers__button(data-open="consult")
+                        svg(width="23" height="23")
+                            use(xlink:href="#pen-icon")
+                    button.helpers__button
+                        svg(width="22" height="22")
+                            use(xlink:href="#search-icon")
+                    button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
+                        svg(width="26" height="22")
+                            use(xlink:href="#glass-icon")
+        main.main
+            .main__wrap--biggest
+                .container
+                    section.breadcumbs
+                        ul.breadcumbs__list
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Главная
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Услуги
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Косметология
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Медицинская косметология
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Инъекционная косметология
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Контурная пластика
+                            li.breadcumbs__item
+                                span Увеличение и коррекция объёма губ
+                    h1.main__title Увеличение и коррекция объёма губ
+                    section.ancors
+                        ul.ancors__list
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#price")
+                                    span Цены
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#application")
+                                    span Применение
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#before-after")
+                                    span До и после
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#specialist")
+                                    span Врачи
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#action")
+                                    span Акции
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#reviews")
+                                    span Отзывы
+                            li.ancors__list-item
+                                a.ancors__list-button(href="#form")
+                                    span Записаться на процедуру
+                    section.gallery
+                        .main__content.gallery__content
+                            ul.gallery__list
+                                li 
+                                    |Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний;
+                                li
+                                    |Комплексный сервис: от базового ухода до революционных косметологических новаций;
+                                li 
+                                    |Самое большое количество оригинального оборудования для эстетической медицины в Челябинске;
+                                li 
+                                    |Самый широкий выбор косметологических препаратов последнего поколения;
+                                li 
+                                    |Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира;
+                                li
+                                    |Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            p Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                            p Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Комплексный сервис: от базового ухода до революционных косметологических новаций. Самое большое количество оригинального оборудования для эстетической медицины в Челябинске. Самый широкий выбор косметологических препаратов последнего поколения. Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            p Все аппараты и косметические средства имеют необходимые лицензии, сертификаты качества и регистрационные удостоверения.
+                        .gallery__inner.js-gallery
+                            a(href="images/today/today1.png" style="background-image: url(images/today/today1.png)").gallery__item
+                                img(src="images/today/today1.png" alt="gallery1")
+                            a(href="images/today/today2.png" style="background-image: url(images/today/today2.png)").gallery__item
+                                img(src="images/today/today2.png" alt="gallery2")
+                            a(href="images/today/today3.png" style="background-image: url(images/today/today3.png)").gallery__item
+                                img(src="images/today/today3.png" alt="gallery3")
+                            a(href="images/today/today4.png" style="background-image: url(images/today/today4.png)").gallery__item
+                                img(src="images/today/today4.png" alt="gallery4")
+                            a(href="images/today/today5.png" style="background-image: url(images/today/today5.png)").gallery__item
+                                img(src="images/today/today5.png" alt="gallery5")
+                            a(href="images/today/today6.png" style="background-image: url(images/today/today6.png)").gallery__item
+                                img(src="images/today/today6.png" alt="gallery6")
+                            a(href="images/today/today7.png" style="background-image: url(images/today/today7.png)").gallery__item
+                                img(src="images/today/today7.png" alt="gallery7")
+                            a(href="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" style="background-image: url(images/today/today1.png)").gallery__item
+                                <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                    section.tabs(id="price")
+                        h2.common__h4-heading Цены на услуги 
+                        .tabs__wrap
+                            ul.tabs__switch
+                                li.tabs__item 
+                                    button.tabs__button.js-tabs-button.active(data-tab="tab-1")
+                                        span Воровского, 13 
+                                li.tabs__item 
+                                    button.tabs__button.js-tabs-button(data-tab="tab-2")
+                                        span Комсомольский проспект, 48 
+                                li.tabs__item 
+                                    button.tabs__button.js-tabs-button(data-tab="tab-3")
+                                        span Ленина, 66
+                                li.tabs__item 
+                                    button.tabs__button.js-tabs-button(data-tab="tab-4")
+                                        span Братьев Кашириных, 131Б
+                            .tabs__inner
+                                .tabs__inner-item.active(id="tab-1")
+                                    .main__content 
+                                        p Аппарат «5 в 1», все тело, 90 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», 1 зона, 20 минут (живот, талия, ягодица, передняя/задняя поверхность бедра, спина, плечи)
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», живот, бедра, ягодицы, 60 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                .tabs__inner-item(id="tab-2") 
+                                    .main__content 
+                                        p Аппарат «5 в 1», все тело, 90 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», 1 зона, 20 минут (живот, талия, ягодица, передняя/задняя поверхность бедра, спина, плечи)
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», живот, бедра, ягодицы, 60 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                .tabs__inner-item(id="tab-3")
+                                    .main__content 
+                                        p Аппарат «5 в 1», все тело, 90 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», 1 зона, 20 минут (живот, талия, ягодица, передняя/задняя поверхность бедра, спина, плечи)
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», живот, бедра, ягодицы, 60 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                .tabs__inner-item(id="tab-4") 
+                                    .main__content 
+                                        p Аппарат «5 в 1», все тело, 90 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», 1 зона, 20 минут (живот, талия, ягодица, передняя/задняя поверхность бедра, спина, плечи)
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                                        p Аппарат «5 в 1», живот, бедра, ягодицы, 60 минут
+                                        table
+                                            tbody 
+                                                tr 
+                                                    td Специалист по массажу
+                                                    td 3980 руб
+                                                tr 
+                                                    td Врач-косметолог
+                                                    td 4580 руб
+                    section.infobox(id="application")
+                        h2.infobox__title В каких случаях применяется
+                        .infobox__inner.infobox__inner--part
+                            .infobox__item.infobox__item--part
+                                span Возрастные изменения кожи
+                            .infobox__item.infobox__item--part
+                                span Возрастные изменения фигуры
+                            .infobox__item.infobox__item--part
+                                span Преждевременное выпадение волос
+                            .infobox__item.infobox__item--part
+                                span Сухость кожи
+                            .infobox__item.infobox__item--part
+                                span Отеки (в том числе, после липосакции, липолиза)
+                    section.before-after__container.before-after__container--slider(id="before-after")
+                        h2.infobox__title
+                            |До и после
+                        .js-before-after-slider.before-after__box.swiper-container
+                            .swiper-wrapper
+                                .swiper-slide.before-after__slide 
+                                    li.before-after-preview.before-after__item
+                                        div.before-after-preview__images-container.js-before-after-container
+                                            div.before-after-preview__image-wrapper
+                                                img.before-after-preview__image(src="images/before-after/01-after.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |После
+                                            div.before-after-preview__image-wrapper.js-before-after-overlay
+                                                img.before-after-preview__image(src="images/before-after/01-before.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |До
+                                        div.before-after-preview__props
+                                            ul.before-after-preview__props-list
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Проблема
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Хроностарение
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Пол
+                                                    span.before-after-preview__data
+                                                        |Женский
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Услуга
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Вакуумно-роликовый массаж
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Аппарат
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Лазер EP56
+                                .swiper-slide.before-after__slide 
+                                    li.before-after-preview.before-after__item
+                                        div.before-after-preview__images-container.js-before-after-container
+                                            div.before-after-preview__image-wrapper
+                                                img.before-after-preview__image(src="images/before-after/01-after.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |После
+                                            div.before-after-preview__image-wrapper.js-before-after-overlay
+                                                img.before-after-preview__image(src="images/before-after/01-before.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |До
+                                        div.before-after-preview__props
+                                            ul.before-after-preview__props-list
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Проблема
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Хроностарение
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Пол
+                                                    span.before-after-preview__data
+                                                        |Женский
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Услуга
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Вакуумно-роликовый массаж
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Аппарат
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Лазер EP56
+                                .swiper-slide.before-after__slide 
+                                    li.before-after-preview.before-after__item
+                                        div.before-after-preview__images-container.js-before-after-container
+                                            div.before-after-preview__image-wrapper
+                                                img.before-after-preview__image(src="images/before-after/01-after.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |После
+                                            div.before-after-preview__image-wrapper.js-before-after-overlay
+                                                img.before-after-preview__image(src="images/before-after/01-before.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |До
+                                        div.before-after-preview__props
+                                            ul.before-after-preview__props-list
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Проблема
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Хроностарение
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Пол
+                                                    span.before-after-preview__data
+                                                        |Женский
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Услуга
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Вакуумно-роликовый массаж
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Аппарат
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Лазер EP56
+                                .swiper-slide.before-after__slide 
+                                    li.before-after-preview.before-after__item
+                                        div.before-after-preview__images-container.js-before-after-container
+                                            div.before-after-preview__image-wrapper
+                                                img.before-after-preview__image(src="images/before-after/01-after.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |После
+                                            div.before-after-preview__image-wrapper.js-before-after-overlay
+                                                img.before-after-preview__image(src="images/before-after/01-before.jpg", alt="")
+                                                span.before-after-preview__tag
+                                                    |До
+                                        div.before-after-preview__props
+                                            ul.before-after-preview__props-list
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Проблема
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Хроностарение
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Пол
+                                                    span.before-after-preview__data
+                                                        |Женский
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Услуга
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Вакуумно-роликовый массаж
+                                                li.before-after-preview__props-item
+                                                    span.before-after-preview__hint
+                                                        |Аппарат
+                                                    span.before-after-preview__data
+                                                        a.before-after-preview__link(href="")
+                                                            |Лазер EP56
+                        .slider__nav.slider__nav--before-after
+                            button.slider__nav-item.slider__nav-item--prev
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="35"><path fill="#382f2d" d="M.696 16.8L17.323.01l.693.699L1.39 17.499l16.626 16.79-.693.7L.697 18.2l-.693-.7z"/></svg>   
+                            button.slider__nav-item.slider__nav-item--next
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="35"><path fill="#382f2d" d="M.698 34.99l-.692-.7L16.602 17.5.006.708l.692-.7L17.985 17.5z"/></svg>
+                        .see__more.see__more--gallery
+                            a.common__button-link(href="")
+                                |Все результаты
+                    include components/special.pug  
+                    section.action__slider-inner(id="action")
+                        .action__slider-box
+                            .action__slider-content
+                                span.action__slider-title Акции
+                            .action__slider.swiper-container.js-action-slider
+                                .swiper-wrapper
+                                    .action__slider-slide.swiper-slide
+                                        .action__slider-img(style="background-image: url(/images/action/action.png)")
+                                            img(src="/images/action/action.png")
+                                        span.action__slider-head Безупречность во всем!
+                                        span.action__slider-text При прохождении Альтератерапии от 406 линий процедура «Обогащённая PRP» в подарок! Только на Воровского, 13.
+                                    .action__slider-slide.swiper-slide
+                                        .action__slider-img(style="background-image: url(/images/action/action2.png)")
+                                            img(src="/images/action/action2.png")
+                                        span.action__slider-head Безупречность во всем!
+                                        span.action__slider-text При прохождении Альтератерапии от 406 линий процедура «Обогащённая PRP» в подарок! Только на Воровского, 13.
+                                    button.action__slider-arrow.action__slider-arrow--left
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
+                                        </svg>
+                                    button.action__slider-arrow.action__slider-arrow--right
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
+                                    </svg>
+                            .action__slider-show
+                                button.common__button.common__button--gray-cherry Все акции 
+                        .action__slider-box
+                            .action__slider-content
+                                span.action__slider-title Ждем вас в лаборатории красоты Jeternel
+                                p.action__slider-desc Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Оригинальное оборудование и косметологические препараты последнего поколения.
+                                p.action__slider-desc Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            .action__slider.swiper-container.js-action-slider
+                                .swiper-wrapper
+                                    .action__slider-slide.swiper-slide
+                                        .action__slider-img(style="background-image: url(/images/action/action.png)")
+                                            img(src="/images/action/action.png")
+                                        span.action__slider-head Безупречность во всем!
+                                        span.action__slider-text При прохождении Альтератерапии от 406 линий процедура «Обогащённая PRP» в подарок! Только на Воровского, 13.
+                                    .action__slider-slide.swiper-slide
+                                        .action__slider-img(style="background-image: url(/images/action/action2.png)")
+                                            img(src="/images/action/action2.png")
+                                        span.action__slider-head Безупречность во всем!
+                                        span.action__slider-text При прохождении Альтератерапии от 406 линий процедура «Обогащённая PRP» в подарок! Только на Воровского, 13.
+                                    button.action__slider-arrow.action__slider-arrow--left
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
+                                        </svg>
+                                    button.action__slider-arrow.action__slider-arrow--right
+                                        <svg xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
+                                    </svg>
+                include components/form-consult.pug
+                .main__wrap--biggest
+                    include components/reviews.pug 
+                    section.faq
+                        h2.infobox__title Вопросы и ответы
+                        include components/faq.pug
+                    include components/publcation.pug
+                    section.gallery
+                        .main__content.gallery__content
+                            h2.gallery__title Jeternel сегодня 
+                            ul.gallery__list
+                                li 
+                                    |Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний;
+                                li
+                                    |Комплексный сервис: от базового ухода до революционных косметологических новаций;
+                                li 
+                                    |Самое большое количество оригинального оборудования для эстетической медицины в Челябинске;
+                                li 
+                                    |Самый широкий выбор косметологических препаратов последнего поколения;
+                                li 
+                                    |Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира;
+                                li
+                                    |Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            p Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                            p Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Комплексный сервис: от базового ухода до революционных косметологических новаций. Самое большое количество оригинального оборудования для эстетической медицины в Челябинске. Самый широкий выбор косметологических препаратов последнего поколения. Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
+                            p Все аппараты и косметические средства имеют необходимые лицензии, сертификаты качества и регистрационные удостоверения.
+                        .gallery__inner.js-gallery
+                            a(href="images/today/today1.png" style="background-image: url(images/today/today1.png)").gallery__item
+                                img(src="images/today/today1.png" alt="gallery1")
+                            a(href="images/today/today2.png" style="background-image: url(images/today/today2.png)").gallery__item
+                                img(src="images/today/today2.png" alt="gallery2")
+                            a(href="images/today/today3.png" style="background-image: url(images/today/today3.png)").gallery__item
+                                img(src="images/today/today3.png" alt="gallery3")
+                            a(href="images/today/today4.png" style="background-image: url(images/today/today4.png)").gallery__item
+                                img(src="images/today/today4.png" alt="gallery4")
+                            a(href="images/today/today5.png" style="background-image: url(images/today/today5.png)").gallery__item
+                                img(src="images/today/today5.png" alt="gallery5")
+                            a(href="images/today/today6.png" style="background-image: url(images/today/today6.png)").gallery__item
+                                img(src="images/today/today6.png" alt="gallery6")
+                            a(href="images/today/today7.png" style="background-image: url(images/today/today7.png)").gallery__item
+                                img(src="images/today/today7.png" alt="gallery7")
+                            a(href="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" style="background-image: url(images/today/today1.png)").gallery__item
+                                <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+
+        //= partials/footer.pug
+        include components/menu-catalog.pug
+        div.intro-curtain
+        include components/popups.pug
+        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        script(src="script/vendor.js" type="text/javascript")
+        script(src="script/script.js" type="text/javascript")

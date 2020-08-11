@@ -51,7 +51,7 @@ gulp.task("style:build", function(){
 });
 
 gulp.task("fonts:build", function(){
-    return gulp.src("src/fonts/*.woff2")
+    return gulp.src("src/fonts/*")
         .pipe(gulp.dest("build/fonts"));
 });
 

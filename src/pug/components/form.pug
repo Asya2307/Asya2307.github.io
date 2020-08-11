@@ -3,15 +3,19 @@ section.form__wrap
         .form__inner
             span.form__title Записаться на прием
             .form__box
-                .form__group
-                    .form__item 
-                        input(type="text" placeholder="Имя").form__input
-                    .form__item
-                        input(type="text" placeholder="Телефон*").form__input.js-input-phone.js-phone-mask
+                ul.form__group(role="none")
+                    li.form__group-item
+                        label.form__item(for="name")
+                            input(type="text" data-req name="name" autocomplete="off").form__input
+                            span.form__label Имя
+                    li.form__group-item
+                        label.form__item
+                            input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask
+                            span.form__label Телефон
                 .form__checkbox
-                    .custom__checkbox-wrap
-                        input(type="checkbox").custom__checkbox
+                    .form__item.custom__checkbox-wrap
+                        input(type="checkbox" data-req).custom__checkbox
                         label.custom__checkbox-label Согласен на обработку персональных данных
-                button.common__button.common__button--gray-cherry Записаться
+                button.common__button.common__button--gray-cherry(type="submit") Записаться
 
                  

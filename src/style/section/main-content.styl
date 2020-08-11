@@ -3,44 +3,75 @@
         max-width: 992px
         margin-left auto
         margin-right auto
-        padding-top 90px
+        padding-top 73px
+        width 100%
         &--big 
             max-width 1270px
             margin-left auto
             margin-right auto
+            width 100%
+            position relative
         &--biggest
             max-width 1332px
             margin-left auto
             margin-right auto
+            width 100%
+            padding-top 73px
+        
+        &--quiz 
+            padding-top 0
+        &--window 
+            width 100%
+            padding-left 64px
+            padding-right 64px
+        &--content 
+            max-width: 1320px
+    @media laptop 
+        &__wrap
+            &--big,
+            &--biggest
+                max-width unset
+    @media tablet-hor
+        &__wrap
+            padding-top 0
+            
     &__content
-        font-family serif
         color black
         p
-            font-size 24px
+            font-size 26px
             line-height 32px
+        @media phone
+            p
+                font-size 20px
+                line-height 24px
         h2
-            font-size 60px
+            font-size 66px
             font-weight 400
-            margin-top 83px
+            margin-top 76px
+            margin-bottom 0px
+            padding-bottom 5px
         @media phone-portrait
             h2
                 font-size 45px
                 margin-top 49px
-        @media phone-portrait
+        @media phone
             h2
                 font-size 32px
+
+            
         h3
-            font-size 42px
+            font-size 50px
             line-height 46px
             font-weight 400
-            margin-top 90px
+            margin-top 85px
+            margin-bottom 40px
         @media phone-portrait
             h3
                 font-size 36px
-                margin-top 49px
         @media phone
             h3
                 font-size 30px
+                line-height 34px
         ul
             list-style-type none
             padding 0
@@ -48,7 +79,7 @@
                 display flex
                 align-items flex-start
                 font-size 24px
-                margin-bottom 17px
+                margin-bottom 6px
                 &:last-child
                     margin-bottom 0
                 &:before
@@ -61,35 +92,48 @@
                     margin-right 10px
                     position relative
                     top 13px
+            @media phone
+                li
+                    font-size 20px
+                    line-height 24px
+        img 
+            margin-top 7px
+            max-width 100%
+        a  
+            color bright-cherry
+            border-bottom 1px solid bright-cherry
+            text-decoration none
+            transition border-bottom-color .3s
+            &:hover 
+                border-bottom-color transparent
         table
             border 1px solid #e7e7e7
             background-color default-gray
             font-size 20px
+            line-height 24px
             font-weight 400
             border-collapse: collapse
             text-align: left 
-            margin-top 9px
-            margin-bottom 4px
+            margin-top 14px
+            margin-bottom 9px
 
             td, th 
                 border-bottom 1px solid #e7e7e7
                 border-left 1px solid #e7e7e7
-                padding 23px
+                padding 24px 30px
                 font-weight 400
+                vertical-align top
             th
                 white-space nowrap
-        img 
-            margin-top 7px
-        @media phone
-            img 
-                width 100%
-                display block
+            td:first-child 
+                max-width: 355px;
+            
     &__title
-        font-size 90px
+        font-size 96px
         font-weight 400
         line-height 94px
         margin-top 30px
-        margin-bottom 50px
+        margin-bottom 52px
         &--inside
             font-size 90px
     @media tablet-hor
@@ -108,10 +152,25 @@
         position relative
     &--prm
         background-color default-cherry
-@media laptop
-    .main 
+
+
+    
+
+.container 
+    @media desktop-medium
+        padding-left 64px
+        padding-right 64px
+    @media tablet-landscape-large
+        padding-left 40px
+        padding-right 40px
+    @media tablet-portrait
+        padding-left 30px
+        padding-right 30px
+    @media phone
         padding-left 20px
         padding-right 20px
+
+  
 .show__more
     display flex
     align-items center

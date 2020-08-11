@@ -9,52 +9,61 @@
     background-repeat no-repeat
     background-color #fff
     height 1124px
-    transform translateY(-100px)
+    overflow hidden
     &-item
         position absolute
         top 0
         left 0
-        transform-origin: left center
-        animation rotate
-        animation-duration 8s
-        animation-timing-function ease-in-out
+        transition-delay 0s
+        transform-origin left center
+        animation-duration 20s
+        animation-delay 0
+        animation-timing-function linear
         animation-iteration-count infinite
-        transition: .7s
-        //  
-        transform: translateY(-100px)
-        &--first
-            left 42%
-            top 20%
-            animation-delay 6s
-        &--second
-            left 62%
-            top 31%
-            animation-delay 3s
-        &--thirth
-            left 84%
-            top 25%
-            animation-delay 9s
-        &--fouth
-            left 52%
-            top 69%
-            animation-delay 1s
-        &--fifth 
-            left 85%
-            top 48%
-
-        &.active 
-            opacity 1
-            visibility visible
-            transform: translate(0)
-
-        svg 
+        &--1
+            animation-name fly--1
+            transform: translate(32vw, 57vh)
+            svg  
+                animation-delay: 1s
+        &--2
+            animation-name fly--2
+            transform: translate(32vw, 57vh)
+            svg  
+                animation-delay: 2s
+        &--3
+            transform: translate(32vw, 57vh)
+            animation-name fly--3
+            svg  
+                animation-delay: 3s
+        &--4
+            animation-name fly--4
+            transform: translate(32vw, 54vh)
+            svg  
+                animation-delay: 4s
+        &--5
+            animation-name fly--5
+            transform: translate(32vw, 54vh)
+            svg  
+                animation-delay: 5s
+        svg  
+            transform-origin: left center
+            animation-name rotate
+            animation-duration 15s
+            animation-timing-function ease
+            animation-iteration-count infinite 
             path 
-                fill default-gray
-                stroke dark-cherry
-                stroke-opacity 0.1
+                fill #fafafa
+@media screen and (max-width: 1366px)
+    .section__bird
+        background-position: center bottom  
+        background-size: contain
+        height 800px
+
 @media tablet-hor
-    .section-bird
+    .section__bird
         display none
+        
+
 
 
     

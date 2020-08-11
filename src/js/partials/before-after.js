@@ -1,19 +1,11 @@
 (function(){
 
-    var swiper = new Swiper('.js-before-after-slider', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-    });
+   
 
 
     let beforeAfterElements = document.querySelectorAll(".js-before-after-container");
 
     window.addEventListener("load", function(){
-
         if(beforeAfterElements){
             calculateBeforeAfter();
             window.addEventListener("resize", updateBeforeAfter);
@@ -79,5 +71,31 @@
     function calcOverlayWidth(){
         neededWidth = Math.round((event.clientX - this.offset) / this.step + this.skewCompensation);
     };
+
+    const openPopup = document.querySelectorAll('.js-open-popup');
+
+
+    // var swiper = new Swiper('.js-before-after-slider', {
+    //     slidesPerView: 3,
+    //     spaceBetween: 30,
+    // });
+
+    if (openPopup) {
+        openPopup.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                document.querySelector('.before-after__popup').classList.add('active');
+            })
+        });
+    }
+
+    const closePopup = document.querySelectorAll('.js-close-popup');
+
+    if (closePopup) {
+        closePopup.forEach((item) => {
+            item.addEventListener('click', (e) => {
+                e.currentTarget.closest('.before-after__popup').classList.remove('active');
+            })
+        });
+    }
 
 })();

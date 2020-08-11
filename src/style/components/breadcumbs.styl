@@ -1,5 +1,8 @@
 .breadcumbs
     font-family default
+    font-size: 13px
+    overflow hidden
+    white-space nowrap
     &__list
         display flex
         align-items center
@@ -8,17 +11,17 @@
     &__item
         display flex
         align-items center
-        cursor pointer
         &:after
             content: '/'
             color middle-gray
             margin 0 5px
             font-size 11px
-        &:last-child
+        &:last-child:after
             content: none
     &__link
         position relative
         color middle-gray
+        cursor pointer
         &:before
             content: ''
             position absolute
@@ -30,13 +33,23 @@
             background-color middle-gray
             opacity: 0.25
             transition: opacity 0.5s 0s ease
-    &__link span
+    span
+        color middle-gray
         display block
         position relative
-        font-weight 400
-        font-size: 12px
+        font-weight 300
     &__link:hover:before
         opacity 0
+    &--center 
+        display flex
+        justify-content center
+        margin-bottom 30px
+        span
+            color: white
+@media screen and (max-width: 1336px)
+    .breadcumbs
+        font-size 12px
+        
 
 
 

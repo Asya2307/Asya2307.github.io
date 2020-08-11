@@ -5,13 +5,22 @@
         display flex
         align-items flex-start
         justify-content space-between
-    @media tablet-landscape-small
+    @media tablet-portrait
         &__container
             flex-direction column 
     &__group
+        padding-left 0
+        margin 0
+        list-style-type none
         &--half
             width calc(50% - 24px)
-    @media tablet-landscape-small
+        &-item 
+            margin-bottom 50px
+            &:last-child 
+                margin-bottom 0
+            &:before 
+                content: none
+    @media tablet-portrait
         &__group 
             &--half 
                 width 100%
@@ -36,6 +45,16 @@
             background-position: center
             background-size contain
             background-repeat no-repeat
+        &--popup 
+            opacity 0
+            transition: opacity 1s 0s ease;
+            position relative
+            z-index 1
+            background-color transparent
+            &:after 
+                content: none
+        &--branch 
+            margin-top 100px
     @media tablet-landscape-medium
         &__wrap
             padding-left 20px
@@ -49,6 +68,8 @@
         margin-right auto
         &--big 
             max-width 950px
+        &--search 
+            max-width 598px
     &__box
         display flex
         flex-direction column
@@ -66,8 +87,26 @@
        position relative
        width 100% 
        margin-bottom 50px
+       cursor pointer
        &:last-child
            margin-bottom 0
+        &--half 
+            width 48%
+        &--filter
+            margin-bottom 30px
+        &.active .form__label 
+            transform: translateY(-29px) scale(.9)
+            color: milk-cherry
+        &.js-valid-error
+            border-bottom-color #ba8c58
+            .form__label 
+                color: #ba8c58
+            .form__input 
+                border-color: #ba8c58
+    @media phone 
+        &__item
+            &--half
+                width 100%
     &__textarea
         width 100%
         display block
@@ -78,7 +117,11 @@
         font-family default
         resize none
         height 100%
+        padding-bottom 16px
+        font-weight 300
     &__input
+        position relative
+        z-index 2
         width 100%
         background-color transparent
         border none
@@ -87,50 +130,180 @@
         font-family default
         font-size 15px
         color white
-        padding-bottom 10px
+        padding-bottom 14px
         transition .3s
+        font-weight 300
+
 
         &--left
             text-align left
+            & ~ .form__label 
+                text-align: left 
+                transform-origin: left center
+
 
         &::placeholder
             font-family default
             font-size 15px
             color white
-            font-weight 400
+            font-weight 300
+
         &.in-valid
             border-bottom 1px solid red
+
+        &--dark
+            border-bottom-color:black
+            color: black
+            &::placeholder
+                color black
+        
+        &--filter
+            padding-top 16px
+            padding-bottom 15px
+            font-size 14px
+            &::placeholder
+                font-size 14px
+        &[data-req] ~ .form__label:after 
+            content: '*'
+            vertical-align top
+        
+        
+    &__checkbox
+         &--filter 
+            margin-bottom 12px
+            &:last-child
+                margin-bottom 0
+    @media phone-portrait
+        &__checkbox
+            &--filter
+                margin-right 15px
+                margin-bottom 0
+                &:last-child 
+                    margin-right 0
+    &__label 
+        position absolute
+        color white 
+        font-size: 15px
+        font-family default 
+        left 0
+        right 0
+        width 100%
+        height 100%
+        text-align center
+        transition transform .7s 0s ease  
+    &__info 
+        display flex
+        flex-direction: column 
+        text-align: center
+        margin-top 47px
+        &-item 
+            display flex
+            flex-direction: column 
+            justify-content center
+            margin-bottom 20px
+            color white
+            font-size: 26px
+            line-height: 34px
+        &-title 
+            color: milk-cherry
+    &__search 
+        &-button 
+            position absolute
+            top: -6px
+            right 10px
+            display block
+            width 19px
+            height 19px
+            padding: 0
+            background-color transparent
+            border none
+            transform: scale(-1, 1)
+            cursor pointer
+            svg 
+                width 100%
+                height 100%
+                path
+                    fill white
+            &:disabled 
+                opacity .5
+
+        
 .custom__checkbox
     position absolute
-    width 100%
+    width 27px
     height 100%
     opacity 0
     cursor pointer
+    left 0
     &-wrap
+        display flex
+        justify-content center
         position relative
-        margin 50px 0 
+        margin-top 50px
+        margin-bottom 50px
         font-family serif
+        &--filter
+            margin: 0
+            &:last-child 
+                margin-bottom 0
+        &:last-child
+            margin-bottom 50px
     &-label 
         color white
         display block
         display flex
         align-items center
         cursor pointer
-        &:before
-            content: ''
-            display block
-            max-width 27px
-            width 100%
-            height 27px
-            border 1px solid rgba(255,255,255,0.25) 
-            margin-right 10px
-            transition .3s
-            color default-cherry
-            text-align center
-            line-height 27px
-    &:checked + &-label:before
-            content: '✓'
-            background-color white
+        font-weight 300
+        font-family default
+        position relative
+           
+        &--dark 
+            color: black
+            font-family default
+            &::before 
+                border-color: black
+                color: black
+    &-check 
+        display flex
+        align-items center
+        justify-content center
+        min-width 27px
+        height 27px
+        border 1px solid rgba(255,255,255,0.25) 
+        margin-right 10px
+        svg
+            opacity 0 
+            transition: opacity .3s
+            path 
+                fill: white 
+        &--dark 
+            border-color: black
+            svg 
+                path 
+                    fill: black
+    &-info 
+        a 
+            color white
+            border-bottom 1px solid white
+            transition: border-bottom-color .3s
+            text-decoration none
+            position relative
+            top 1px
+            &:hover 
+                border-bottom-color transparent
+        &--dark 
+            color: black
+
+
+        
+    &:checked ~ &-check
+        svg  
+            opacity 1
+
+    
+
+   
 
 
 

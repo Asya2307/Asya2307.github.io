@@ -59,6 +59,11 @@
 
 .choices--white[data-type*='select-one']:after
   content ''
+  background-image url("../images/icons/select-arrow-white.svg")
+  //opacity .25
+
+.choices--white[data-type*='select-one']:after
+  content ''
   //background-image url("../images/icons/select-arrow-white.png")
 
 .choices[data-type*='select-one'].is-open:after
@@ -149,6 +154,12 @@
     font-size 14px
 
 .choices__list--dropdown .choices__item:not(:nth-child(1))
+  min-height 18px
+  padding 13px 20px
+  @media (max-width: 1480px)
+    padding 11px 20px
+
+.choices__list--dropdown .choices__item:nth-child(1)
   min-height 18px
   padding 13px 20px
   @media (max-width: 1480px)
@@ -357,5 +368,9 @@
 .choices__placeholder 
   opacity 0.5
 */
-
 /*=====  End of Choices  ======*/
+
+
+.choices__inner--white
+  border-bottom 1px solid rgba(255,255,255,0.25)
+  text-align: center

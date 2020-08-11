@@ -1,22 +1,52 @@
 .gallery
     &__inner
         display flex
+        align-items stretch
         flex-wrap wrap
-        margin: 0 -12px
+        margin: -6px
+    &--index
+        margin-top 94px
+        & + .publication .publication__inner
+            margin-top 47px
+    &__content 
+        h2
+            margin-bottom 53px
+            margin-top 0
+            font-size 50px
+            line-height 54px
+    @media screen and (max-width: 1366px) 
+        &__content 
+            h2 
+                font-size: 42px
+    @media phone
+        &__content 
+            h2 
+                font-size: 32px
+                line-height 36px
+    &--inside 
+        margin-top 100px
     &__item
-        width calc(100%/5 - 24px)
-        margin 11px
-        height 164px
+        position relative
+        text-decoration: none
+        width calc(100%/5 - 12px)
+        margin 6px
         background-position center
         background-size cover
         background-repeat no-repeat
-        border 1px solid #e7e7e7
+        img
+            display block
+            width 100%
+            object-fit contain
+        iframe 
+            display none
         &--ser
             background-size: contain
             height unset
             display flex
             align-items center
             justify-content center
+            border 1px solid #e7e7e7
+            padding: 11px
             &:after
                 content ''
                 float left 
@@ -24,25 +54,54 @@
             img 
                 margin-left auto
                 margin-right auto
+                display block
         &--popup 
             height unset
+            background-image none
             img 
                 display block
                 margin auto 
                 padding 11px
-    @media tablet-hor
-        &__item
-            width calc(100%/2 - 24px)
+        &--video:after
+            content: 'Видео'
+            display block
+            position absolute
+            bottom: 20px
+            left 20px
+            font-family default 
+            color black 
+            background-color white 
+            font-size: 13px
+            border-radius: 17px
+            padding: 9px 17px
+        &--map:after
+            content: 'Виртуальный тур'
+            display block
+            position absolute
+            bottom: 20px
+            left 20px
+            font-family default 
+            color black 
+            background-color white 
+            font-size: 13px
+            border-radius: 17px
+            padding: 9px 17px
+    @media tablet-portrait
+        &__inner 
+            margin: 0 -6px
+        &__item 
+            width: calc(100%/3 - 12px)
+            margin: 6px
     @media phone
+        &__item 
+            width: calc(100%/2 - 6px)
+            margin: 3px
         &__item
-            width 100%
-            margin 12px 0
-            height 300px
-
-@media tablet-landscape-large
-    .gallery
-        padding-left 20px
-        padding-right 20px
-
+            &--popup 
+                height unset
+@media phone 
+    .gallery 
+        &__title 
+            text-align: center
 
         

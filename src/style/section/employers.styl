@@ -12,6 +12,9 @@
         &__inner
             margin-left 0
             margin-right 0
+    @media screen and (max-width: 450px)
+        &__inner
+            justify-content space-between
     &__wrap 
         padding 0 44px
     @media tablet-portrait
@@ -24,19 +27,30 @@
         position relative
         z-index 1
     &__name
-       letter-spacing 3.12px
-       line-height 23px 
-       color black
-       font-size 13px
-       text-transform uppercase
-       text-align center
-       display block
-       padding: 40px 40px 20px 40px
+        font-family default
+        line-height 22px 
+        color black
+        font-size 13px
+        text-transform uppercase
+        text-align center
+        display block
+        padding: 0px 40px 17px 40px
+        margin-top -18px
+        position relative
     @media phone-portrait
         &__name
             padding-left 0
             padding-right 0
+    @media screen and (max-width: 450px)
+        &__name
+            margin-top 0
+            font-size 8px
+            line-height 14px
+            padding-bottom 8px
+
     &__img
+        position relative
+        overflow hidden
         height 400px
         display flex
         align-items flex-end
@@ -45,9 +59,24 @@
             height 100%
             object-fit contain
             object-position bottom
+        svg  
+            position absolute
+            bottom: 0
+            transform: translateY(50%)
+            path 
+                fill: #fafafa
+    @media tablet-landscape-large
+        &__img 
+            svg 
+                transform: translateY(63%)
     @media tablet-hor
         &__img
-            height auto
+            height 200px
+            svg 
+                transform: translateY(50%)
+    @media screen and (max-width: 450px)
+        &__img
+            height 150px
     &__item
         width calc(100%/3 - 164px)
         margin: 0 81px 72px 81px
@@ -55,27 +84,47 @@
         &:hover .employers__pattern-item
             opacity 1
             animation-play-state running 
+        &--slider 
+            width unset 
+            margin 0
     
     @media tablet-landscape-large
         &__item
             margin-left 20px
             margin-right 20px
             width: calc(100% / 3 - 40px)
+            &--slider
+                margin-left 0
+                margin-right 0
     @media tablet-landscape-medium
         &__item
             width: calc(100% / 2 - 40px)
+            margin-bottom 40px
     @media tablet-hor
         &__item
-            width 100%
+            &--slider 
+                margin-left 0
+                margin-right 0
+    
     &__position
         font-size 15px
+        line-height 19px
         color black
         width 100%
         text-align center
         font-family default
+    @media screen and (max-width: 450px)
+        &__position
+            font-size 8px
     &__title
         font-size 50px
         font-family serif
+    @media phone-portrait
+        &__title
+            font-size 45px
+    @media phone
+        &__title
+            font-size 32px
     &__pattern
         position absolute
         width 100%
@@ -98,20 +147,20 @@
             &--1
                 width 67px
                 height 67px
-                background-image url(../images/employers/pen1.png)
+                background-image url(../images/icons/decor-01.svg)
                 top 50%
                 left -24px
                 animation-direction reverse
             &--2
                 width 101px
                 height 101px
-                background-image url(../images/employers/pen2.png)
+                background-image url(../images/icons/decor-02.svg)
                 top 37%
                 right -100px
             &--3
                 width 177px
                 height 177px
-                background-image url(../images/employers/pen3.png)
+                background-image url(../images/icons/decor-02.svg)
                 top 10%
                 animation-direction reverse
     @media tablet-landscape-medium

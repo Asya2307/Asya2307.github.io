@@ -1,3 +1,13 @@
+const addHiddenBody = (block) => {
+    block.style.overflow = 'hidden';
+}
+
+const removeHiddenBody = (block) => {
+    block.style.overflow = '';
+}
+
+
+
 (function(){
 
     // Основной слайдер на главной странице
@@ -285,20 +295,12 @@ if(document.getElementById("map")){
 };
 (function(){
 
-    var swiper = new Swiper('.js-before-after-slider', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-    });
+   
 
 
     let beforeAfterElements = document.querySelectorAll(".js-before-after-container");
 
     window.addEventListener("load", function(){
-
         if(beforeAfterElements){
             calculateBeforeAfter();
             window.addEventListener("resize", updateBeforeAfter);
@@ -366,6 +368,12 @@ if(document.getElementById("map")){
     };
 
     const openPopup = document.querySelectorAll('.js-open-popup');
+
+
+    // var swiper = new Swiper('.js-before-after-slider', {
+    //     slidesPerView: 3,
+    //     spaceBetween: 30,
+    // });
 
     if (openPopup) {
         openPopup.forEach((item) => {
@@ -445,6 +453,44 @@ if(document.getElementById("map")){
     };
 
 })();
+
+const filterButton = document.querySelectorAll('.js-filters__button');
+const filterItems = document.querySelectorAll('.js-employers__item');
+
+if (filterButton) {
+    const setItemsStyle = (items, style) => {
+        items.style.display = style;
+    };
+    const filterAct = (e) => {
+        const current = e.currentTarget;
+        const dataFilter = current.getAttribute('data-filter-info');
+        if (dataFilter) {
+            const filtersItemCurrent = document.querySelectorAll(`[data-filter='${dataFilter}']`);
+            filterItems.forEach((item) => {
+                setItemsStyle(item, 'none')
+            });
+            filtersItemCurrent.forEach((item) => {
+                setItemsStyle(item, 'block')
+            });
+        } else {
+            filterItems.forEach((item) => {
+                setItemsStyle(item, 'block')
+            });
+        }
+    };
+    filterButton.forEach((item) => {
+        item.addEventListener('click', filterAct)
+    });
+
+    const filterBox = document.querySelector('.js-filter-box');
+
+    if (filterBox) {
+        const filterItem = filterBox.querySelectorAll('.js-filter-item');
+        filterItem.forEach((item,index) => {
+            item.style.zIndex = `${filterItem.length - index}`
+        })
+    }
+}
 document.addEventListener('DOMContentLoaded', function() {
     function resizeWatcher() {
         var tableSel = document.querySelectorAll('table');
@@ -496,7 +542,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
         specialSlider.forEach(function(item) {
                  new Swiper(item, {
                     speed: 1200,
-                    spaceBetween: 150,
                     slidesPerView: 1,
                     autoHeight: true,
                     loop: true,
@@ -507,36 +552,57 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     breakpoints: {
                         // when window width is >= 320px
                         768: {
-                          slidesPerView: 3,
+                          slidesPerView: 2,
+                          spaceBetween: 50,
                         },
-                        1024: {
+                        1336: {
                             slidesPerView: 3,
+                            spaceBetween: 150
                         }
                       }
                 })
         })
     }
 })
-document.querySelectorAll('.js-open-faq').forEach((item) => {
-    item.addEventListener('click', (e) => {
-        e.currentTarget.classList.toggle('active')
-    })
-});
+const faqItem = document.querySelectorAll('.js-faq-item');
+const faqButtonAll = document.querySelectorAll('.js-open-faq')
+
+if (faqItem) {
+    faqItem.forEach((item, index) => {
+        item.setAttribute('style', `z-index: ${index + 1}`);
+        const faqButton = item.querySelector('.js-open-faq');
+        faqButton.addEventListener('click', (e) => {
+            faqButtonAll.forEach((item) => {
+                item.classList.remove('active');
+            });
+            faqItem.forEach((item) => {
+                item.classList.remove('active');
+            });
+            if(!e.currentTarget.classList.contains('active')) {
+                e.currentTarget.classList.add('active');
+                e.currentTarget.closest('.js-faq-item').classList.add('active');
+            } else {
+                e.currentTarget.classList.remove('active');
+                e.currentTarget.closest('.js-faq-item').classList.remove('active');
+            }
+        });
+    });
+}
 const form = document.querySelectorAll('.js-form');
 
-const cleaveMaskPhone = document.querySelectorAll('.js-phone-mask')
+// const cleaveMaskPhone = document.querySelectorAll('.js-phone-mask')
 
-if (cleaveMaskPhone) {
-    cleaveMaskPhone.forEach((item) => {
-        item.addEventListener('focus', (e) => {
-            new Cleave(e.currentTarget, {
-                phone: true,
-                phoneRegionCode: 'ru',
-                prefix: '+7'
-            });
-        })
-    });
-};
+// if (cleaveMaskPhone) {
+//     cleaveMaskPhone.forEach((item) => {
+//         item.addEventListener('focus', (e) => {
+//             new Cleave(e.currentTarget, {
+//                 phone: true,
+//                 phoneRegionCode: 'ru',
+//                 prefix: '+7'
+//             });
+//         })
+//     });
+// };
 
 if (form) {
     
@@ -555,9 +621,9 @@ if (form) {
             function noErrors(elem){
                 let elemParent = elem.parentElement;
                 console.log(elemParent)
-                while(!elemParent.classList.contains("form__group")){
-                    elemParent = elemParent.parentElement;
-                };
+                // while(!elemParent.classList.contains("form__item")){
+                //     elemParent = elemParent.parentElement;
+                // };
                 if(elemParent.classList.contains("js-valid-error")){
                     elemParent.classList.remove("js-valid-error");
                 };
@@ -605,7 +671,7 @@ if (form) {
                 }
     
                 switch(elemType){
-    
+
                     // Для инпутов
                     case "text":
                         if(formElems[i].value == ""){ 
@@ -677,7 +743,6 @@ if (form) {
                 for(let i = 0; i < validErrors.length; i++){
     
                     let elemParent = validErrors[i].parentElement;
-                    console.log(elemParent);
 
                     while(!elemParent.classList.contains("form__item")){
                         elemParent = elemParent.parentElement;
@@ -692,11 +757,7 @@ if (form) {
         form.forEach((item) => {
             item.addEventListener('submit', validationCheck)
         });
-        
-
-
     
-
 
     const formItem = document.querySelectorAll('.form__input');
 
@@ -705,7 +766,6 @@ if (form) {
             e.currentTarget.closest('.form__item').classList.add('active');
         });
         item.addEventListener('blur', (e) => {
-            console.log(e.currentTarget.value)
             if (!e.target.value) {
                 e.currentTarget.closest('.form__item').classList.remove('active');
             }
@@ -729,15 +789,19 @@ if (windowWidth > 768) {
 }
 document.addEventListener('DOMContentLoaded', () => {
     const openCatalogButton = document.querySelector('.js-open-catalog');
-
     if (openCatalogButton) {
+       
+
         const openCatalog = (e) => {
-            document.querySelector('.js-menu-catalog').classList.add('active')
+            document.querySelector('.js-menu-catalog').classList.add('active');
+            addHiddenBody(document.querySelector('.content'))
         }
+
         openCatalogButton.addEventListener('click', openCatalog);
 
         document.querySelector('.js-close-catalog').addEventListener('click', (e) => {
-            e.currentTarget.closest('.menu__catalog').classList.remove('active')
+            e.currentTarget.closest('.menu__catalog').classList.remove('active');
+            removeHiddenBody(document.querySelector('.content'))
         });
     }
 
@@ -799,7 +863,6 @@ if (quizStep.length) {
     });
 
     quizStep[0].classList.add('active');
-    console.log(quizStep.length)
 
     document.querySelector('.js-quiz-all').innerHTML = quizStep.length
     
@@ -831,7 +894,6 @@ if (quizStep.length) {
 
     const resultButton = document.querySelectorAll('.js-slide-button');
     resultButton.forEach((item, index) => {
-        console.log(item)
         item.style.zIndex = `${resultButton.length - index}`
     });
 }
@@ -843,6 +905,7 @@ if (popup) {
     const openPopup = (e) => {
         let dataPopup = e.currentTarget.getAttribute('data-open');
         document.querySelector(`[data-popup='${dataPopup}']`).classList.add('active');
+        addHiddenBody(document.querySelector('.content'));
     }
 
     popup.forEach((item) => {
@@ -852,29 +915,50 @@ if (popup) {
     popupClose.forEach((item) => {
         item.addEventListener('click', (e) => {
             e.currentTarget.closest('.popup').classList.remove('active');
-        } )
+            removeHiddenBody(document.querySelector('.content'))
+        });
     })
 }
 
-const sectionBird = document.querySelector('.section__bird');
 
-if (sectionBird) {
-    const pens = sectionBird.querySelectorAll('.section__bird-item');
-    const blockPosition = sectionBird.scrollHeight;
+const gallery = document.querySelectorAll('.js-gallery');
 
-    document.addEventListener('scroll', (e) => {
-        const scroll = window.pageYOffset;
-        console.log((blockPosition - 300), scroll)
-        if (scroll > (blockPosition - 800)) {
-            pens.forEach((item,index) => {
-                item.classList.add(`section__bird-item--${ index + 1 }`)
-            });
-            setTimeout(() => {
-                pens.forEach((item) => {
-                    item.classList.add(`active`)
-                });
-            }, 2000)
+if (gallery) {
+    gallery.forEach( (item)=> {
+        lightGallery(item); 
+
+        const itemGallery = item.querySelectorAll('.gallery__item');
+
+        const youTubeLink = 'youtube';
+        const mapLink = 'google.com/maps';
+
+        const isVideo = (href) => href.includes(youTubeLink);
+        const isMap = (href) => href.includes(mapLink);
+    
+
+        itemGallery.forEach((item) => {
+            const href = item.getAttribute('href');
+            if (isVideo(href)) {
+                item.classList.add('gallery__item--video');
+            };
+
+            if (isMap(href)) {
+                item.classList.add('gallery__item--map');
+            };
+        })
+    })
+}
+const searchInput = document.querySelectorAll('.js-search-input');
+const searchButton = document.querySelector('.form__search-button');
+
+if (searchInput) {
+    searchInput.forEach((item) => {
+
+        const buttonVisible = (e) => {
+            const inputValue = e.currentTarget.value;
+            inputValue ? searchButton.removeAttribute('disabled') : searchButton.setAttribute('disabled', true);
         };
         
-    })
+        item.addEventListener('input', buttonVisible);
+    });
 }

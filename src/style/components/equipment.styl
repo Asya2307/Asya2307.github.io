@@ -3,13 +3,21 @@
     &__box 
         display flex
         flex-direction column
-    
+    &--inside
+        margin-top -24px
+        .infobox__title
+            margin-bottom 23px
     &__title 
         font-size 50px
-        margin-top -10px
-    @media tablet-hor
+        margin-top -2px
+        font-weight 300
+        margin-bottom 5px
+    @media phone-portrait
         &__title 
-            font-size 36px
+            font-size 45px
+    @media phone
+        &__title 
+            font-size 32px
     &__list 
         display flex
         flex-wrap wrap 
@@ -17,6 +25,7 @@
         padding 0
         margin-left -24px
         margin-right -24px
+        margin-top 0
     @media tablet-landscape-large
         &__list 
             margin-left 0
@@ -25,7 +34,7 @@
         position relative
         width calc(100%/3 - 48px)
         margin 35px 24px 35px 24px 
-        border-top 1px solid rgba(0,0,0,0.25)
+        border-top 1px solid #e7e7e7
         &--half 
             width calc(100%/2 - 48px)
     @media tablet-landscape-large
@@ -49,14 +58,17 @@
             .equipment__tooltip-inner
                 opacity 1
         &--row 
-            padding-right 40px
+            padding 35px 49px 32px 40px
             display flex
             align-items flex-start
             justify-content space-between
-        @media phone-portrait
+        @media tablet-landscape-medium
             &--row 
                 flex-direction column 
                 align-items flex-start
+                .equipment__link-title
+                    max-width 100%
+                    margin-bottom 10px
         &-title 
             max-width 70%
             width 100%
@@ -75,22 +87,28 @@
             left 0
             position absolute
             opacity 0
-    @media phone-portrait
+            transition opacity .6s
+            z-index 1
+    @media tablet-landscape-medium
         &__tooltip 
-            width 100%
-            margin-top 20px
-            &-inner
-                position unset
-                opacity 1
+            display none
     &__head
         display flex
         justify-content space-between
         align-items center
         .equipment__title
             margin-bottom 0
+    @media phone-portrait
+        &__head
+            flex-direction: column
+            margin-bottom 20px
+            align-items flex-start
+            .equipment__title
+                margin-bottom 20px
     &__wrap 
         &--inside 
             margin-top 80px
+            
 
 
 

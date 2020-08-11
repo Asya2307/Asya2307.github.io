@@ -18,4 +18,15 @@
 //= partials/content.js
 // Фильтры
 //= partials/special.js
+// Faq
+//= partials/faq.js
+// Validation
+//= partials/validation.js
+// Validation
+//= partials/equipment.js
+// Scroll menu
+//= partials/menu-catalog.js
+// Tabs
+//= partials/tabs.js
 "use strict";
+//# sourceMappingURL=script.dev.js.map

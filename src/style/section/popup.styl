@@ -1,0 +1,71 @@
+.popup
+    display flex
+    align-items center
+    justify-content center
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 10000
+    width: 0
+    height: 100vh
+    overflow: hidden
+    transition: width 0s 2s ease
+    &:before 
+        content: ""
+        position: absolute
+        top: 0
+        left: -100%
+        -webkit-transform: translateX(-50%) skew(-22deg)
+        transform: translateX(-50%) skew(-22deg)
+        width: 150%
+        height: 100%
+        background-color: #5c2d32
+        transition: left 1.5s 0.5s ease
+    &--main
+        &:after 
+            content: ""
+            position: absolute
+            width 555px
+            height 352px
+            bottom 0
+            left 0
+            right 0
+            margin-left auto
+            margin-right auto
+            background-image url(../images/pattern-popup.png)
+            opacity 0
+            transition: opacity 1s 0s ease
+        .swiper-slide 
+            display flex
+            align-items center
+            justify-content center
+        
+    &.active
+        width: 100%
+        transition: width 0s 0s ease
+        &:before
+            left: 50%
+            transition: left 1.5s 0s ease
+        .form__wrap--popup
+            opacity 1
+            transition: opacity 2s 1s ease
+        .popup__close--main 
+            opacity 1
+            transition: opacity 2s 1s ease
+        &:after 
+            opacity 1
+            transition: opacity 0.3s 2s ease
+@media tablet-landscape-small 
+    .popup
+        &:before 
+            left: -200%
+            width: 250%
+@media phone
+    .popup 
+        &:before 
+            left: -150%
+            width: 250%
+
+
+
+

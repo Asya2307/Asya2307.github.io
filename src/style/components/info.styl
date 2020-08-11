@@ -1,9 +1,18 @@
 .infobox
-    margin-top 100px
+    margin-top 90px
     &__title
         font-size 50px
         line-height 54px
         font-weight 400
+        margin-bottom 46px
+    @media phone-portrait
+        &__title
+            font-size 45px
+    @media phone
+        &__title
+            font-size 32px
+            line-height 36px
+            text-align: center
     &__inner
         display flex
         flex-wrap wrap 
@@ -25,8 +34,8 @@
         border-top: 1px solid #e7e7e7
         &--part 
             width calc(100%/3 - 48px)
-            margin: 24px
-            padding 32px 49px 0px 30px
+            margin: 0 24px
+            padding 32px 49px 24px 30px
             font-size 26px
             line-height 30px
             margin-bottom 0
@@ -37,10 +46,99 @@
             flex-wrap wrap
             font-size 26px
             width calc(100%/2 - 48px)
+        &--backdrop
+            padding: 0
+            margin: 10px 24px
+    @media tablet-landscape-large
+        &__item 
+            padding: 20px 0
+            &--half 
+                width 100%
+                margin-left 0
+                margin-right 0
+    
+                
+    &__link 
+        color: black
+        text-decoration: none
+        border-bottom 1px solid transparent 
+        text-decoration: none
+        transition: border-bottom-color .3s
+        &--backdrop 
+            position relative
+            display block
+            padding 32px 49px 35px 30px
+            text-decoration: none
+            color: black
+            span 
+                position relative 
+                z-index 1
+            &:after
+                content '' 
+                position absolute
+                top -1px
+                left 0
+                display block
+                width 100%
+                height 0
+                transition: height .3s
+                background-color #fff
+            &:hover:after 
+                height 100%
+        &--row 
+            display flex
+            justify-content space-between
+            width 100%
+
+        &:hover
+            border-bottom-color rgba(56,47,45,0.25)
+    @media tablet-landscape-large
+        &__link
+            &--backdrop 
+                padding-left 10px
+                padding-right 10px
+
+    @media tablet-portrait
+        &__link 
+            font-size 26px
+            line-height 30px
+    @media phone
+        &__link 
+            &--row
+                flex-direction: column
+
+
     @media tablet-hor
         &__item 
             &--part 
                 width 100%
+                margin-left 0
+                margin-right 0
+                padding-left 0
+                padding-right 0
+    &__list 
+        font-family default
+        list-style-type none
+        padding-left 0
+        margin-top 15px
+        &-item
+            margin-bottom -1px
+            &:last-child
+                margin-bottom 0
+        &-link
+            text-decoration: none
+            span
+                color: black
+                font-weight 300
+                font-size 15px
+                transition: color .3s
+            &:hover
+                span 
+                    color gray-cherry
+
+    &--index 
+        margin-top 70px
+
 
 
             

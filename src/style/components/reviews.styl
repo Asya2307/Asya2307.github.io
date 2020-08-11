@@ -4,9 +4,14 @@
         display flex
         flex-wrap wrap 
         flex-direction column
+    &--problem
+        margin-top 62px
+        .block__title
+            margin-top 0
+            margin-bottom 60px
 
     &__item
-        padding: 50px 59px
+        padding: 37px 59px 50px 59px
         margin-bottom 12px
         background-color white
 
@@ -20,11 +25,19 @@
         p
             font-size 24px
             line-height 32px
+            margin 0 0 24px 0
+            &:last-child
+                margin-bottom 0
+    @media phone 
+        &__text 
+            p
+                font-size 20px
+                line-height 24px
     &__bottom
         display flex
         align-items center
         justify-content space-between
-        margin-top 37px
+        margin-top 40px
     @media tablet-hor
         &__bottom
             flex-direction column
@@ -34,20 +47,26 @@
         flex-wrap wrap
         &-item
             border-radius 17px
-            border 1px solid #e7e7e7
+            border 1px solid #F0F0EF
             margin-right 12px
-            font-size 12px
-            line-height 13px
+            font-size 14px
+            line-height 15px
             padding 9px 18px
             text-decoration none
             color #382f2d
             font-family default
+            transition: .3s
             &:last-child
                 margin-right 0
+            &:hover 
+                background-color #F0F0EF
+                border-color #F0F0EF
+    @media laptop
+        &__tags
+            &-item 
+                font-size 13px
     @media tablet-hor
         &__tags
-            flex-direction column
-            align-items flex-start
             &-item 
                 margin-bottom 20px
     &__info

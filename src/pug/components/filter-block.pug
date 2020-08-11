@@ -1,0 +1,64 @@
+section.filter__container
+    form.filter
+        .filter__inner 
+            .filter__box 
+                span.filter__box-title Пол
+                .filter__check-inner 
+                    .form__checkbox.form__checkbox--filter
+                        .custom__checkbox-wrap--filter
+                            input(type="checkbox").custom__checkbox.custom__checkbox--dark
+                            label.custom__checkbox-label
+                                input(type="checkbox" name="checkbox").custom__checkbox.custom__checkbox--dark
+                                span.custom__checkbox-check.custom__checkbox-check--dark
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                span.custom__checkbox-info.custom__checkbox-info--dark Женский
+                    .form__checkbox.form__checkbox--filter
+                        .custom__checkbox-wrap--filter
+                            input(type="checkbox").custom__checkbox.custom__checkbox--dark
+                            label.custom__checkbox-label
+                                input(type="checkbox" name="checkbox").custom__checkbox.custom__checkbox--dark
+                                span.custom__checkbox-check.custom__checkbox-check--dark
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                span.custom__checkbox-info.custom__checkbox-info--dark Мужской
+            .filter__box--full.js-filter-box
+                .form__item.form__item--half.form__item--filter.js-filter-item
+                    .location__select-wrapper.location__select-wrapper--full
+                        select.location__select(data-choices-black)
+                            option(value="problem-01")
+                                |Все проблемы
+                            option(value="problem-02")
+                                |Проблема1
+                            option(value="problem-03")
+                                |Проблема2
+                            option(value="problem-04")
+                                |Проблема3
+                .form__item.form__item--half.form__item--filter.js-filter-item 
+                    .location__select-wrapper.location__select-wrapper--full
+                        select.location__select(data-choices-black)
+                            option(value="problem-01")
+                                |Все услуги
+                            option(value="problem-02")
+                                |Услуга1
+                            option(value="problem-03")
+                                |Услуга2
+                            option(value="problem-04")
+                                |Услуга3
+                .form__item.form__item--half.form__item--filter.js-filter-item 
+                    input(type="text" placeholder="Препарат").form__input.form__input--dark.form__input--filter.form__input--left
+                .form__item.form__item--half.form__item--filter.js-filter-item
+                    .location__select-wrapper.location__select-wrapper--full
+                        select.location__select(data-choices-black)
+                            option(value="apparatus-01")
+                                |Все аппараты
+                            option(value="apparatus-02")
+                                |Апарат1
+                            option(value="apparatus-03")
+                                |Апарат2
+                            option(value="apparatus-04")
+                                |Апарат3 
+        .filter__button 
+            .filter__button-item
+                button.common__button Сбросить
+            .filter__button-item
+                button.common__button.common__button--gray-cherry Применить
+                    

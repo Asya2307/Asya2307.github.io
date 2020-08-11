@@ -3,12 +3,15 @@
     align-items flex-start
     position relative
     background-color #ffffff
+    &__wrap 
+        margin-top 73px
     &__image
         position absolute
         bottom 0
         right 190px
         img
             display block
+    
     &__inner
         display flex
         align-items flex-start
@@ -28,28 +31,45 @@
         padding: 0
         margin-top 157px
         &-link
+            position relative
             color: black
             display flex
             align-items center
             text-decoration none
             font-family default
             font-size 15px
-            &--sound
-                &:before
-                    content: ''
-                    display block
-                    width 29px
-                    height 29px
-                    background-image url(../images/sound.png)
-                    border-radius 50%
-                    background-position center
-                    background-repeat no-repeat
-                    border 1px solid #000000
-                    margin-right 10px
+            transition: color .3s
+            & span:after
+                content: "";
+                position: absolute;
+                top: 19px;
+                left: 0;
+                display: block;
+                width: 0;
+                height: 1px;
+                background-color: #382f2d;
+                opacity: 0.25;
+                -webkit-transition: width 0.5s 0s ease;
+                transition: width 0.5s 0s ease;
+            span 
+                position relative
+            &:hover span:after
+                width 100%
         &-item
             margin-right 30px
             &:last-child
                 margin-right 0
+        &-icon 
+            width 29px
+            height 29px
+            margin-right 10px
+    @media screen and (max-width: 1280px)
+        &__info 
+            flex-direction column
+            align-items flex-start
+            margin-top 30px
+            &-item
+                margin-bottom 15px
     &__name 
         display flex
         align-items flex-start
@@ -67,6 +87,39 @@
         width 563px
         height 425px
         background-image url(../images/pattern-prm.png)
+@media tablet-landscape-small
+    .expert
+        &__inner 
+            padding-left 10px
+            padding-right 10px
+        &__info
+            &--mobile 
+                display block
+        &__name
+            &-wrap 
+                position relative
+                transform: none
+                margin-top 40px
+                margin-bottom 30px
+                &--desctop 
+                    display none
+        &__image 
+            width 200px
+            height 200px
+            top 40px
+            right 70px
+            overflow hidden
+            border-radius: 50%
+            &--desctop 
+                display none
+            img 
+                display block
+                object-fit: fill 
+                width 100%
+            &--mobile
+                position unset
+        &__pattern 
+            display none
     
                 
 

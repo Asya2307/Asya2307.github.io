@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
               nextEl: item.querySelector('.action__slider-arrow--left'),
               prevEl: item.querySelector('.action__slider-arrow--right'),
             },
-            autoHeight: false
           });
         })
       }

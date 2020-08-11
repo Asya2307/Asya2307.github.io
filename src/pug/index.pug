@@ -6,6 +6,7 @@ html(lang="ru")
         link(rel="stylesheet" href="style/normalize.css" type="text/css")
         link(rel="stylesheet" href="style/swiper.css" type="text/css")
         link(rel="stylesheet" href="style/choices.css" type="text/css")
+        link(rel="stylesheet" href="style/lightbox.css" type="text/css")
         link(rel="stylesheet" href="style/main.css" type="text/css")
         title Центр косметологии Jeternel
     body.content.js-intro-is-shown
@@ -31,7 +32,7 @@ html(lang="ru")
                                 button.helpers__button
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
-                                button.helpers__button.helpers__button--special
+                                button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                                     svg(width="26" height="22")
                                         use(xlink:href="#glass-icon")
                     div.burger-menu__bottom
@@ -175,7 +176,7 @@ html(lang="ru")
                     button.helpers__button
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
-                    button.helpers__button.helpers__button--special
+                    button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                         svg(width="26" height="22")
                             use(xlink:href="#glass-icon")
         main.main
@@ -517,11 +518,11 @@ html(lang="ru")
                         p
                             |Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
                     div.advantages__buttons
-                        button.common__button.common__button--gray-cherry.common__button--with-icon.advantages__button
+                        button.common__button.common__button--gray-cherry.common__button--with-icon.advantages__button(data-open="conslt-whidth-info-free")
                             svg(width="29" height="28")
                                 use(xlink:href="#dialogue-icon")
                             |Получить бесплатную консультацию
-                        button.common__button.common__button--gray-cherry.advantages__button
+                        button.common__button.common__button--gray-cherry.advantages__button.js-open-main-popup(data-open="consult")
                             |Записаться на прием
             section.location
                 h4.common__hidden-heading
@@ -566,10 +567,12 @@ html(lang="ru")
                                     |+7 351 225-75-10
                                 span.location__work-time
                                     |c 09:00 до 21:00
-                    button.common__button.location__button
+                    button.common__button.location__button(data-open="order-call")
                         |Заказать обратный звонок
         //= partials/footer.pug
         div.intro-curtain
+        include components/cookies.pug
+        include components/popups.pug
         script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
         script(src="script/vendor.js" type="text/javascript")
         script(src="script/script.js" type="text/javascript")

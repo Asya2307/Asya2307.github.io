@@ -34,6 +34,21 @@
                 },
             });
         };
+
+        let choicesWhite = document.querySelectorAll("[data-choices-white]");
+        for (i = 0; i < choicesWhite.length; ++i) {
+            let choicesItem = choicesWhite[i];
+            new Choices(choicesItem, {
+                silent: false,
+                searchEnabled: false,
+                resetScrollPosition: true,
+                classNames: {
+                    containerOuter: "choices choices--white",
+                    containerInner: "choices__inner choices__inner--white",
+                    item: "choices__item choices__item--white",
+                },
+            });
+        };
     });
 
 })();

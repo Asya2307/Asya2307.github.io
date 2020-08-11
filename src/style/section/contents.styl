@@ -30,31 +30,50 @@
                 border-bottom-color transparent
     @media phone 
         &__link
-            font-size 28px
+            font-size 28px;
+            line-height 32px
     &__info 
         display block
         font-size 15px
         font-family default
         margin-top 20px
-@media tablet-landscape-small
+        line-height 25px
+@media laptop
     .contacts
-        margin-left 0
-        margin-right 0
+        margin-left -40px
+        margin-right -40px 
+        &__item 
+            width calc(100%/2 - 80px)
+            margin-left 40px
+            margin-right 40px
+@media tablet-portrait
+    .contacts
+        margin-left 0px
+        margin-right 0px 
+        &__item 
+            width 100%
+            margin-left 0px
+            margin-right 0px
 
 .requisites
     font-family serif
-    margin-top 93px
-    margin-bottom 55px
+    margin-bottom: 53px;
     &__title
         font-size 36px
         font-family serif
+        font-weight 300
+    @media phone
+        &__title
+            font-size 32px
+            line-height 36px
+            text-align: center
     &__list 
         display flex
         flex-wrap wrap
         align-items center
         padding 0
-        margin-top 76px
-    @media tablet-hor
+        margin-top 55px
+    @media phone
         &__list 
             flex-direction column 
             align-items flex-start
@@ -67,10 +86,14 @@
         &-title 
             padding-right 10px
             color middle-gray
-    @media tablet-hor
+            white-space: nowrap
+    @media phone
         &__item 
             flex-direction column 
             align-items flex-start
+@media phone 
+    .requisites
+        margin-top -30px
 
 
 

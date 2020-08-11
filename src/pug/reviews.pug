@@ -7,6 +7,7 @@ html(lang="ru")
         link(rel="stylesheet" href="style/normalize.css" type="text/css")
         link(rel="stylesheet" href="style/swiper.css" type="text/css")
         link(rel="stylesheet" href="style/choices.css" type="text/css")
+        link(rel="stylesheet" href="style/lightbox.css" type="text/css")
         link(rel="stylesheet" href="style/main.css" type="text/css")
         title Центр косметологии Jeternel
     body.content.js-intro-is-shown
@@ -19,20 +20,20 @@ html(lang="ru")
                         use(xlink:href="#logo-sign")
                 div.burger-menu__container
                     div.burger-menu__top
-                        div.logo.burger-menu__logo
+                        a(href="/index.html").logo.logo--inside.burger-menu__logo
                             svg(width="51" height="50")
                                 use(xlink:href="#logo-sign")
                             span.logo__description
                                 |Cеть медицинских центров косметологии Jeternel
                         aside.burger-menu__aside
                             div.helpers
-                                button.helpers__button
+                                button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
                                 button.helpers__button
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
-                                button.helpers__button.helpers__button--special
+                                button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                                     svg(width="26" height="22")
                                         use(xlink:href="#glass-icon")
                     div.burger-menu__bottom
@@ -147,7 +148,7 @@ html(lang="ru")
             div.burger.head__burger
                 div.burger__default
                 div.burger__crossed
-            div.logo
+            a(href="/index.html").logo.logo--inside
                 svg(width="51" height="50")
                     use(xlink:href="#logo-sign")
                 span.logo__description
@@ -170,19 +171,25 @@ html(lang="ru")
                 a.head__phone(href="tel:")
                     |+7 351 225-55-55
                 div.helpers
-                    button.helpers__button
+                    button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
                     button.helpers__button
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
-                    button.helpers__button.helpers__button--special
+                    button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                         svg(width="26" height="22")
                             use(xlink:href="#glass-icon")
         main.main
-            .container
-                .main__wrap--biggest
-                    include components/breadcumbs.pug
+            .main__wrap--biggest
+                .container
+                    section.breadcumbs
+                        ul.breadcumbs__list
+                            li.breadcumbs__item
+                                a.breadcumbs__link
+                                    span Главная
+                            li.breadcumbs__item
+                                span Отзывы
                     h1.main__title Отзывы
                     .filters
                         ul.filters__list
@@ -217,8 +224,8 @@ html(lang="ru")
                                     p Приходя в салон, всегда чувствуешь себя как дома.
                                 .reviews__bottom
                                     .reviews__tags
-                                        a(href="#").reviews__tags-item Jeternel на Воровского, 13
-                                        a(href="#").reviews__tags-item Вебер Наталья Андреевна
+                                        a(href="/").reviews__tags-item Jeternel на Воровского, 13
+                                        a(href="/").reviews__tags-item Вебер Наталья Андреевна
                                     .reviews__info 
                                         span Екатерина, 18.03.2020
                             .reviews__item
@@ -234,36 +241,44 @@ html(lang="ru")
                                     p Хочется отметить ее внимательность и грамотность. Она очень подробно расспросила меня, провела осмотр, задавала много уточняющих вопросов. Дала рекомендации по курсу коррекции выявленных проблем, посоветовала сдать некоторые анализы. Спасибо Вам огромное! Обязательно приду к вам за красотой!
                                 .reviews__bottom
                                     .reviews__tags
-                                        a(href="#").reviews__tags-item Jeternel на Комсомольском проспекте, 48
-                                        a(href="#").reviews__tags-item Консультация врача-косметолога
-                                        a(href="#").reviews__tags-item Гува Дженет Мурадовна
+                                        a(href="/").reviews__tags-item Jeternel на Комсомольском проспекте, 48
+                                        a(href="/").reviews__tags-item Консультация врача-косметолога
+                                        a(href="/").reviews__tags-item Гува Дженет Мурадовна
                                     .reviews__info 
                                         span Юлия, 08.05.2019
                         .see__more.see__more--center
                             button.common__button Показать еще
-                section.form__wrap.form__wrap--index
-                    form.form(action="").js-form
-                        .form__inner.form__inner--big
-                            span.form__title Оставить отзыв
-                            .form__box
-                                .form__container
-                                    .form__group.form__group--half
-                                        .form__item 
-                                            input(type="text" name="name" placeholder="Имя").form__input.form__input--left.required.js-input-name
-                                        .form__item
-                                            input(type="text" name="phone" placeholder="Телефон*").form__input.form__input--left.js-input-phone.js-phone-mask.required
-                                        .form__item
-                                            input(type="text" name="email" placeholder="Электронная почта*").form__input.form__input--left.required.js-input-email
-                                    .form__group.form__group--half
+            section.form__wrap.form__wrap--index
+                form.form(action="").js-form
+                    .form__inner.form__inner--big
+                        span.form__title Оставить отзыв
+                        .form__box
+                            .form__container
+                                ul.form__group.form__group--half
+                                    li.form__group-item
+                                        label.form__item(for="name")
+                                            input(type="text" data-req name="name" autocomplete="off").form__input.form__input--left
+                                            span.form__label.form__label--left Имя
+                                    li.form__group-item
+                                        label.form__item
+                                            input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask.form__input--left
+                                            span.form__label.form__label--left Телефон
+                                    li.form__group-item
+                                        label.form__item
+                                            input(type="text" data-req name="email" autocomplete="off").form__input.form__input--left
+                                            span.form__label.form__label--left Email
+                                ul.form__group.form__group--half
+                                    li.form__group-item
                                         .form__item.form__item-textarea
                                             textarea(name="textarea", cols="30", rows="10").form__textarea.required.js-input-textarea Текст отзыва *
-                                .form__checkbox
-                                    .custom__checkbox-wrap
-                                        input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
-                                        label.custom__checkbox-label Согласен на обработку персональных данных
-                                button.common__button.common__button--half.common__button--gray-cherry Отправить отзыв              
+                            .form__checkbox
+                                .form__item.custom__checkbox-wrap
+                                    input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                    label.custom__checkbox-label Согласен на обработку персональных данных
+                            button.common__button.common__button--half.common__button--gray-cherry Отправить отзыв             
         //= partials/footer.pug
         div.intro-curtain
+        include components/popups.pug
         script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
         script(src="script/vendor.js" type="text/javascript")
         script(src="script/script.js" type="text/javascript")
