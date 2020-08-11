@@ -14,7 +14,7 @@ if (popup) {
 
     popupClose.forEach((item) => {
         item.addEventListener('click', (e) => {
-            e.currentTarget.closest('.popup').classList.remove('active');
+            e.currentTarget.closest('.js-popup').classList.remove('active');
             removeHiddenBody(document.querySelector('.content'))
         });
     })
