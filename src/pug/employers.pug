@@ -29,7 +29,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -173,14 +173,14 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
                         svg(width="26" height="22")
                             use(xlink:href="#glass-icon")
         main.main
-            .main__wrap.main__wrap--big
+            .main__wrap.main__wrap--biggest
                 .container
                     section.breadcumbs
                         ul.breadcumbs__list
@@ -380,7 +380,7 @@ html(lang="ru")
                                             .employers__pattern-item.employers__pattern-item--2
                                             .employers__pattern-item.employers__pattern-item--3
             include components/form.pug 
-            .main__wrap--big
+            .main__wrap--biggest.main__wrap--pt0
                 .container
                     include components/sections.pug 
                     section.gallery

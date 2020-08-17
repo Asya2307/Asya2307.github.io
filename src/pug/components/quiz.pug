@@ -1,10 +1,11 @@
 section.quiz__wrap
-    .main__wrap.main__wrap--quiz
+    .quiz__backdrop 
+    button.btn__forward.js-btn(data-tab="prev" disabled) 
+        <svg xmlns="http://www.w3.org/2000/svg">
+            <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
+        </svg>
+    .main__wrap.main__wrap--biggest.main__wrap--quiz
         .quiz
-            button.btn__forward.js-btn(data-tab="prev" disabled) 
-                <svg xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
-                </svg>
             .quiz__count
                 span.quiz__count--current.js-quiz-current 1
                 span.quiz__count--all.js-quiz-all 
@@ -30,7 +31,7 @@ section.quiz__wrap
             .quiz__step.js-step
                     .quiz__part 
                         .quiz__top
-                            h2.quiz__title Какая проблема вас волнует?
+                            h2.quiz__title Какие признаки характерны для вашей проблемы?
                         .quiz__button-inner 
                             button.common__button.common__button--gray-cherry.quiz__button.js-btn.js-btn(data-tab="next" type="button")  Целлюлит
                             button.common__button.common__button--gray-cherry.quiz__button.js-btn.js-btn(data-tab="next" type="button") Жировые отложения
@@ -38,8 +39,8 @@ section.quiz__wrap
                             button.common__button.common__button--gray-cherry.quiz__button.js-btn.js-btn(data-tab="next" type="button") Избыточная масса тела
             .quiz__step.quiz__step--result.js-step
                 .quiz__part 
-                    .quiz__top
-                        h2.quiz__title Какая проблема вас волнует?
+                    .quiz__top.quiz__top--result
+                        h2.quiz__title Рекомендуемые технологии
                     .quiz__result-inner 
                         .quiz__result.js-slide-button
                             a(href="/problem-item.html").quiz__result-link Detox

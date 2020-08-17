@@ -11,20 +11,23 @@ section.popup.popup--main.js-popup.js-popup-scroll(data-popup="consult")
                                     ul.form__group(role="none")
                                         li.form__group-item
                                             label.form__item(for="name")
-                                                input(type="text" data-req name="name" autocomplete="off").form__input
+                                                input(type="text" data-req name="name" autocomplete="off").form__input.js-form-input
                                                 span.form__label Имя
                                         li.form__group-item
                                             label.form__item
-                                                input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask
+                                                input(type="text" data-req name="phone" autocomplete="off").form__input.js-form-input.js-input-phone.js-phone-mask
                                                 span.form__label Телефон
                                     .form__checkbox
-                                        .form__item.custom__checkbox-wrap
-                                            input(type="checkbox" data-req).custom__checkbox
-                                            label.custom__checkbox-label Согласен на обработку персональных данных
+                                        .custom__checkbox-wrap
+                                            label.custom__checkbox-label 
+                                                input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                                span.custom__checkbox-check
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                                span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
                                     button.common__button.common__button--gray-cherry(type="submit") Записаться
     .swiper-scrollbar
     button.popup__close--main.js-popup-close
-                        <svg xmlns="http://www.w3.org/2000/svg"><path d="M.01 23.282l11.285-11.284L.01.714.715.009 12 11.293 23.284.009l.705.705-11.284 11.284 11.284 11.284-.705.705L12 12.703.716 23.987z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg"><path d="M.01 23.282l11.285-11.284L.01.714.715.009 12 11.293 23.284.009l.705.705-11.284 11.284 11.284 11.284-.705.705L12 12.703.716 23.987z"/></svg>
 
 
 section.popup.popup--main.js-popup.swiper-container.js-popup-scroll(data-popup="consult-width-info")
@@ -52,16 +55,19 @@ section.popup.popup--main.js-popup.swiper-container.js-popup-scroll(data-popup="
                                     ul.form__group(role="none")
                                         li.form__group-item
                                             label.form__item(for="name")
-                                                input(type="text" data-req name="name" autocomplete="off").form__input
+                                                input(type="text" data-req name="name" autocomplete="off").form__input.js-form-input
                                                 span.form__label Имя
                                         li.form__group-item
                                             label.form__item
-                                                input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask
+                                                input(type="text" data-req name="phone" autocomplete="off").form__input.js-form-input.js-input-phone.js-phone-mask
                                                 span.form__label Телефон
                                     .form__checkbox
-                                        .form__item.custom__checkbox-wrap
-                                            input(type="checkbox" data-req).custom__checkbox
-                                            label.custom__checkbox-label Согласен на обработку персональных данных
+                                        .custom__checkbox-wrap
+                                            label.custom__checkbox-label 
+                                                input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                                span.custom__checkbox-check
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                                span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
                                     button.common__button.common__button--gray-cherry(type="submit") Записаться
     .swiper-scrollbar
     button.popup__close--main.js-popup-close
@@ -81,16 +87,19 @@ section.popup.popup--main.js-popup.js-popup-scroll(data-popup="order-call")
                                     ul.form__group(role="none")
                                         li.form__group-item
                                             label.form__item(for="name")
-                                                input(type="text" data-req name="name" autocomplete="off").form__input
+                                                input(type="text" data-req name="name" autocomplete="off").form__input.js-form-input
                                                 span.form__label Имя
                                         li.form__group-item
                                             label.form__item
-                                                input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask
+                                                input(type="text" data-req name="phone" autocomplete="off").form__input.js-form-input.js-input-phone.js-phone-mask
                                                 span.form__label Телефон
                                     .form__checkbox
-                                        .form__item.custom__checkbox-wrap
-                                            input(type="checkbox" data-req).custom__checkbox
-                                            label.custom__checkbox-label Согласен на обработку персональных данных
+                                        .custom__checkbox-wrap
+                                            label.custom__checkbox-label 
+                                                input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                                span.custom__checkbox-check
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                                span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
                                     button.common__button.common__button--gray-cherry(type="submit") Заказать
     .swiper-scrollbar
     button.popup__close--main.js-popup-close
@@ -110,24 +119,27 @@ section.popup.popup--main.js-popup.js-popup-scroll(data-popup="review")
                                         ul.form__group.form__group--half
                                             li.form__group-item
                                                 label.form__item(for="name")
-                                                    input(type="text" data-req name="name" autocomplete="off").form__input.form__input--left
+                                                    input(type="text" data-req name="name" autocomplete="off").js-form-input.form__input.form__input--left
                                                     span.form__label.form__label--left Имя
                                             li.form__group-item
                                                 label.form__item
-                                                    input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask.form__input--left
+                                                    input(type="text" data-req name="phone" autocomplete="off").js-form-input.form__input.js-input-phone.js-phone-mask.form__input--left
                                                     span.form__label.form__label--left Телефон
                                             li.form__group-item
                                                 label.form__item
-                                                    input(type="text" data-req name="email" autocomplete="off").form__input.form__input--left
+                                                    input(type="text" data-req name="email" autocomplete="off").js-form-input.form__input.form__input--left
                                                     span.form__label.form__label--left Email
                                         ul.form__group.form__group--half
                                             li.form__group-item
                                                 .form__item.form__item-textarea
-                                                    textarea(name="textarea", cols="30", rows="10").form__textarea.required.js-input-textarea Текст отзыва *
+                                                    textarea(name="textarea", cols="30", rows="10").form__textarea.required.js-input-textarea.js-form-input Текст отзыва *
                                     .form__checkbox
-                                        .form__item.custom__checkbox-wrap
-                                            input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
-                                            label.custom__checkbox-label Согласен на обработку персональных данных
+                                        .custom__checkbox-wrap
+                                            label.custom__checkbox-label 
+                                                input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                                span.custom__checkbox-check
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                                span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
                                     button.common__button.common__button--half.common__button--gray-cherry Отправить отзыв  
     .swiper-scrollbar
     button.popup__close--main.js-popup-close
@@ -159,16 +171,19 @@ section.popup.popup--main.js-popup.js-popup-scroll(data-popup="conslt-witdh-info
                                         ul.form__group(role="none")
                                             li.form__group-item
                                                 label.form__item(for="name")
-                                                    input(type="text" data-req name="name" autocomplete="off").form__input
+                                                    input(type="text" data-req name="name" autocomplete="off").form__input.js-form-input
                                                     span.form__label Имя
                                             li.form__group-item
                                                 label.form__item
-                                                    input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask
+                                                    input(type="text" data-req name="phone" autocomplete="off").form__input.js-form-input.js-input-phone.js-phone-mask
                                                     span.form__label Телефон
                                         .form__checkbox
-                                            .form__item.custom__checkbox-wrap
-                                                input(type="checkbox" data-req).custom__checkbox
-                                                label.custom__checkbox-label Согласен на обработку персональных данных
+                                            .custom__checkbox-wrap
+                                                label.custom__checkbox-label 
+                                                    input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                                    span.custom__checkbox-check
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                                    span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
                                         button.common__button.common__button--gray-cherry(type="submit") Записаться
     .swiper-scrollbar
     button.popup__close--main.js-popup-close
@@ -176,76 +191,77 @@ section.popup.popup--main.js-popup.js-popup-scroll(data-popup="conslt-witdh-info
 
 section.before-after__popup.swiper-container.js-popup.js-popup-scroll(data-popup="before-after")
     .swiper-wrapper 
+        button.btn__close.js-popup-close
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#382f2d" d="M.01 23.282l11.285-11.284L.01.714.715.009 12 11.293 23.284.009l.705.705-11.284 11.284 11.284 11.284-.705.705L12 12.703.716 23.987z"/></svg>
         .swiper-slide
             .main__wrap--big
                 .before-after__scroll
-                    h1.main__title Вакуумно-роликовый массаж. До и после
-                    .popup__info
-                        ul.popup__info-list
-                            li.popup__info-item
-                                span.popup__info-title Проблема
-                                a.popup__info-link 
-                                    span Возрастные изменения фигуры
-                            li.popup__info-item
-                                span.popup__info-title Пол
-                                a.popup__info-link 
-                                    span Женский
-                            li.popup__info-item
-                                span.popup__info-title Услуга
-                                a.popup__info-link 
-                                    span Механическая дермотония
-                            li.popup__info-item
-                                span.popup__info-title Аппарат
-                                a.popup__info-link 
-                                    span «5 в 1»
-                    .before-after__popup-container
-                        .before-after__part(style="background-image: url(images/before-after/01-before.jpg)")
-                            span.before-after__desc До
-                        .before-after__part(style="background-image: url(images/before-after/01-after.jpg)")
-                            span.before-after__desc После
-                    section.gallery
-                        .main__content.gallery__content
-                            h2.gallery__title Jeternel сегодня 
-                            ul.gallery__list
-                                li 
-                                    |Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний;
-                                li
-                                    |Комплексный сервис: от базового ухода до революционных косметологических новаций;
-                                li 
-                                    |Самое большое количество оригинального оборудования для эстетической медицины в Челябинске;
-                                li 
-                                    |Самый широкий выбор косметологических препаратов последнего поколения;
-                                li 
-                                    |Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира;
-                                li
-                                    |Высокий уровень сервиса в соответствии с мировыми стандартами.
-                            p Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
-                            p Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Комплексный сервис: от базового ухода до революционных косметологических новаций. Самое большое количество оригинального оборудования для эстетической медицины в Челябинске. Самый широкий выбор косметологических препаратов последнего поколения. Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
-                            p Все аппараты и косметические средства имеют необходимые лицензии, сертификаты качества и регистрационные удостоверения.
-                        .gallery__inner.js-gallery
-                            a(href="images/today/today1.png" style="background-image: url(images/today/today1.png)").gallery__item
-                                img(src="images/today/today1.png" alt="gallery1")
-                            a(href="images/today/today2.png" style="background-image: url(images/today/today2.png)").gallery__item
-                                img(src="images/today/today2.png" alt="gallery2")
-                            a(href="images/today/today3.png" style="background-image: url(images/today/today3.png)").gallery__item
-                                img(src="images/today/today3.png" alt="gallery3")
-                            a(href="images/today/today4.png" style="background-image: url(images/today/today4.png)").gallery__item
-                                img(src="images/today/today4.png" alt="gallery4")
-                            a(href="images/today/today5.png" style="background-image: url(images/today/today5.png)").gallery__item
-                                img(src="images/today/today5.png" alt="gallery5")
-                            a(href="images/today/today6.png" style="background-image: url(images/today/today6.png)").gallery__item
-                                img(src="images/today/today6.png" alt="gallery6")
-                            a(href="images/today/today7.png" style="background-image: url(images/today/today7.png)").gallery__item
-                                img(src="images/today/today7.png" alt="gallery7")
-                            a(href="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" style="background-image: url(images/today/today1.png)").gallery__item
-                                <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                    .popup__close
-                        button.common__button.common__button--gray-cherry.js-popup-close Закрыть
+                    .container
+                        h1.main__title.main__title--small Вакуумно-роликовый массаж. До и после
+                        .popup__info
+                            ul.popup__info-list
+                                li.popup__info-item
+                                    span.popup__info-title Проблема
+                                    a.popup__info-link 
+                                        span Возрастные изменения фигуры
+                                li.popup__info-item
+                                    span.popup__info-title Пол
+                                    a.popup__info-link 
+                                        span Женский
+                                li.popup__info-item
+                                    span.popup__info-title Услуга
+                                    a.popup__info-link 
+                                        span Механическая дермотония
+                                li.popup__info-item
+                                    span.popup__info-title Аппарат
+                                    a.popup__info-link 
+                                        span «5 в 1»
+                        .before-after__popup-container
+                            .before-after__part(style="background-image: url(images/before-after/01-before.jpg)")
+                                span.before-after__desc До
+                            .before-after__part(style="background-image: url(images/before-after/01-after.jpg)")
+                                span.before-after__desc После
+                        section.gallery
+                            .main__content.gallery__content
+                                ul.gallery__list
+                                    li 
+                                        |Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний;
+                                    li
+                                        |Комплексный сервис: от базового ухода до революционных косметологических новаций;
+                                    li 
+                                        |Самое большое количество оригинального оборудования для эстетической медицины в Челябинске;
+                                    li 
+                                        |Самый широкий выбор косметологических препаратов последнего поколения;
+                                    li 
+                                        |Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира;
+                                    li
+                                        |Высокий уровень сервиса в соответствии с мировыми стандартами.
+                                p Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                                p Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Комплексный сервис: от базового ухода до революционных косметологических новаций. Самое большое количество оригинального оборудования для эстетической медицины в Челябинске. Самый широкий выбор косметологических препаратов последнего поколения. Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
+                                p Все аппараты и косметические средства имеют необходимые лицензии, сертификаты качества и регистрационные удостоверения.
+                            .gallery__inner.js-gallery
+                                a(href="images/today/today1.png" style="background-image: url(images/today/today1.png)").gallery__item
+                                    img(src="images/today/today1.png" alt="gallery1")
+                                a(href="images/today/today2.png" style="background-image: url(images/today/today2.png)").gallery__item
+                                    img(src="images/today/today2.png" alt="gallery2")
+                                a(href="images/today/today3.png" style="background-image: url(images/today/today3.png)").gallery__item
+                                    img(src="images/today/today3.png" alt="gallery3")
+                                a(href="images/today/today4.png" style="background-image: url(images/today/today4.png)").gallery__item
+                                    img(src="images/today/today4.png" alt="gallery4")
+                                a(href="images/today/today5.png" style="background-image: url(images/today/today5.png)").gallery__item
+                                    img(src="images/today/today5.png" alt="gallery5")
+                                a(href="images/today/today6.png" style="background-image: url(images/today/today6.png)").gallery__item
+                                    img(src="images/today/today6.png" alt="gallery6")
+                                a(href="images/today/today7.png" style="background-image: url(images/today/today7.png)").gallery__item
+                                    img(src="images/today/today7.png" alt="gallery7")
+                                a(href="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" style="background-image: url(images/today/today1.png)").gallery__item
+                                    <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                        .popup__close
+                            button.common__button.common__button--gray-cherry.js-popup-close Закрыть
     .swiper-scrollbar
-    button.btn__close.js-popup-close
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#382f2d" d="M.01 23.282l11.285-11.284L.01.714.715.009 12 11.293 23.284.009l.705.705-11.284 11.284 11.284 11.284-.705.705L12 12.703.716 23.987z"/></svg>
+    
 
-section.popup.popup--main.js-popup.js-popup-scroll(data-popup="search")
+section.popup.popup--main.js-popup(data-popup="search")
     button.popup__close--main.js-popup-close
         <svg xmlns="http://www.w3.org/2000/svg"><path d="M.01 23.282l11.285-11.284L.01.714.715.009 12 11.293 23.284.009l.705.705-11.284 11.284 11.284 11.284-.705.705L12 12.703.716 23.987z"/></svg>
     .swiper-wrapper 

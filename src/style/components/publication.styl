@@ -1,11 +1,25 @@
 .publication 
+    margin-bottom -18px
+    &--main 
+        margin-bottom 100px;
     &__inner 
-        margin-top 90px
+        margin-top 60px
+        &--main
+            margin-bottom -18px
+        &--margin
+            margin-top 50px
+    @media tablet-landscape-small
+        &__inner
+            &--main
+                margin-bottom 40px
+
     &__container
         display flex
         flex-wrap wrap
         margin-left -24px
         margin-right -24px
+        margin-top 18px
+        
     @media tablet-landscape-medium
         &__container
             margin-left 0
@@ -14,10 +28,11 @@
         display flex
         align-items center
         justify-content space-between
-        margin-bottom 36px
+        
     @media phone-portrait
         &__top 
             flex-direction: column
+            align-items flex-start
     &__item
         width calc(100%/3 - 48px)
         margin-right 24px
@@ -28,7 +43,7 @@
             margin-right 0
         &--art
             position relative
-            margin-bottom 90px 
+            margin-bottom 112px 
     @media tablet-landscape-medium
         &__item
             width calc(100%/2 - 48px)
@@ -72,13 +87,13 @@
         line-height 23px
         letter-spacing 3.12px
         display block
-        margin-top 30px
+        margin-top 34px
         text-transform uppercase
     &__text 
         font-size 15px
         line-height 25px
         display block
-        margin-top 20px
+        margin-top 13px
         padding-left 50px
         padding-right 50px
     @media phone-portrait
@@ -93,7 +108,8 @@
                 img
                     transform: scale(1.05)
     & + .equipment__wrap
-        margin-top 26px
+        margin-top 100px
+        margin-bottom -50px
 
 .hidden-xs
     display block

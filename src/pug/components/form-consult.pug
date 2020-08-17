@@ -2,7 +2,7 @@ section.form__wrap
     form.form(action="").js-form
         .form__inner
             span.form__title Записаться на прием
-            .form__box
+            .form__box.form__box--consult
                 ul.form__group(role="none")
                     li.form__group-item
                         .form__item 
@@ -18,16 +18,19 @@ section.form__wrap
                                         |Онлайн-консультация5
                     li.form__group-item
                         label.form__item(for="name")
-                            input(type="text" data-req name="name" autocomplete="off").form__input
+                            input(type="text" data-req name="name" autocomplete="off").form__input.js-form-input
                             span.form__label Имя
                     li.form__group-item
                         label.form__item
-                            input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask
+                            input(type="text" data-req name="phone" autocomplete="off").form__input.js-input-phone.js-phone-mask.js-form-input
                             span.form__label Телефон
                 .form__checkbox
-                    .form__item.custom__checkbox-wrap
-                        input(type="checkbox" data-req).custom__checkbox
-                        label.custom__checkbox-label Согласен на обработку персональных данных
+                    .custom__checkbox-wrap
+                        label.custom__checkbox-label 
+                            input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                            span.custom__checkbox-check
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                            span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
                 button.common__button.common__button--gray-cherry(type="submit") Записаться
 
                  

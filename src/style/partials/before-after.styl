@@ -4,6 +4,7 @@
         .before-after-preview
             width 100%
             text-align left
+        
     &--index
         margin-bottom 200px
         @media laptop
@@ -24,28 +25,33 @@
             padding: 0 
             background-color transparent
             position relative
-            margin-top 123px
+            margin-top 88px
             .infobox__title 
                 padding-left 28px
         &--index 
             background-color transparent
             width 100%
-            padding-top 70px
+            padding-top 88px
+            padding-bottom 30px
+        
         @media desktop-medium
             width 100%
-        @media laptop
-            padding 62px 0 100px 0
-            &--slider
-                padding 0
-        @media tablet-portrait
-            &--slider
-                margin-top 0
-        @media phone
+        @media tablet-landscape-large
             &--index 
                 .before-after-preview__props
                     display flex
                     flex-direction: column 
                     align-items center
+        @media laptop
+            padding 62px 0 100px 0
+            &--slider
+                padding 0
+                .infobox__title 
+                    padding-left 0px
+        @media tablet-portrait
+            &--slider
+                margin-top 0
+           
 
     &__heading
         display block
@@ -120,8 +126,11 @@
             visibility visible
         .swiper-slide 
             height auto
+        .btn__close
+            right 37px
         &-container 
             display flex
+            margin-bottom 39px
         @media phone-portrait
             &-container 
                 flex-direction: column
@@ -153,6 +162,10 @@
         padding: 10px 18px
         bottom: 20px
         left 20px
+    &__item:hover
+        .common__button--hidden
+            opacity 1
+            visibility visible
 
 @media tablet-landscape-large
     .before-after

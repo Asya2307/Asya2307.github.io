@@ -348,9 +348,11 @@ if(document.getElementById("map")){
 
     function addMouseMoveListener(){
         if(document.documentElement.clientWidth > 1283){
+            
             let overlay = this.overlay;
             overlay.style.transition = "none";
             widthChange = setInterval(function(){
+                console.log(currentWidth, neededWidth)
                 if(currentWidth < neededWidth){
                     currentWidth = currentWidth + 1;
                     overlay.style.width = currentWidth + "%";
@@ -369,11 +371,6 @@ if(document.getElementById("map")){
 
     const openPopup = document.querySelectorAll('.js-open-popup');
 
-
-    // var swiper = new Swiper('.js-before-after-slider', {
-    //     slidesPerView: 3,
-    //     spaceBetween: 30,
-    // });
 
     if (openPopup) {
         openPopup.forEach((item) => {
@@ -759,7 +756,7 @@ if (form) {
         });
     
 
-    const formItem = document.querySelectorAll('.form__input');
+    const formItem = document.querySelectorAll('.js-form-input');
 
     formItem.forEach((item) => {
         item.addEventListener('focus', (e) => {
@@ -809,15 +806,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (popupScroll) {
         popupScroll.forEach((item) => {
-            new Swiper(item, {
-                direction: 'vertical',
-                slidesPerView: 'auto',
-                freeMode: true,
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-                mousewheel: true,
-            });
+                const scrollSwiper = new Swiper(item, {
+                    direction: 'vertical',
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                    },
+                    mousewheel: true,
+                    simulateTouch: false
+                });
         });
     };
 
@@ -854,7 +852,6 @@ if (cookiesShow) {
         e.target.closest('.cookies').classList.remove('active');
     })
 }
-
 const quizStep = document.querySelectorAll('.js-step');
 
 if (quizStep.length) {
@@ -905,7 +902,7 @@ if (popup) {
     const openPopup = (e) => {
         let dataPopup = e.currentTarget.getAttribute('data-open');
         document.querySelector(`[data-popup='${dataPopup}']`).classList.add('active');
-        addHiddenBody(document.querySelector('.content'));
+            addHiddenBody(document.querySelector('.content'));
     }
 
     popup.forEach((item) => {

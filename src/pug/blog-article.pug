@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -197,8 +197,8 @@ html(lang="ru")
                             li.breadcumbs__tem
                                 span Все публикации 
                     h1.main__title Все публикации
-                    section.publication
-                        .publication__inner 
+                    section.publication.publication--main 
+                        .publication__inner.publication__inner--main 
                             .publication__container.publication__container--articles
                                 .publication__item.publication__item--art
                                     a(href="#").publication__link

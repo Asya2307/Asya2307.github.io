@@ -4,7 +4,10 @@
         font-size 50px
         line-height 54px
         font-weight 400
-        margin-bottom 46px
+        margin-bottom 58px
+        &--part
+            margin-bottom 51px
+        
     @media phone-portrait
         &__title
             font-size 45px
@@ -12,7 +15,6 @@
         &__title
             font-size 32px
             line-height 36px
-            text-align: center
     &__inner
         display flex
         flex-wrap wrap 
@@ -20,14 +22,18 @@
             margin 0 -24px
         &--half
             justify-content space-between
+            margin 0 -24px
     @media tablet-hor
         &__inner 
             &--part 
                 margin-left 0
                 margin-right 0
+            &--half 
+                margin-left 0
+                margin-right 0
     &__item
         width 100%
-        padding: 45px 80px 45px 59px
+        padding: 45px 64px 50px 59px
         font-family serif 
         font-size 36px
         line-height 40px
@@ -48,7 +54,7 @@
             width calc(100%/2 - 48px)
         &--backdrop
             padding: 0
-            margin: 10px 24px
+            margin: 10px 24px 1px 24px
     @media tablet-landscape-large
         &__item 
             padding: 20px 0
@@ -56,8 +62,6 @@
                 width 100%
                 margin-left 0
                 margin-right 0
-    
-                
     &__link 
         color: black
         text-decoration: none
@@ -67,7 +71,7 @@
         &--backdrop 
             position relative
             display block
-            padding 32px 49px 35px 30px
+            padding 32px 49px 36px 49px
             text-decoration: none
             color: black
             span 
@@ -92,6 +96,9 @@
 
         &:hover
             border-bottom-color rgba(56,47,45,0.25)
+        &--nohover
+            &:hover
+                border-bottom-color transparent
     @media tablet-landscape-large
         &__link
             &--backdrop 
@@ -106,6 +113,9 @@
         &__link 
             &--row
                 flex-direction: column
+            &--backdrop 
+                padding-top 15px
+                padding-bottom 15px
 
 
     @media tablet-hor
@@ -131,13 +141,17 @@
                 color: black
                 font-weight 300
                 font-size 15px
-                transition: color .3s
+                transition: .3s
+                border-bottom 1px solid transparent
             &:hover
                 span 
-                    color gray-cherry
+                    border-bottom-color  rgba(56, 47, 45, .25)
 
     &--index 
-        margin-top 70px
+        margin-top 80px
+    &--apply
+        margin-top 170px
+    
 
 
 

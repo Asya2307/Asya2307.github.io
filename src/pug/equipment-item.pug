@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -224,7 +224,7 @@ html(lang="ru")
                                     a(href="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" style="background-image: url(images/today/today1.png)").gallery__item
                                         <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                
                     section.infobox
-                        h2.infobox__title В каких случаях применяется
+                        h2.infobox__title.infobox__title--part В каких случаях применяется
                         .infobox__inner.infobox__inner--part
                             .infobox__item.infobox__item--part.infobox__item--backdrop
                                 a(href="http://").infobox__link--backdrop
@@ -406,31 +406,108 @@ html(lang="ru")
                                     a.common__button-link(href="")
                                         |Прайс-лист
                                 ul.equipment__list
-                                    li.equipment__item.equipment__item--half
-                                        a(href="#").equipment__link.equipment__link--row 
+                                    li.equipment__item.equipment__item--half.infobox__item--backdrop
+                                        a(href="#").equipment__link.equipment__link--row.infobox__link--backdrop 
                                             span.equipment__link-title Аппарат газожидкостного пилинга «АтисМед»
                                             span.equipment__link-price от 1940 руб
-                                    li.equipment__item.equipment__item--half
-                                        a(href="#").equipment__link.equipment__link--row 
+                                    li.equipment__item.equipment__item--half.infobox__item--backdrop
+                                        a(href="#").equipment__link.equipment__link--row.infobox__link--backdrop 
                                             span.equipment__link-title Заполнение носогубных складок, складок на переносице, морщин вокруг губ
                                             span.equipment__link-price от 1980 руб
-                                    li.equipment__item.equipment__item--half
-                                        a(href="#").equipment__link.equipment__link--row 
+                                    li.equipment__item.equipment__item--half.infobox__item--backdrop
+                                        a(href="#").equipment__link.equipment__link--row.infobox__link--backdrop 
                                             span.equipment__link-title Объемное Моделирование щёк, скул, подбородка, углов нижней челюсти, височных областей
                                             span.equipment__link-price от 1279 руб
-                                    li.equipment__item.equipment__item--half
-                                        a(href="#").equipment__link.equipment__link--row 
+                                    li.equipment__item.equipment__item--half.infobox__item--backdrop
+                                        a(href="#").equipment__link.equipment__link--row.infobox__link--backdrop 
                                             span.equipment__link-title Увеличение и коррекция объёма губ
                                             span.equipment__link-price от 1590 руб
-                                    li.equipment__item.equipment__item--half
-                                        a(href="#").equipment__link.equipment__link--row 
+                                    li.equipment__item.equipment__item--half.infobox__item--backdrop
+                                        a(href="#").equipment__link.equipment__link--row.infobox__link--backdrop 
                                             span.equipment__link-title Коррекция носослезной борозды
                                             span.equipment__link-price от 590 руб
-                                    li.equipment__item.equipment__item--half
-                                        a(href="#").equipment__link.equipment__link--row 
+                                    li.equipment__item.equipment__item--half.infobox__item--backdrop
+                                        a(href="#").equipment__link.equipment__link--row.infobox__link--backdrop 
                                             span.equipment__link-title Коррекция атрофических рубцов
                                             span.equipment__link-price от 3850 руб
-                    include components/special.pug
+                    section.special.special--after
+                        span.block__title Специалисты
+                        .special__slider-inner
+                            .special__slider.js-special-slider.swiper-container
+                                .swiper-wrapper
+                                    .employers__item.employers__item--slider.swiper-slide
+                                        a(href="/").employers__link
+                                            .employers__img
+                                                img(src="../images/employers/e7.png", alt="")
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227.5"><path d="M375 25.5c-72.2 37.6-120.3 34-184.8.4C121.7-9.7 65.8-7.7 0 26.5v201h375v-202z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                                            span.employers__name Никулиина Екатерина Дмитриевна
+                                            span.employers__position Врач-косметолог
+                                        .employers__pattern
+                                            .employers__pattern-item.employers__pattern-item--1
+                                            .employers__pattern-item.employers__pattern-item--2
+                                            .employers__pattern-item.employers__pattern-item--3
+                                    .employers__item.employers__item--slider.swiper-slide
+                                        a(href="/").employers__link
+                                            .employers__img
+                                                img(src="../images/employers/e8.png", alt="")
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227.5"><path d="M375 25.5c-72.2 37.6-120.3 34-184.8.4C121.7-9.7 65.8-7.7 0 26.5v201h375v-202z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                                            span.employers__name Брюхова Надежда Александровна
+                                            span.employers__position Врач-косметолог, дерматовенеролог, преподаватель
+                                        .employers__pattern
+                                            .employers__pattern-item.employers__pattern-item--1
+                                            .employers__pattern-item.employers__pattern-item--2
+                                            .employers__pattern-item.employers__pattern-item--3
+                                    .employers__item.employers__item--slider.swiper-slide
+                                        a(href="/").employers__link
+                                            .employers__img
+                                                img(src="../images/employers/e4.png", alt="")
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227.5"><path d="M375 25.5c-72.2 37.6-120.3 34-184.8.4C121.7-9.7 65.8-7.7 0 26.5v201h375v-202z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                                            span.employers__name Герман Фарида Загитовна
+                                            span.employers__position Врач-дерматовенеролог
+                                        .employers__pattern
+                                            .employers__pattern-item.employers__pattern-item--1
+                                            .employers__pattern-item.employers__pattern-item--2
+                                            .employers__pattern-item.employers__pattern-item--3
+                                    .employers__item.employers__item--slider.swiper-slide
+                                        a(href="/").employers__link
+                                            .employers__img
+                                                img(src="../images/employers/e7.png", alt="")
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227.5"><path d="M375 25.5c-72.2 37.6-120.3 34-184.8.4C121.7-9.7 65.8-7.7 0 26.5v201h375v-202z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                                            span.employers__name Никулиина Екатерина Дмитриевна
+                                            span.employers__position Врач-косметолог
+                                        .employers__pattern
+                                            .employers__pattern-item.employers__pattern-item--1
+                                            .employers__pattern-item.employers__pattern-item--2
+                                            .employers__pattern-item.employers__pattern-item--3
+                                    .employers__item.employers__item--slider.swiper-slide
+                                        a(href="/").employers__link
+                                            .employers__img
+                                                img(src="../images/employers/e8.png", alt="")
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227.5"><path d="M375 25.5c-72.2 37.6-120.3 34-184.8.4C121.7-9.7 65.8-7.7 0 26.5v201h375v-202z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                                            span.employers__name Брюхова Надежда Александровна
+                                            span.employers__position Врач-косметолог, дерматовенеролог, преподаватель
+                                        .employers__pattern
+                                            .employers__pattern-item.employers__pattern-item--1
+                                            .employers__pattern-item.employers__pattern-item--2
+                                            .employers__pattern-item.employers__pattern-item--3
+                                    .employers__item.employers__item--slider.swiper-slide
+                                        a(href="/").employers__link
+                                            .employers__img
+                                                img(src="../images/employers/e4.png", alt="")
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 227.5"><path d="M375 25.5c-72.2 37.6-120.3 34-184.8.4C121.7-9.7 65.8-7.7 0 26.5v201h375v-202z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+                                            span.employers__name Герман Фарида Загитовна
+                                            span.employers__position Врач-дерматовенеролог
+                                        .employers__pattern
+                                            .employers__pattern-item.employers__pattern-item--1
+                                            .employers__pattern-item.employers__pattern-item--2
+                                            .employers__pattern-item.employers__pattern-item--3
+                            .slider__nav.slider__nav--em
+                                button.slider__nav-item.slider__nav-item--prev
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="35"><path fill="#382f2d" d="M.696 16.8L17.323.01l.693.699L1.39 17.499l16.626 16.79-.693.7L.697 18.2l-.693-.7z"/></svg>   
+                                button.slider__nav-item.slider__nav-item--next
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="35"><path fill="#382f2d" d="M.698 34.99l-.692-.7L16.602 17.5.006.708l.692-.7L17.985 17.5z"/></svg>
+
+
         //= partials/footer.pug
         div.intro-curtain
         include components/popups.pug

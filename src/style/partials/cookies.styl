@@ -32,8 +32,9 @@
     &__desc 
         color: #ffffff
         font-family default 
-        font-size: 14px
-        line-height: 24px
+        font-size: 15px
+        line-height: 19px
+        padding-right 20px
         a  
             color: #ffffff
             text-decoration: none 
@@ -41,7 +42,12 @@
             transition: .3s
             &:hover 
                 border-bottom-color transparent
+    @media laptop 
+         &__desc 
+            font-size 14px
+            line-height 18px
     @media tablet-portrait
         &__desc
            padding-bottom 20px
+           padding-right 0
 

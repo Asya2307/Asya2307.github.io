@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -190,20 +190,22 @@ html(lang="ru")
                                     span Главная
                             li.breadcumbs__item
                                 span Отзывы
-                    h1.main__title Отзывы
-                    .filters
+                    .faq__title-inner
+                        h1.main__title Отзывы
+                        button.common__button(data-open="order-call") Оставить отзыв
+                    .filters.filters--index
                         ul.filters__list
                             li.filters__item 
-                                a.filters__button 
+                                a(href="/").filters__button 
                                     span Все
                             li.filters__item 
-                                a.filters__button 
+                                a(href="/").filters__button 
                                     span О филиалах
                             li.filters__item 
-                                a.filters__button 
+                                a(href="/").filters__button 
                                     span О врачах
                             li.filters__item 
-                                a.filters__button 
+                                a(href="/").filters__button 
                                     span Об услугах
                     .filters__select 
                         .location__select-wrapper
@@ -256,26 +258,31 @@ html(lang="ru")
                             .form__container
                                 ul.form__group.form__group--half
                                     li.form__group-item
-                                        label.form__item(for="name")
-                                            input(type="text" data-req name="name" autocomplete="off").form__input.form__input--left
-                                            span.form__label.form__label--left Имя
+                                        label.form__item
+                                            input(type="text" data-req name="name" autocomplete="off").form__input.form__input--left.js-form-input
+                                            span.form__label Имя
                                     li.form__group-item
                                         label.form__item
-                                            input(type="text" data-req name="name" autocomplete="off").form__input.js-input-phone.js-phone-mask.form__input--left
-                                            span.form__label.form__label--left Телефон
+                                            input(type="text" data-req name="phone" autocomplete="off").form__input.js-input-phone.js-phone-mask.form__input--left.js-form-input
+                                            span.form__label Телефон
                                     li.form__group-item
                                         label.form__item
-                                            input(type="text" data-req name="email" autocomplete="off").form__input.form__input--left
-                                            span.form__label.form__label--left Email
+                                            input(type="text" data-req name="email" autocomplete="off").form__input.form__input--left.js-form-input
+                                            span.form__label Email
                                 ul.form__group.form__group--half
                                     li.form__group-item
-                                        .form__item.form__item-textarea
-                                            textarea(name="textarea", cols="30", rows="10").form__textarea.required.js-input-textarea Текст отзыва *
+                                        label.form__item.form__item-textarea
+                                            textarea(name="textarea", cols="30", rows="10" data-type="textarea" data-req).form__textarea.required.js-input-textarea.js-form-input
+                                            span.form__label Текст отзыва*
+
                             .form__checkbox
-                                .form__item.custom__checkbox-wrap
-                                    input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
-                                    label.custom__checkbox-label Согласен на обработку персональных данных
-                            button.common__button.common__button--half.common__button--gray-cherry Отправить отзыв             
+                                .custom__checkbox-wrap
+                                    label.custom__checkbox-label 
+                                        input(type="checkbox" name="checkbox").custom__checkbox.required.js-input-checkbox
+                                        span.custom__checkbox-check
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11"><path fill="#fff" d="M15.158.01l.83.835L5.9 10.985l-.254-.255-.254.255-5.38-5.413.83-.834 4.805 4.834z"/></svg>
+                                        span.custom__checkbox-info Согласен на обработку <a href="/">персональных данных</a>
+                            button.common__button.common__button--half.common__button--gray-cherry Отправить отзыв            
         //= partials/footer.pug
         div.intro-curtain
         include components/popups.pug

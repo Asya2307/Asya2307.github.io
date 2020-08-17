@@ -15,7 +15,7 @@
         &--half
             width calc(50% - 24px)
         &-item 
-            margin-bottom 50px
+            margin-bottom 47px
             &:last-child 
                 margin-bottom 0
             &:before 
@@ -30,7 +30,7 @@
     &__wrap
         background-color default-cherry
         position relative
-        padding: 70px 0
+        padding: 60px 0 74px 0
         &:after
             content ''
             position absolute
@@ -73,7 +73,9 @@
     &__box
         display flex
         flex-direction column
-        margin-top 60px
+        margin-top 57px
+        &--consult
+            margin-top: 43px
     &__title
         font-size 36px
         color white
@@ -91,7 +93,7 @@
        &:last-child
            margin-bottom 0
         &--half 
-            width 48%
+            width 47.4%
         &--filter
             margin-bottom 30px
         &.active .form__label 
@@ -102,6 +104,8 @@
             .form__label 
                 color: #ba8c58
             .form__input 
+                border-color: #ba8c58
+            .form__textarea 
                 border-color: #ba8c58
     @media phone 
         &__item
@@ -180,6 +184,14 @@
                 margin-bottom 0
                 &:last-child 
                     margin-right 0
+    @media phone
+        &__checkbox
+            &--filter
+                margin-bottom 20px
+                margin-right 0
+                &:last-child 
+                    margin-bottom 0px
+
     &__label 
         position absolute
         color white 
@@ -187,6 +199,8 @@
         font-family default 
         left 0
         right 0
+        top 0
+        white-space: nowrap
         width 100%
         height 100%
         text-align center
@@ -241,14 +255,13 @@
         justify-content center
         position relative
         margin-top 50px
-        margin-bottom 50px
+        margin-bottom 66px
         font-family serif
         &--filter
             margin: 0
             &:last-child 
                 margin-bottom 0
-        &:last-child
-            margin-bottom 50px
+        
     &-label 
         color white
         display block

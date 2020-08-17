@@ -10,7 +10,7 @@
             background-color default-cherry
             margin-bottom 42px
             padding-top 86px
-            padding-bottom 86px
+            padding-bottom 67px
             &:last-child 
                 margin-bottom 0
         @media tablet-hor
@@ -19,16 +19,32 @@
         &-box
             display flex
             align-items center
-            max-width 950px
+            padding-left 226px
+            padding-right 160px
             margin-left auto
             margin-right auto
             justify-content space-between
+        @media desktop-medium
+            &-box
+                padding-left 126px
+                padding-right 60px
+
+        @media laptop
+            &-box
+                padding-right 193px
+                padding-left 180px
+        @media tablet-landscape-large
+            &-box
+                padding-right 100px
+                padding-left 100px
         @media tablet-hor
             &-box 
                 flex-direction column
+                padding-left 0
+                padding-right 0
         &-img
             width 100%
-            max-width: 320px
+            min-width 320px
             &:after
                 content ''
                 float left 
@@ -40,10 +56,15 @@
         @media tablet-hor
             &-img 
                 margin-bottom 30px
+                min-width unset 
+                max-width 320px
         &-inner 
-            max-width 441px
+            padding-left 192px
             text-align center
             color white
+        @media laptop 
+            &-inner
+                padding-left 144px
         @media tablet-landscape-small
             &-inner
                 max-width 100%
@@ -51,6 +72,8 @@
         @media tablet-hor
             &-inner 
                 padding-left 0
+        &-wrap 
+            margin-top -4px
     &__info 
         display flex
         align-items center
@@ -81,18 +104,22 @@
             font-family serif
             font-size 26px
         &-danger 
-            display block
-            padding 20px 20px 18px 20px
-            font-family default
-            font-size 15px
-            line-height 25px
-            border 1px solid rgba(255,255,255,0.1)
-            margin-top 28px
+            display: block;
+            padding: 14px 15px 15px 17px;
+            font-family: "Helvetica-Neue";
+            font-size: 15px;
+            line-height: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-top: 28px;
+            max-width: 367px;
+            margin-left: auto;
+            margin-right: auto;
         &-text 
             font-family default 
             font-size 15px 
             line-height 25px  
-            margin-top 50px  
+            margin-top 50px 
+            margin-top 43px
     @media tablet-hor
         &__info
             flex-direction column

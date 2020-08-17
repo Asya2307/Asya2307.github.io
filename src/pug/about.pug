@@ -29,7 +29,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -173,7 +173,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -183,6 +183,7 @@ html(lang="ru")
                 .main-slider__video
                     video(class="video" preload="auto" autoplay="true" loop="true" muted="muted")
                         source(src="/images/video/Jeternel.mp4" type='video/mp4' )
+                    img(src="images/main-slider/main-slider-01.jpg", alt="").main-slider__video--backdrop
                 h4.common__hidden-heading
                 |Центр косметологии Jeternel
                 ul.main-slider__list
@@ -227,7 +228,7 @@ html(lang="ru")
                                 p.legend__text
                                         |Cказку о Жар-птице и молодильных яблоках мы превратили в современную историю Jeternel. Мы помогаем нашим клиентам вернуть вечное сияние молодости и красоты!  
                     
-            .main__wrap--big
+            .main__wrap--biggest
                 .container
                     section.gallery
                         .main__content.gallery__content

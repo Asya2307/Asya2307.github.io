@@ -17,29 +17,39 @@
             margin-right auto
             width 100%
             padding-top 73px
-        
-        &--quiz 
-            padding-top 0
         &--window 
             width 100%
             padding-left 64px
             padding-right 64px
         &--content 
-            max-width: 1320px
+            max-width: 1320px 
+        &--pt0
+            padding-top 0        
     @media laptop 
         &__wrap
             &--big,
             &--biggest
                 max-width unset
+            &--quiz 
+                max-width 1003px
     @media tablet-hor
         &__wrap
             padding-top 0
+            &--window
+                padding 0px
+                padding-right 0px
+    @media tablet-landscape-small
+        &__wrap
+            &--quiz
+                padding-top 90px
             
     &__content
         color black
         p
             font-size 26px
-            line-height 32px
+            line-height 34px
+            margin-bottom 20px
+            margin-top 20px
         @media phone
             p
                 font-size 20px
@@ -50,6 +60,8 @@
             margin-top 76px
             margin-bottom 0px
             padding-bottom 5px
+            &+p 
+                margin-top 27px
         @media phone-portrait
             h2
                 font-size 45px
@@ -63,8 +75,8 @@
             font-size 50px
             line-height 46px
             font-weight 400
-            margin-top 85px
-            margin-bottom 40px
+            margin-top 86px
+            margin-bottom 45px
         @media phone-portrait
             h3
                 font-size 36px
@@ -75,11 +87,13 @@
         ul
             list-style-type none
             padding 0
+            margin-top 30px
+            margin-bottom 24px
             li
                 display flex
                 align-items flex-start
                 font-size 24px
-                margin-bottom 6px
+                margin-bottom 7px
                 &:last-child
                     margin-bottom 0
                 &:before
@@ -89,7 +103,7 @@
                     max-width: 25px
                     height 1px
                     background-color bright-cherry
-                    margin-right 10px
+                    margin-right 13px
                     position relative
                     top 13px
             @media phone
@@ -99,6 +113,8 @@
         img 
             margin-top 7px
             max-width 100%
+            &+p 
+                margin-top: 31px;
         a  
             color bright-cherry
             border-bottom 1px solid bright-cherry
@@ -114,13 +130,12 @@
             font-weight 400
             border-collapse: collapse
             text-align: left 
-            margin-top 14px
             margin-bottom 9px
-
+            margin-top 45px
             td, th 
                 border-bottom 1px solid #e7e7e7
                 border-left 1px solid #e7e7e7
-                padding 24px 30px
+                padding 20px 23px 20px 30px
                 font-weight 400
                 vertical-align top
             th
@@ -131,11 +146,14 @@
     &__title
         font-size 96px
         font-weight 400
-        line-height 94px
-        margin-top 30px
+        line-height 100px
+        margin-top 24px
         margin-bottom 52px
         &--inside
             font-size 90px
+        &--small
+            font-size 60px
+            margin-bottom 41px
     @media tablet-hor
         &__title
             font-size 70px

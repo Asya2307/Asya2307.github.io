@@ -5,7 +5,7 @@ if (popup) {
     const openPopup = (e) => {
         let dataPopup = e.currentTarget.getAttribute('data-open');
         document.querySelector(`[data-popup='${dataPopup}']`).classList.add('active');
-        addHiddenBody(document.querySelector('.content'));
+            addHiddenBody(document.querySelector('.content'));
     }
 
     popup.forEach((item) => {

@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -263,14 +263,14 @@ html(lang="ru")
                                         a(href="#").equipment__link.equipment__link--row 
                                             span.equipment__link-title Коррекция атрофических рубцов
                                             span.equipment__link-price от 3850 руб
-                    section.gallery
+                    section.gallery.gallery--about
                         .main__content.gallery__content
                             h2.gallery__title Описание услуг
-                                p На сегодняшний день одной из самых перспективных отраслей косметологической индустрии является именно аппаратная косметология. Это воздействие на проблемные участки лица и тела
-                                p с помощью физиотерапевтического оборудования.
-                                p С помощью аппаратной косметологии можно корректировать фигуру, очистить лицо от нежелательных появлений на коже, сгладить морщины и решить множество других эстетических проблем!
-                                p Главное преимущество аппаратной косметологии заключается в том, что все процедуры проводятся без операционного вмешательства!
-                                p Процедуры аппаратной косметологии для лица и тела в наших салонах красоты выполняют специалисты с многолетним опытом работы. Обращаясь к нам за аппаратной косметологией, вы можете быть уверенны в отличных ценах и в высоком качестве процедур. Мы заботимся о вас и вашей коже.                    
+                            p На сегодняшний день одной из самых перспективных отраслей косметологической индустрии является именно аппаратная косметология. Это воздействие на проблемные участки лица и тела
+                            p с помощью физиотерапевтического оборудования.
+                            p С помощью аппаратной косметологии можно корректировать фигуру, очистить лицо от нежелательных появлений на коже, сгладить морщины и решить множество других эстетических проблем!
+                            p Главное преимущество аппаратной косметологии заключается в том, что все процедуры проводятся без операционного вмешательства!
+                            p Процедуры аппаратной косметологии для лица и тела в наших салонах красоты выполняют специалисты с многолетним опытом работы. Обращаясь к нам за аппаратной косметологией, вы можете быть уверенны в отличных ценах и в высоком качестве процедур. Мы заботимся о вас и вашей коже.                    
                             .see__more
                                 button.common__button Узнать как
                     section.action__slider-inner
@@ -324,10 +324,11 @@ html(lang="ru")
                                         <svg xmlns="http://www.w3.org/2000/svg">
                                             <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
                                     </svg>    
-                include components/form-consult.pug
-                .main__wrap.main__wrap--biggest
+            include components/form-consult.pug
+            .main__wrap.main__wrap--biggest
+                .container
                     include components/special.pug
-                    section.gallery
+                    section.gallery.gallery--inside
                         .main__content.gallery__content
                             h2.gallery__title Jeternel сегодня 
                             ul.gallery__list
@@ -365,7 +366,7 @@ html(lang="ru")
                                 img(src="images/today/today7.png" alt="gallery7")
                                 <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                 
                     include components/reviews.pug
-                    section.faq 
+                    section.faq.faq--inner
                         .faq__title-inner
                             h2.block__title Вопросы и ответы
                         include components/faq.pug
@@ -394,8 +395,6 @@ html(lang="ru")
                                         a(href="#").equipment__link.equipment__link--row 
                                             span.equipment__link-title Прессотерапия
                                             span.equipment__link-price от 1590 руб
- 
-
         //= partials/footer.pug
         include components/menu-catalog.pug
         div.intro-curtain

@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -192,11 +192,8 @@ html(lang="ru")
                                 a.breadcumbs__link
                                     span Проблемы
                             li.breadcumbs__item
-                                a.breadcumbs__link
-                                    span Старение
-                            li.breadcumbs__item
-                                span Омоложение лица, шеи, декольте
-                    h1.main__title Омоложение лица, шеи, декольте
+                                span Старение
+                    h1.main__title Старение
                     section.expert__wrap
                         .expert
                             .expert__inner
@@ -231,8 +228,47 @@ html(lang="ru")
                             .expert__info--desctop
                                 .expert__image.expert__image--desctop 
                                     img(src="/images/expert.png", alt="")
+                    section.faq.faq--problem
+                        .faq__inner
+                            .faq__item.js-faq-item 
+                                .faq__box.js-open-faq
+                                    button.faq__title 
+                                        span Как правильно пользоваться масками для лица? Как часто ими можно пользоваться?
+                                    .faq__container 
+                                        p.faq__text Обычно маски для лица делают 1-2 раза в неделю, а в целях профилактики — 1 раз в десять дней. Если нужно усиленное воздействие на истощенную и проблемную кожу, то частоту применения увеличивают до 3 раз в неделю или делают курс масок.
+                                        .faq__bottom
+                                            .faq__auth
+                                                .faq__auth-profile(style="background-image: url(images/faq.png)")
+                                                .faq__auth-inner
+                                                    span.faq__auth-name Константинопольская Ольга
+                                                    span.faq__auth-position врач-косметолог
+                                            .faq__date 
+                                                span 18.03.2020
+                            .faq__item.js-faq-item 
+                                .faq__box.js-open-faq
+                                    button.faq__title 
+                                        span Как происходит естественное очищение кожи?
+                                    .faq__container 
+                                        p.faq__text Обычно маски для лица делают 1-2 раза в неделю, а в целях профилактики — 1 раз в десять дней. Если нужно усиленное воздействие на истощенную и проблемную кожу, то частоту применения увеличивают до 3 раз в неделю или делают курс масок.
+                                        .faq__bottom
+                                            .faq__auth
+                                                .faq__auth-profile(style="background-image: url(images/faq.png)")
+                                                .faq__auth-inner
+                                                    span.faq__auth-name Константинопольская Ольга
+                                                    span.faq__auth-position врач-косметолог
+                                            .faq__date 
+                                                span 18.03.2020
+                            .faq__item.js-faq-item
+                                .faq__box.js-open-faq
+                                    button.faq__title 
+                                        span Косметологические процедуры улучшают внешний вид. Не создают ли они других, скрытых проблем?
+                                    .faq__container 
+                                        p.faq__text Обычно маски для лица делают 1-2 раза в неделю, а в целях профилактики — 1 раз в десять дней. Если нужно усиленное воздействие на истощенную и проблемную кожу, то частоту применения увеличивают до 3 раз в неделю или делают курс масок.
+                                        .faq__bottom
+                                            .faq__date 
+                                                span 18.03.2020
                     section.infobox
-                        h2.infobox__title Проблемы старения
+                        h2.infobox__title.infobox__title--part Проблемы старения
                         .infobox__inner.infobox__inner--part
                             .infobox__item.infobox__item--part.infobox__item--backdrop
                                 a(href="#").infobox__link--backdrop
@@ -369,8 +405,8 @@ html(lang="ru")
                                 button.slider__nav-item.slider__nav-item--next
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="35"><path fill="#382f2d" d="M.698 34.99l-.692-.7L16.602 17.5.006.708l.692-.7L17.985 17.5z"/></svg>
                     include components/reviews.pug
-                    section.faq 
-                        .faq__title-inner
+                    section.faq.faq--inner 
+                        .faq__title-inner.faq__title-inner--p0
                             h2.block__title Вопросы и ответы
                         include components/faq.pug
                     section.sections

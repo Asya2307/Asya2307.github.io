@@ -4,29 +4,35 @@
     &__wrap 
         position relative
         background-color default-cherry
-        overflow hidden
         margin-top 100px
+    &__backdrop 
+        position absolute
+        width 100%
+        height 100%
+        top 0
+        left 0
+        overflow hidden
         &:after 
             content: ''
             position absolute
-            background-image url(../images/pattern-resourses.png)
+            background-image url(../images/pattern-resourses-quiz.png)
             width 706px
             height 504px
             top 0
-            right 0
+            right 300px
             background-position center 
             background-repeat no-repeat
             background-size contain
-            transform translateX(-22%) translateY(-27%)
+            transform translateX(-22%)
     @media desktop-medium
         &__wrap
-            padding 25px 64px 28px 64px
+            padding 0px 64px 0px 64px
     @media laptop
         &__wrap
-            padding 20px 64px 23px 64px
+            padding 0px 64px 0px 64px
     @media tablet-landscape-large
         &__wrap
-            padding 20px 40px 23px 40px
+            padding 0px 40px 0px 40px
     @media tablet-landscape-small
         &__wrap:after 
             width 90%
@@ -49,7 +55,6 @@
         opacity 0
         z-index -1
         visibility hidden
-        padding-top 61px
         padding-bottom 66px
         cursor pointer
         &.active
@@ -57,10 +62,6 @@
             z-index 1
             opacity 1
             visibility visible
-    @media tablet-landscape-small
-        &__step 
-            padding-top 100px
-
     &__part
         display flex
         flex-direction column 
@@ -69,15 +70,21 @@
         align-items center
         justify-content space-between
         margin-bottom 64px
+        &--result
+            margin-bottom 44px
     &__title
         font-size 36px
         color white 
         font-weight 300
-        margin: 0
+        margin: 0 
+    @media laptop 
+        &__title
+            font-size 32px 
+            line-height 36px      
     &__count
         position absolute
-        right 0
-        top: 55px 
+        right -2px
+        top 3px
         display flex
         align-items center
         color white 
@@ -87,13 +94,14 @@
                 content '/' 
     @media tablet-landscape-small
         &__count 
-            top 34px
+            top -67px
     &__button 
         display flex
         flex-direction: column
         align-items center
         margin-bottom 12px
-        margin-right 12px
+        margin-right 20px
+        letter-spacing 3.12px
         &:last-child 
             margin-right 0
         span 
@@ -103,6 +111,7 @@
             flex-wrap: wrap
         &--icon 
             width 296px 
+            padding: 90px 20px 20px 20px
             &:after 
                 content ''
                 float left 
@@ -115,8 +124,8 @@
         width calc(100%/2 - 42px)
         margin: 21px
         border-top: 1px solid rgba(255,255,255,.15)
-        padding: 35px 0px 40px 49px
-        margin-bottom 50px
+        padding 34px 0px 41px 53px
+        margin-bottom -17px
         transition: .5s 
         &-inner 
             display flex
@@ -138,6 +147,7 @@
             bottom: 0
             left 0
             padding-left 50px
+            padding-right 40px
             width 100%
             font-family default 
             font-size 15px
@@ -162,6 +172,7 @@
             font-family serif
             display block
             padding-bottom 40px
+            padding-top 6px
         &:hover 
             background-color gray-cherry
             .quiz__result-box
@@ -171,15 +182,14 @@
         &__result 
             padding: 20px
             background-color gray-cherry
+            &-box 
+                padding-left 0px
+                margin-top 5px
     @media phone-portrait
         &__result
             margin-left 0
             margin-right 0 
             width 100%
-            padding-left 20px
-            margin-bottom 20px
-            &-box 
-                padding-left 20px
 
 
                 
@@ -193,8 +203,8 @@
     height 18px
     width 35px
     transform: rotate(-90deg)
-    top: 74px
-    left -100px
+    top 88px
+    left 49px
     svg  
         width 100%
         height 100%
@@ -202,10 +212,24 @@
             fill white
     &:disabled 
         display none
-@media tablet-landscape-small
+@media screen and (max-width: 1550px)
+    .btn__forward
+        left 32px
+@media laptop 
     .btn__forward 
-        top 40px
-        left 0
+        top 103px
+        left 59px
+@media tablet-landscape-medium
+    .btn__forward 
+        left 20px
+@media screen and (max-width: 1100px)
+    .btn__forward
+        left 33px
+        top 37px
+@media phone
+    .btn__forward 
+        left 15px
+        top 54px
 
         
 

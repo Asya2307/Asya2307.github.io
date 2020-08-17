@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -265,7 +265,7 @@ html(lang="ru")
                             a(href="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" style="background-image: url(images/today/today1.png)").gallery__item
                                 <iframe src="https://www.youtube.com/embed/E83DVERrmUk?autoplay=1&amp;loop=1&amp;mute=1&amp" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                     section.tabs(id="price")
-                        h2.common__h4-heading Цены на услуги 
+                        h2.block__title.block__title--tabs Цены на услуги 
                         .tabs__wrap
                             ul.tabs__switch
                                 li.tabs__item 
@@ -397,19 +397,24 @@ html(lang="ru")
                                                 tr 
                                                     td Врач-косметолог
                                                     td 4580 руб
-                    section.infobox(id="application")
+                    section.infobox.infobox--index(id="application")
                         h2.infobox__title В каких случаях применяется
                         .infobox__inner.infobox__inner--part
-                            .infobox__item.infobox__item--part
-                                span Возрастные изменения кожи
-                            .infobox__item.infobox__item--part
-                                span Возрастные изменения фигуры
-                            .infobox__item.infobox__item--part
-                                span Преждевременное выпадение волос
-                            .infobox__item.infobox__item--part
-                                span Сухость кожи
-                            .infobox__item.infobox__item--part
-                                span Отеки (в том числе, после липосакции, липолиза)
+                            .infobox__item.infobox__item--part.infobox__item--backdrop
+                                a(href="#").infobox__link--backdrop
+                                    span Возрастные изменения кожи
+                            .infobox__item.infobox__item--part.infobox__item--backdrop
+                                a(href="#").infobox__link--backdrop
+                                    span Возрастные изменения фигуры
+                            .infobox__item.infobox__item--part.infobox__item--backdrop
+                                a(href="#").infobox__link--backdrop
+                                    span Преждевременное выпадение волос
+                            .infobox__item.infobox__item--part.infobox__item--backdrop
+                                a(href="#").infobox__link--backdrop
+                                    span Сухость кожи
+                            .infobox__item.infobox__item--part.infobox__item--backdrop
+                                a(href="#").infobox__link--backdrop
+                                    span Отеки (в том числе, после липосакции, липолиза)
                     section.before-after__container.before-after__container--slider(id="before-after")
                         h2.infobox__title
                             |До и после
@@ -568,7 +573,7 @@ html(lang="ru")
                             a.common__button-link(href="")
                                 |Все результаты
                     include components/special.pug  
-                    section.action__slider-inner(id="action")
+                    section.action__slider-inner.action__slider-inner--index(id="action")
                         .action__slider-box
                             .action__slider-content
                                 span.action__slider-title Акции
@@ -619,16 +624,74 @@ html(lang="ru")
                                         <svg xmlns="http://www.w3.org/2000/svg">
                                             <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
                                     </svg>
-                include components/form-consult.pug
-                .main__wrap--biggest
-                    include components/reviews.pug 
+            include components/form-consult.pug
+            .main__wrap--biggest.main__wrap--pt0
+                .container
+                    section.reviews
+                        h2.block__title Отзывы
+                        .reviews__inner
+                            .reviews__item
+                                .reviews__text 
+                                    p Огромное спасибо Наталье Андреевне за деликатный подход и внимательность к своим пациентам.
+                                    p Приходя в салон, всегда чувствуешь себя как дома.
+                                .reviews__bottom
+                                    .reviews__tags
+                                        a(href="/").reviews__tags-item Jeternel на Воровского, 13
+                                        a(href="/").reviews__tags-item Вебер Наталья Андреевна
+                                    .reviews__info 
+                                        span Екатерина, 18.03.2020
+                            .reviews__item
+                                .reviews__text 
+                                    p Хочу выразить огромную благодарность Ивановой Валерии Олеговне, за ее профессионализм! Делала удаление сосудистых звездочек на лице неодимовым лазером. Была приятно удивлена увидеть результат сразу после процедуры. Доктор все доходчиво объяснил и рассказал какие рекомендации соблюдать после. Спасибо Валерии Олеговне, теперь я ваш постоянный клиент!
+                                .reviews__bottom
+                                    .reviews__tags
+                                    .reviews__info 
+                                        span Анастасия, 24.05.2019
+                            .reviews__item
+                                .reviews__text 
+                                    p Впервые я была на консультации у врача-косметолога в вашем Центре косметологии на Комсомольском проспекте 48 2 мая 2018. Меня принимала доктор Гува Дженет Мурадовна.
+                                    p Хочется отметить ее внимательность и грамотность. Она очень подробно расспросила меня, провела осмотр, задавала много уточняющих вопросов. Дала рекомендации по курсу коррекции выявленных проблем, посоветовала сдать некоторые анализы. Спасибо Вам огромное! Обязательно приду к вам за красотой!
+                                .reviews__bottom
+                                    .reviews__tags
+                                        a(href="/").reviews__tags-item Jeternel на Комсомольском проспекте, 48
+                                        a(href="/").reviews__tags-item Консультация врача-косметолога
+                                        a(href="/").reviews__tags-item Гува Дженет Мурадовна
+                                    .reviews__info 
+                                        span Юлия, 08.05.2019
+                        .see__more
+                            button.common__button Все отзывы о процедуре
                     section.faq
                         h2.infobox__title Вопросы и ответы
                         include components/faq.pug
-                    include components/publcation.pug
-                    section.gallery
+                    section.publication
+                        .publication__inner.publication__inner--margin 
+                            .publication__top
+                                h2.block__title Публикации
+                                button.common__button.hidden-xs Все публикации
+                            .publication__container
+                                .publication__item
+                                    a(href="#").publication__link
+                                        .publication__image 
+                                            img(src="images/pub/pub.png", alt="", srcset="")
+                                        span.publication__title 
+                                            | 23 декабря прошел вечер подведения итогов 20-летней деятельности компании Jeternel
+                                        p.publication__text За долгую работу и вклад в развитие компании врачи и специалисты были награждены знаками Jeternel.
+                                .publication__item
+                                    a(href="#").publication__link
+                                        .publication__image 
+                                            img(src="images/pub/pub2.png", alt="", srcset="")
+                                        span.publication__title 
+                                            | Основы здоровой кожи - на бьюти-завтраке - 26 сентября
+                                        p.publication__text 26 сентября пройдет бьюти #завтраксполипо (проект очаровательной Полины Поповой) в семейном ресторане Sanchos.
+                                .publication__item
+                                    a(href="#").publication__link
+                                        .publication__image 
+                                            img(src="images/pub/pub3.png", alt="", srcset="")
+                                        span.publication__title 
+                                            | Jeternel на Воровского, 13
+                                        p.publication__text Группа компаний Jeternel стоит на страже красоты и здоровья с 1998 года. В 2009 году самые передовые и прогрессивные технологии в косметологии были выделены в отдельное направление работы. Так появилась Лаборатория красоты Jeternel.
+                    section.gallery.gallery--index
                         .main__content.gallery__content
-                            h2.gallery__title Jeternel сегодня 
                             ul.gallery__list
                                 li 
                                     |Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний;

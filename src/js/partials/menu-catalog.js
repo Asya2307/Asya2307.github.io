@@ -20,15 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (popupScroll) {
         popupScroll.forEach((item) => {
-            new Swiper(item, {
-                direction: 'vertical',
-                slidesPerView: 'auto',
-                freeMode: true,
-                scrollbar: {
-                    el: '.swiper-scrollbar',
-                },
-                mousewheel: true,
-            });
+                const scrollSwiper = new Swiper(item, {
+                    direction: 'vertical',
+                    slidesPerView: 'auto',
+                    freeMode: true,
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                    },
+                    mousewheel: true,
+                    simulateTouch: false
+                });
         });
     };
 

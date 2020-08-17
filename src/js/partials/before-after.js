@@ -53,9 +53,11 @@
 
     function addMouseMoveListener(){
         if(document.documentElement.clientWidth > 1283){
+            
             let overlay = this.overlay;
             overlay.style.transition = "none";
             widthChange = setInterval(function(){
+                console.log(currentWidth, neededWidth)
                 if(currentWidth < neededWidth){
                     currentWidth = currentWidth + 1;
                     overlay.style.width = currentWidth + "%";
@@ -74,11 +76,6 @@
 
     const openPopup = document.querySelectorAll('.js-open-popup');
 
-
-    // var swiper = new Swiper('.js-before-after-slider', {
-    //     slidesPerView: 3,
-    //     spaceBetween: 30,
-    // });
 
     if (openPopup) {
         openPopup.forEach((item) => {

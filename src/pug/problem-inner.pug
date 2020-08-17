@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -192,8 +192,11 @@ html(lang="ru")
                                 a.breadcumbs__link
                                     span Проблемы
                             li.breadcumbs__item
-                                span Старение
-                    h1.main__title Старение
+                                a.breadcumbs__link
+                                    span Старение
+                            li.breadcumbs__item
+                                span Омоложение лица, шеи, декольте
+                    h1.main__title Омоложение лица, шеи, декольте
                     section.expert__wrap
                         .expert
                             .expert__inner
@@ -420,7 +423,7 @@ html(lang="ru")
                             a.common__button-link(href="")
                                 |Все результаты
                     include components/special.pug
-                    section.action__slider-inner
+                    section.action__slider-inner.action__slider-inner--main
                         .action__slider-box
                             .action__slider-content
                                 span.action__slider-title Акции
@@ -447,22 +450,18 @@ html(lang="ru")
                             .action__slider-show
                                 button.common__button.common__button--gray-cherry Все акции 
                         .action__slider-box
-                            .action__slider-content
+                            .action__slider-content.action__slider-content--about
                                 span.action__slider-title Ждем вас в лаборатории красоты Jeternel
                                 p.action__slider-desc Лучшие мировые технологии омоложения, коррекции эстетических недостатков и лечения кожных заболеваний. Оригинальное оборудование и косметологические препараты последнего поколения.
                                 p.action__slider-desc Ведущие профессионалы города, прошедшие стажировку в лучших клиниках России и мира. Высокий уровень сервиса в соответствии с мировыми стандартами.
-                            .action__slider.swiper-container.js-action-slider
+                            .action__slider.action__slider--notext.swiper-container.js-action-slider
                                 .swiper-wrapper
                                     .action__slider-slide.swiper-slide
                                         .action__slider-img(style="background-image: url(/images/action/action.png)")
                                             img(src="/images/action/action.png")
-                                        span.action__slider-head Безупречность во всем!
-                                        span.action__slider-text При прохождении Альтератерапии от 406 линий процедура «Обогащённая PRP» в подарок! Только на Воровского, 13.
                                     .action__slider-slide.swiper-slide
                                         .action__slider-img(style="background-image: url(/images/action/action2.png)")
                                             img(src="/images/action/action2.png")
-                                        span.action__slider-head Безупречность во всем!
-                                        span.action__slider-text При прохождении Альтератерапии от 406 линий процедура «Обогащённая PRP» в подарок! Только на Воровского, 13.
                                     button.action__slider-arrow.action__slider-arrow--left
                                         <svg xmlns="http://www.w3.org/2000/svg">
                                             <path fill="#fff" d="M.71 17.984l-.7-.692L17.5.002l17.49 17.29-.7.692L17.5 1.386z"/>
@@ -531,7 +530,7 @@ html(lang="ru")
                                         span Юлия, 08.05.2019
                         .see__more
                             button.common__button Все отзывы
-                    section.faq 
+                    section.faq.faq--inner
                         .faq__title-inner
                             h2.block__title Вопросы и ответы
                         include components/faq.pug

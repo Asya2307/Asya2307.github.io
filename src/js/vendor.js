@@ -7,9 +7,6 @@
 // Customscroll
 //= plugins/perfectscrollbar.js
 
-// Mask
-//= plugins/clever.js
-
 // Mask location
 //= plugins/clever.ru.js
 
@@ -27,6 +24,9 @@
 
 // Gallery
 //= plugins/lg-video.js
+
+// Inputmask
+//= plugins/inputmask.js
 
 
 

@@ -29,7 +29,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -173,7 +173,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -208,25 +208,25 @@ html(lang="ru")
                         .main__content.gallery__content
                             h2.gallery__title Дипломы и сертификаты 
                         .gallery__inner.js-gallery
-                            a(href="images/sertificate/s1.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s1.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s1.png" alt="liense1")
-                            a(href="images/sertificate/s2.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s2.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s2.png" alt="liense2")
-                            a(href="images/sertificate/s3.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s3.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s3.png" alt="liense1")      
-                            a(href="images/sertificate/s4.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s4.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s4.png" alt="liense1")  
-                            a(href="images/sertificate/s5.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s5.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s5.png" alt="liense1")  
-                            a(href="images/sertificate/s6.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s6.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s6.png" alt="liense1")  
-                            a(href="images/sertificate/s7.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s7.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s7.png" alt="liense1")  
-                            a(href="images/sertificate/s8.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s8.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s8.png" alt="liense1")  
-                            a(href="images/sertificate/s9.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s9.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s9.png" alt="liense1")  
-                            a(href="images/sertificate/s10.png").gallery__item.gallery__item--ser
+                            a(href="images/sertificate/s10.png").gallery__item.gallery__item--popup
                                 img(src="images/sertificate/s10.png" alt="liense1")  
                         .see__more.see__more--gallery
                             button.common__button Показать еще
@@ -240,7 +240,7 @@ html(lang="ru")
                                 a.infobox__link(href="/" target="_blank")
                                     span Контурная инъекционная пластика. Использование биодеградируемых имплантов
                     section.infobox.infobox--index
-                        h2.infobox__title Специализируется на проблемах
+                        h2.infobox__title.infobox__title--part Специализируется на проблемах
                         .infobox__inner.infobox__inner--part
                             .infobox__item.infobox__item--part.infobox__item--backdrop
                                 a.infobox__link--backdrop
@@ -415,7 +415,7 @@ html(lang="ru")
                             a.common__button-link(href="")
                                 |Все результаты
                     section.infobox
-                        h2.infobox__title Услуги
+                        h2.infobox__title.infobox__title--part Услуги
                         .infobox__inner.infobox__inner--half
                             .infobox__item.infobox__item--half.infobox__item--backdrop
                                 a.infobox__link--backdrop.infobox__link--row
@@ -433,7 +433,42 @@ html(lang="ru")
                                 a.infobox__link--backdrop.infobox__link--row
                                     span Прессотерапия
                                     span от 590 руб                               
-                    include components/reviews.pug
+                    section.reviews
+                        h2.block__title Отзывы о специалисте
+                        .reviews__inner
+                            .reviews__item
+                                .reviews__text 
+                                    p Огромное спасибо Наталье Андреевне за деликатный подход и внимательность к своим пациентам.
+                                    p Приходя в салон, всегда чувствуешь себя как дома.
+                                .reviews__bottom
+                                    .reviews__tags
+                                        a(href="/").reviews__tags-item Jeternel на Воровского, 13
+                                        a(href="/").reviews__tags-item Вебер Наталья Андреевна
+                                    .reviews__info 
+                                        span Екатерина, 18.03.2020
+                            .reviews__item
+                                .reviews__text 
+                                    p Хочу выразить огромную благодарность Ивановой Валерии Олеговне, за ее профессионализм! Делала удаление сосудистых звездочек на лице неодимовым лазером. Была приятно удивлена увидеть результат сразу после процедуры. Доктор все доходчиво объяснил и рассказал какие рекомендации соблюдать после. Спасибо Валерии Олеговне, теперь я ваш постоянный клиент!
+                                .reviews__bottom
+                                    .reviews__tags
+                                    .reviews__info 
+                                        span Анастасия, 24.05.2019
+                            .reviews__item
+                                .reviews__text 
+                                    p Впервые я была на консультации у врача-косметолога в вашем Центре косметологии на Комсомольском проспекте 48 2 мая 2018. Меня принимала доктор Гува Дженет Мурадовна.
+                                    p Хочется отметить ее внимательность и грамотность. Она очень подробно расспросила меня, провела осмотр, задавала много уточняющих вопросов. Дала рекомендации по курсу коррекции выявленных проблем, посоветовала сдать некоторые анализы. Спасибо Вам огромное! Обязательно приду к вам за красотой!
+                                .reviews__bottom
+                                    .reviews__tags
+                                        a(href="/").reviews__tags-item Jeternel на Комсомольском проспекте, 48
+                                        a(href="/").reviews__tags-item Консультация врача-косметолога
+                                        a(href="/").reviews__tags-item Гува Дженет Мурадовна
+                                    .reviews__info 
+                                        span Юлия, 08.05.2019
+                        .see__more
+                            button.common__button Все отзывы о специалисте
+    
+
+
                     section.faq
                         h2.infobox__title Вопросы и ответы
                         include components/faq.pug

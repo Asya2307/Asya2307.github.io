@@ -25,7 +25,6 @@ const removeHiddenBody = (block) => {
 //= partials/tabs.js
 //= partials/ancors.js
 //= partials/cookies.js
-//= partials/slide.js
 //= partials/quiz.js
 //= partials/buttons.js
 //= partials/popup.js

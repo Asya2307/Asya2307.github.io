@@ -1,6 +1,7 @@
 .em__profile 
     display flex
     align-items flex-start
+    padding-left 70px
     &-photo
         position relative
         display flex
@@ -27,11 +28,12 @@
             max-width 380px
     &-name  
         display block
-        margin-top 24px
+        margin-top 25px
         font-family serif 
         font-size 96px
         line-height 100px
         font-weight 300
+        margin-bottom 86px
     @media phone-portrait
         &-name
             font-size 36px
@@ -50,6 +52,7 @@
 @media tablet-landscape-small
     .em__profile
         flex-direction: column
+        padding-left 0
         &-inner 
             width 100%
             padding-left 0

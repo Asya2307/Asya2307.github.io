@@ -30,7 +30,7 @@ html(lang="ru")
                                 button.helpers__button(data-open="consult")
                                     svg(width="23" height="23")
                                         use(xlink:href="#pen-icon")
-                                button.helpers__button
+                                button.helpers__button(data-open="search")
                                     svg(width="22" height="22")
                                         use(xlink:href="#search-icon")
                                 button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -174,7 +174,7 @@ html(lang="ru")
                     button.helpers__button(data-open="consult")
                         svg(width="23" height="23")
                             use(xlink:href="#pen-icon")
-                    button.helpers__button
+                    button.helpers__button(data-open="search")
                         svg(width="22" height="22")
                             use(xlink:href="#search-icon")
                     button.helpers__button.helpers__button--special.js-version-button(onclick="uvcl()")
@@ -198,12 +198,12 @@ html(lang="ru")
                         h2.infobox__title Медицинская косметология
                         .infobox__inner.infobox__inner--part
                             .infobox__item.infobox__item--part
-                                a(href="#").infobox__link Консультация врача-косметолога с диагностикой кожи
+                                a(href="#").infobox__link.infobox__link--nohover Консультация врача-косметолога с диагностикой кожи
                             .infobox__item.infobox__item--part
                                 span Альтеро-терапия
                                 ul.infobox__list
                                     li.infobox__list-item
-                                        a.infobox__list-link 
+                                        a(href="#").infobox__list-link 
                                             span SMAS-лифтинг Ulthera
                             .infobox__item.infobox__item--part
                                 span Лазерные технологии
@@ -230,7 +230,7 @@ html(lang="ru")
                                         a.infobox__list-link 
                                             span Лазерная биоревитализация
                             .infobox__item.infobox__item--part
-                                a(href="#").infobox__link Фото технологии
+                                a(href="#").infobox__link.infobox__link--nohover Фото технологии
                                 ul.infobox__list
                                     li.infobox__list-item
                                         a.infobox__list-link 
@@ -260,7 +260,7 @@ html(lang="ru")
                                         a.infobox__list-link 
                                             span Коллагенотерапия
                             .infobox__item.infobox__item--part
-                                a(href="#").infobox__link Тредлифтинг
+                                a(href="#").infobox__link.infobox__link--nohover Тредлифтинг
                                 ul.infobox__list
                                     li.infobox__list-item
                                         a.infobox__list-link 
